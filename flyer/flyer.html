@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frauentanzen | Theresa Ross</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+    @page { size: 100mm 210mm; margin: 0; }
+    @media print { .no-print { display: none; } body { background: none; } .flyer { box-shadow: none; margin: 0; } }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #C9BFB4; display: flex; flex-direction: column; align-items: center; padding: 2rem 0; }
+
+    :root {
+      --bordeaux: #5E2434;
+      --bordeaux-mid: #7A3348;
+      --cream: #F7F0E8;
+      --cream-mid: #EDE4D9;
+      --text: #2A2222;
+      --text-soft: #5C5252;
+      --gold: #BFA476;
+      --gold-light: #D4C4A0;
+    }
+
+    .flyer {
+      width: 100mm;
+      min-height: 210mm;
+      margin: 0 auto 2rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    }
+
+    /* ==================== VORDERSEITE ==================== */
+    .front {
+      background: var(--bordeaux);
+      color: var(--cream);
+      min-height: 210mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Dezenter Lichtschein */
+    .front::after {
+      content: '';
+      position: absolute;
+      top: -20%; right: -40%;
+      width: 100%; height: 80%;
+      background: radial-gradient(ellipse, rgba(191,164,118,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .front-top {
+      padding: 2rem 1.75rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+    }
+    .front-eyebrow {
+      font-size: 6.5px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .front-badge {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 0.75px solid var(--gold);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    .badge-small { font-size: 5.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .badge-word { font-family: 'Cormorant Garamond', serif; font-size: 11px; font-weight: 400; }
+
+    .front-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .front-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .front-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(247,240,232,0.5);
+      margin-bottom: 20px;
+    }
+    .gold-line { width: 32px; height: 0.75px; background: var(--gold); margin-bottom: 20px; }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .detail-label {
+      font-size: 5.5px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+    .detail-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+    .detail-single { margin-bottom: 0; }
+
+    .front-bottom {
+      padding: 0 1.75rem 1.75rem;
+      position: relative;
+      z-index: 1;
+    }
+    .front-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9px;
+      font-style: italic;
+      color: rgba(247,240,232,0.3);
+      line-height: 1.5;
+    }
+
+    /* ==================== RÜCKSEITE ==================== */
+    .back {
+      background: var(--cream);
+      color: var(--text);
+      min-height: 210mm;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .back-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--bordeaux);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .back-text {
+      font-size: 8px;
+      line-height: 1.8;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .back-list {
+      list-style: none;
+      margin-bottom: 14px;
+      padding: 0;
+    }
+    .back-list li {
+      font-size: 8px;
+      color: var(--text-soft);
+      padding: 5px 0 5px 10px;
+      position: relative;
+      border-bottom: 0.5px solid rgba(94,36,52,0.06);
+      line-height: 1.5;
+    }
+    .back-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--bordeaux);
+    }
+
+    .back-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-style: italic;
+      color: var(--bordeaux);
+      padding-left: 10px;
+      border-left: 1.5px solid var(--bordeaux);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .back-offer {
+      background: var(--bordeaux);
+      color: var(--cream);
+      padding: 12px 14px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .offer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+    .back-offer p {
+      font-size: 7.5px;
+      line-height: 1.6;
+      color: rgba(247,240,232,0.8);
+    }
+
+    .back-section { margin-bottom: 10px; }
+    .back-label {
+      font-size: 5.5px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 3px;
+    }
+    .back-value {
+      font-size: 8px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .back-divider {
+      height: 0.5px;
+      background: rgba(94,36,52,0.1);
+      margin: 10px 0;
+    }
+
+    .back-social {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+    .back-social a {
+      font-size: 8px;
+      color: var(--bordeaux);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-footer {
+      margin-top: auto;
+      text-align: center;
+      font-size: 6px;
+      color: var(--text-soft);
+      opacity: 0.6;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== VORDERSEITE ==================== -->
+<div class="flyer">
+  <div class="front">
+
+    <div class="front-top">
+      <p class="front-eyebrow">Theresa Ross</p>
+      <div class="front-badge">
+        <span class="badge-small">Nur für</span>
+        <span class="badge-word">Frauen</span>
+      </div>
+    </div>
+
+    <div class="front-center">
+      <h1 class="front-title">Frauen<br>tanzen.</h1>
+      <p class="front-sub">Zeig dich. Beweg dich. Sei du.</p>
+      <div class="gold-line"></div>
+
+      <div class="detail-row">
+        <div>
+          <p class="detail-label">Wann</p>
+          <p class="detail-value">6 Wochen<br>ab Ende Oktober 2026</p>
+        </div>
+        <div>
+          <p class="detail-label">Wo</p>
+          <p class="detail-value">Tanzschule<br>[Adresse folgt]</p>
+        </div>
+      </div>
+      <div class="detail-single">
+        <p class="detail-label">Investition</p>
+        <p class="detail-value">89 &euro; / 6 Wochen</p>
+      </div>
+    </div>
+
+    <div class="front-bottom">
+      <p class="front-tagline">Kein Kurs. Kein Leistungsdruck.<br>Nur du und die Musik.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== RÜCKSEITE ==================== -->
+<div class="flyer">
+  <div class="back">
+
+    <h2 class="back-title">Tanzen,<br>wie du bist.</h2>
+    <p class="back-text">Kein Tanzpartner nötig. Keine Choreografie. Keine Bewertung. Nur ein Raum voller Frauen, Musik und die Erlaubnis, dich so zu zeigen, wie du bist. Barfuß oder in Socken. Mit offenen Haaren und offenem Herzen.</p>
+
+    <ul class="back-list">
+      <li>6 Wochen, einmal pro Woche</li>
+      <li>Tanzschule mit Spiegelfront</li>
+      <li>Bequeme Kleidung, Socken oder barfuß</li>
+      <li>Keine Vorkenntnisse nötig</li>
+      <li>Geschützter Raum nur für Frauen</li>
+      <li>Jede Woche ein anderes Thema</li>
+    </ul>
+
+    <blockquote class="back-quote">"Tanzen ist die direkteste Sprache deines Körpers. Hier darfst du sie sprechen."</blockquote>
+
+    <div class="back-offer">
+      <p class="offer-title">Eröffnungsangebot</p>
+      <p>Zahle für eine, bring eine Freundin mit.<br>Gilt für die erste Stunde.</p>
+    </div>
+
+    <div class="back-section">
+      <p class="back-label">Für wen</p>
+      <p class="back-value">Für jede Frau. Jedes Alter, jeder Körper. Du musst nichts können. Nur kommen.</p>
+    </div>
+
+    <div class="back-section">
+      <p class="back-label">Mitbringen</p>
+      <p class="back-value">Bequeme Kleidung, Socken oder Stulpen, Wasser.</p>
+    </div>
+
+    <div class="back-divider"></div>
+
+    <div class="back-section">
+      <p class="back-label">Kontakt &amp; Anmeldung</p>
+      <p class="back-value">Theresa Ross<br>theresaross-coach@outlook.de<br>+49 176 34613361</p>
+    </div>
+
+    <div class="back-social">
+      <a href="#">@frauentanzen</a>
+      <a href="#">Facebook</a>
+    </div>
+
+    <p class="back-footer">Begrenzte Plätze. Anmeldung per Instagram, E-Mail oder Telefon.</p>
+
+  </div>
+</div>
+
+<div class="no-print" style="text-align: center; padding: 1.5rem;">
+  <button onclick="window.print()" style="background: #5E2434; color: #F7F0E8; border: none; padding: 0.75rem 1.75rem; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 0.8rem; cursor: pointer; letter-spacing: 0.08em; text-transform: uppercase;">Als PDF speichern</button>
+</div>
+
+</body>
+</html>
