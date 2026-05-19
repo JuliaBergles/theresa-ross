@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rabattcodes | Theresa Ross</title>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    .rabatt-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 3rem; }
+    @media (min-width: 768px) { .rabatt-grid { grid-template-columns: repeat(2, 1fr); } }
+    .rabatt-card {
+      background: var(--bg-elevated); border: 1px solid var(--border-light);
+      border-radius: 4px; padding: 2rem; transition: all 0.3s ease;
+    }
+    .rabatt-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .rabatt-card h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .rabatt-category { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .rabatt-card p { color: var(--text-on-light-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem; }
+    .rabatt-code {
+      display: inline-block; background: var(--bg-primary); border: 1.5px dashed var(--accent);
+      padding: 0.5rem 1rem; border-radius: 4px; font-family: var(--font-body);
+      font-size: 1rem; font-weight: 600; color: var(--text-on-light); letter-spacing: 0.05em; margin-bottom: 1rem;
+    }
+    .rabatt-link {
+      display: inline-block; font-size: 0.9rem; font-weight: 500;
+      color: var(--accent); text-decoration: underline; transition: color 0.2s;
+    }
+    .rabatt-link:hover { color: var(--accent-dark); }
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo">Theresa Ross</a><button class="menu-toggle">&#9776;</button><div class="nav-links"><a href="ueber-mich.html">Über mich</a><a href="coaching.html">Coaching</a><a href="unternehmen.html">Unternehmen</a><a href="selbsttest.html" class="nav-cta">Selbsttest</a></div></div></nav>
+
+  <section class="section" style="padding-top: clamp(8rem, 12vh, 12rem);">
+    <div class="container" style="max-width: 900px;">
+      <span class="eyebrow fade-up">Empfehlungen</span>
+      <h1 class="h1 fade-up" style="margin-bottom: 1rem;">Rabattcodes</h1>
+      <p class="body-large fade-up" style="color: var(--text-on-light-muted);">Nutzen Sie meine Rabattcodes für Ihre Einkäufe!</p>
+
+      <div class="rabatt-grid">
+
+        <div class="rabatt-card fade-up">
+          <h3>Sunday Natural</h3>
+          <p class="rabatt-category">Nahrungsergänzungsmittel</p>
+          <p>Natürliche Gesundheit und Vitalität. Über 1.500 erlesene Produkte von höchster Qualität und Reinheit.</p>
+          <p style="font-size: 0.85rem; color: var(--text-on-light-muted);">Sie benötigen Auskunft zu den Produkten? Schreiben Sie mich gerne direkt an.</p>
+          <a href="https://www.sunday.de" target="_blank" rel="noopener" class="rabatt-link">Zum Shop &rarr;</a>
+        </div>
+
+        <div class="rabatt-card fade-up">
+          <h3>Nature Heart</h3>
+          <p class="rabatt-category">Nahrungsergänzungsmittel</p>
+          <p>Natürliche Vitalstoffe vom Vorbild der Natur. Nature Heart gewährleistet perfekte und laborgeprüfte Qualität ohne Zusatzstoffe.</p>
+          <span class="rabatt-code">THERESA10</span><br>
+          <a href="https://www.nature-heart.de" target="_blank" rel="noopener" class="rabatt-link">Zum Shop &rarr;</a>
+        </div>
+
+        <div class="rabatt-card fade-up">
+          <h3>NORSAN</h3>
+          <p class="rabatt-category">Nahrungsergänzungsmittel</p>
+          <p>DER Omega-3 Spezialist aus Norwegen. Natürliche und hochdosierte Omega-3 Produkte.</p>
+          <span class="rabatt-code">ER521</span><br>
+          <a href="https://www.norsan.de" target="_blank" rel="noopener" class="rabatt-link">Zum Shop &rarr;</a>
+        </div>
+
+        <div class="rabatt-card fade-up">
+          <h3>Seifenfreund</h3>
+          <p class="rabatt-category">Pflegeprodukte</p>
+          <p>Original Premium Aleppo Seife mit natürlichen Inhaltsstoffen. Auch für Neurodermitiker und Betroffene von Rosacea geeignet!</p>
+          <span class="rabatt-code">THERESA10</span><br>
+          <a href="https://www.seifenfreund.de" target="_blank" rel="noopener" class="rabatt-link">Zum Shop &rarr;</a>
+        </div>
+
+        <div class="rabatt-card fade-up">
+          <h3>nextvital</h3>
+          <p class="rabatt-category">Nahrungsergänzungsmittel</p>
+          <p>Eine sorgfältige Auswahl an Nahrungsergänzungsmitteln namhafter Hersteller.</p>
+          <span class="rabatt-code">THERESA05</span><br>
+          <a href="https://www.nextvital.de" target="_blank" rel="noopener" class="rabatt-link">Zum Shop &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="footer-inner"><div><div class="footer-logo">Theresa Ross</div><p class="footer-text">Coaching für Nervensystem,<br>Darm-Hirn-Achse & Körper-Geist</p></div><div><p class="footer-heading">Seiten</p><div class="footer-links"><a href="ueber-mich.html">Über mich</a><a href="coaching.html">Coaching</a><a href="unternehmen.html">Unternehmen</a><a href="rabattcodes.html">Rabattcodes</a><a href="selbsttest.html">Selbsttest</a></div></div><div><p class="footer-heading">Rechtliches</p><div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></div><div class="footer-bottom">&copy; 2026 Theresa Ross. Alle Rechte vorbehalten.</div></footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
