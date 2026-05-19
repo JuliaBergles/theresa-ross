@@ -3,326 +3,366 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Book: 5 Muster, die deine Gesundheit sabotieren | Theresa Ross</title>
+  <title>Workbook: Dein Nervensystem verstehen | Theresa Ross</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap');
-    @page { size: A4; margin: 2cm 2cm; }
-    @media print { .no-print { display: none; } body { background: #EAE0D5; } .page { box-shadow: none; margin: 0; } }
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap');
+    @page { size: A4; margin: 2cm; }
+    @media print { .no-print { display: none; } .page { box-shadow: none; break-after: page; } }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; color: #2C2820; background: #E8E3D9; line-height: 1.75; font-size: 15px; font-weight: 300; }
+    body { font-family: 'Inter', sans-serif; color: #2C2820; background: #D5CBC0; line-height: 1.75; font-size: 15px; font-weight: 300; }
     h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 400; line-height: 1.2; }
 
-    .page { max-width: 700px; margin: 0 auto; background: #EAE0D5; padding: 3.5rem; min-height: 100vh; box-shadow: 0 4px 40px rgba(0,0,0,0.06); position: relative; }
-    .page + .page { margin-top: 2rem; }
+    .page { max-width: 700px; margin: 0 auto; background: #EAE0D5; padding: 3rem 3.5rem; min-height: 100vh; box-shadow: 0 4px 40px rgba(0,0,0,0.08); position: relative; }
+    .page + .page { margin-top: 1.5rem; }
     @media (max-width: 768px) { .page { padding: 2rem 1.5rem; } }
 
-    /* Colors */
-    .c-accent { color: #9B5B55; }
-    .c-muted { color: #7A6F65; }
-
-    /* Station Label */
-    .station { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: #7A6F65; margin-bottom: 0.5rem; }
-
-    /* Headings */
-    .cover-title { font-size: 2.8rem; line-height: 1.1; margin-bottom: 1rem; }
-    .page-title { font-size: 1.6rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; font-weight: 500; }
-    .page-subtitle { font-size: 1.4rem; color: #9B5B55; margin-bottom: 2rem; }
-    .section-title { font-size: 1.2rem; color: #9B5B55; margin: 2rem 0 1rem; }
-
-    /* Eyebrow */
+    .station { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: #7A6F65; margin-bottom: 0.25rem; }
+    .grundfrage { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; margin-bottom: 2rem; }
     .eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9B5B55; display: block; margin-bottom: 1.5rem; }
-
-    /* Body */
+    .section-title { font-size: 1.3rem; color: #9B5B55; margin: 2rem 0 1rem; }
     p { margin-bottom: 1rem; }
     .bold { font-weight: 500; }
-    .italic { font-style: italic; }
 
-    /* Images */
-    .full-image { width: calc(100% + 7rem); margin-left: -3.5rem; margin-top: 1.5rem; margin-bottom: 2rem; max-height: 240px; object-fit: cover; }
-    @media (max-width: 768px) { .full-image { width: calc(100% + 3rem); margin-left: -1.5rem; } }
+    .full-img { width: calc(100% + 7rem); margin-left: -3.5rem; margin-bottom: 2rem; max-height: 280px; object-fit: cover; }
+    @media (max-width: 768px) { .full-img { width: calc(100% + 3rem); margin-left: -1.5rem; } }
 
-    /* Quote Block */
-    .quote-block { margin: 2.5rem 0; position: relative; }
-    .quote-marks { font-family: 'Fraunces', serif; font-size: 6rem; color: #9B5B55; opacity: 0.2; line-height: 1; position: absolute; top: -1.5rem; right: 0; }
-    .quote-text { font-family: 'Fraunces', serif; font-size: 1.15rem; font-style: italic; color: #9B5B55; line-height: 1.5; max-width: 85%; }
-    .quote-author { font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #7A6F65; margin-top: 0.75rem; }
-
-    /* Info Box (like Nepal box) */
     .info-box { border-left: 3px solid #9B5B55; padding: 1rem 1.25rem; margin: 1.5rem 0; background: #F2EBE3; }
     .info-box .info-title { font-size: 0.85rem; color: #9B5B55; font-weight: 500; margin-bottom: 0.5rem; }
     .info-box p { font-size: 0.9rem; margin-bottom: 0.25rem; color: #5F5950; }
 
-    /* Reflexion */
-    .reflexion { margin: 2.5rem 0; }
-    .reflexion-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #9B5B55; font-weight: 500; margin-bottom: 1.5rem; }
+    .quote-block { margin: 2.5rem 0; position: relative; }
+    .quote-marks { font-family: 'Fraunces', serif; font-size: 5rem; color: #9B5B55; opacity: 0.15; line-height: 1; position: absolute; top: -1rem; right: 0; }
+    .quote-text { font-family: 'Fraunces', serif; font-size: 1.1rem; font-style: italic; color: #9B5B55; line-height: 1.5; max-width: 85%; }
+    .quote-author { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #7A6F65; margin-top: 0.5rem; }
+
+    .reflexion-label { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #9B5B55; font-weight: 600; margin-bottom: 1.5rem; }
     .question { margin-bottom: 2rem; }
     .question p { font-size: 0.95rem; margin-bottom: 0.75rem; font-weight: 400; }
-    .write-box { border: 1.5px solid #D5CBC0; border-radius: 6px; padding: 1rem; min-height: 5rem; background: #F2EBE3; }
-    .write-line { border-bottom: 1px solid #D5CBC0; height: 2.2rem; }
+    .write-box { border: 1.5px solid #C9C0B5; border-radius: 6px; padding: 0.75rem 1rem; background: #F2EBE3; }
+    .write-line { border-bottom: 1px solid #D5CBC0; height: 2rem; }
     .write-line:last-child { border-bottom: none; }
 
-    /* Muster Nummer */
-    .muster-header { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem; }
-    .muster-num { font-family: 'Fraunces', serif; font-size: 3.5rem; color: #9B5B55; font-weight: 300; line-height: 1; flex-shrink: 0; }
-    .muster-title { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 400; margin-top: 0.5rem; }
+    .pf { position: absolute; bottom: 1.5rem; left: 3.5rem; right: 3.5rem; display: flex; justify-content: space-between; font-size: 0.65rem; color: #B5AC9E; letter-spacing: 0.05em; }
+    @media (max-width: 768px) { .pf { left: 1.5rem; right: 1.5rem; } }
 
-    /* Divider */
-    .divider { height: 1px; background: linear-gradient(90deg, transparent, #D5CBC0, transparent); margin: 3rem 0; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
 
-    /* Page Footer */
-    .page-footer { position: absolute; bottom: 2rem; left: 3.5rem; right: 3.5rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: #B5AC9E; letter-spacing: 0.05em; }
+    .checklist { list-style: none; margin: 1rem 0; }
+    .checklist li { padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .checklist li::before { content: '·'; position: absolute; left: 0; color: #9B5B55; font-weight: 700; font-size: 1.2rem; line-height: 1.5; }
 
-    /* CTA */
-    .cta-box { background: #2C2820; color: #F5EDE4; border-radius: 4px; padding: 3rem; text-align: center; margin: 2rem 0; }
-    .cta-box h2 { color: #F5EDE4; font-size: 1.6rem; margin-bottom: 0.75rem; }
-    .cta-box p { color: #B5AC9E; margin-bottom: 1rem; font-size: 0.95rem; }
-    .cta-btn { display: inline-block; background: linear-gradient(135deg, #B87272, #9B5B55, #7A4440); color: #fff; padding: 0.875rem 2rem; border-radius: 4px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; margin-top: 0.5rem; }
+    .toc { margin: 2rem 0; }
+    .toc-item { display: flex; justify-content: space-between; align-items: baseline; padding: 0.6rem 0; border-bottom: 1px dotted #C9C0B5; font-size: 0.9rem; }
+    .toc-label { color: #7A6F65; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+
+    .cta-box { background: #2C2820; color: #F5EDE4; border-radius: 4px; padding: 2.5rem; text-align: center; margin: 2rem 0; }
+    .cta-box h2 { font-family: 'Fraunces', serif; color: #F5EDE4; font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .cta-box p { color: #B5AC9E; margin-bottom: 1rem; font-size: 0.9rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, #B87272, #9B5B55, #7A4440); color: #fff; padding: 0.75rem 1.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
   </style>
 </head>
 <body>
 
-<!-- ==================== COVER ==================== -->
+<!-- COVER -->
 <div class="page" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-  <!-- Bild oben, 60% der Seite -->
   <div style="position: relative; flex: 1; min-height: 55vh;">
     <img src="images/20.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, #EAE0D5 100%);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, #EAE0D5 100%);"></div>
   </div>
-  <!-- Text unten -->
-  <div style="padding: 2rem 3.5rem 3rem; text-align: center; position: relative; margin-top: -4rem; z-index: 2;">
+  <div style="padding: 2rem 3.5rem 3rem; text-align: center; position: relative; margin-top: -5rem; z-index: 2;">
     <span class="eyebrow">Theresa Ross</span>
-    <h1 class="cover-title" style="font-size: 2.6rem;">5 Muster, die deine Gesundheit sabotieren.</h1>
+    <h1 style="font-family: 'Fraunces', serif; font-size: 2.5rem; line-height: 1.1; margin-bottom: 1rem;">Dein Nervensystem verstehen.</h1>
     <div style="height: 1px; width: 80px; background: #9B5B55; margin: 1.5rem auto;"></div>
-    <p style="max-width: 30ch; margin: 1rem auto 0; color: #7A6F65; font-size: 1rem;">
-      Und warum dein Nervensystem der Schlüssel ist, den du bisher übersehen hast.
-    </p>
-    <p style="margin-top: 2.5rem; font-size: 0.75rem; color: #B5AC9E; letter-spacing: 0.1em;">EIN KOSTENLOSES WORKBOOK</p>
+    <p style="color: #7A6F65; font-size: 1rem; max-width: 30ch; margin: 1rem auto 0;">Ein Workbook über die Verbindung von Darm, Nervensystem und Geist.</p>
+    <p style="margin-top: 2.5rem; font-size: 0.7rem; color: #B5AC9E; letter-spacing: 0.15em; text-transform: uppercase;">Das Workbook zum Coaching</p>
   </div>
 </div>
 
-<!-- ==================== PERSÖNLICHES VORWORT ==================== -->
+<!-- VORWORT -->
 <div class="page">
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+  <div class="two-col">
     <div>
-      <h2 class="page-subtitle" style="font-size: 1.6rem;">Ein persönliches Wort von Theresa.</h2>
-      <p>Wenn du diese Seiten liest, dann wahrscheinlich, weil du spürst: Da ist etwas, das nicht stimmt.</p>
-      <p>Vielleicht Verdauung. Vielleicht Erschöpfung. Vielleicht beides. Und du hast schon einiges versucht.</p>
-      <p>Ich kenne das. Vor einigen Jahren war ich genau dort. Ärzte, Tests, Supplements, Ernährungsumstellungen. Nichts hat nachhaltig geholfen.</p>
+      <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; color: #9B5B55; margin-bottom: 1.5rem;">Ein persönliches Wort von Theresa Ross</h2>
+      <p>Herzlich willkommen zu deinem Workbook.</p>
+      <p>Ich freue mich, dass du hier bist. Und dass du dir die Zeit nimmst, über das hinauszugehen, was du bisher versucht hast.</p>
+      <p>Dieses Workbook zeigt eine Reise. Nicht in ferne Länder, sondern nach innen. Zu deinem Nervensystem. Zu deinem Darm. Zu der Verbindung, die alles zusammenhält.</p>
     </div>
     <img src="images/1.png" alt="Theresa Ross" style="width: 100%; border-radius: 4px; object-fit: cover; aspect-ratio: 3/4;">
   </div>
-  <p style="margin-top: 1.5rem;">Bis ich verstanden habe, dass das Problem nicht mein Darm war. Und nicht mein Kopf. Sondern das System, das beides steuert: mein Nervensystem.</p>
-  <p>Dieses Workbook zeigt dir die fünf Muster, die ich bei fast allen meinen Klientinnen sehe. Fünf Muster, die dafür sorgen, dass dein Körper nicht zur Ruhe kommt.</p>
-  <p>Lies es in Ruhe. Nicht als Checkliste, sondern als Einladung, deinen Körper anders zu sehen.</p>
-  <p style="margin-top: 1.5rem; font-style: italic;">Theresa</p>
-
-  <div class="quote-block">
+  <p style="margin-top: 1.5rem;">Ich habe Jahre gebraucht, um zu verstehen, warum mein Körper nicht zur Ruhe kam. Warum keine Diät, kein Supplement und kein Arzt eine Antwort hatte, die wirklich hielt. Die Antwort lag nicht in dem, was ich aß. Sie lag in dem, wie mein Nervensystem die Welt verarbeitete.</p>
+  <p>Das Schöne ist: Du brauchst dafür keine Reise ans andere Ende der Welt. Du brauchst nur die Bereitschaft, dieselbe Frage zu stellen, die mich auf den Weg gebracht hat: Was braucht mein Körper wirklich?</p>
+  <p>Dieses Workbook ist dein Raum dafür. Station für Station. Frage für Frage. Nicht ich beantworte sie. Du tust es. Die Antworten sind schon in dir.</p>
+  <p style="margin-top: 1.5rem; font-style: italic;">Ich wünsche dir eine gute Reise nach innen.</p>
+  <p style="font-style: italic;">Theresa</p>
+  <div class="quote-block" style="margin-top: 2rem;">
     <span class="quote-marks">&#8220;&#8221;</span>
     <p class="quote-text">"Solange dein Nervensystem im Alarmmodus hängt, kann dein Darm nicht gesund werden. Egal, was du isst."</p>
     <p class="quote-author">Theresa Ross</p>
   </div>
-
-  <div class="page-footer"><span>Theresa Ross</span><span>2</span></div>
+  <div class="pf"><span>Theresa Ross</span><span>2</span></div>
 </div>
 
-<!-- ==================== MUSTER 1 ==================== -->
+<!-- WIE DU DIESES WORKBOOK NUTZT -->
 <div class="page">
-  <p class="station">Muster 1 | Nervensystem</p>
-  <h2 class="page-title">DER DAUER-ALARM</h2>
-  <h3 class="page-subtitle">Wenn dein Körper nicht mehr runterfährt</h3>
+  <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; color: #9B5B55; margin-bottom: 1.5rem;">Wie du dieses Workbook nutzt</h2>
+  <p>Du bist eingeladen, diese Seiten wie eine Reise zu erleben. Station für Station. Jede Station entspricht einer Ebene deines Körpers und einer Grundfrage deines Lebens. Lies, reflektiere, und schreib. Es gibt kein Richtig oder Falsch. Nur deine Antworten.</p>
+  <p style="font-weight: 500; margin-top: 1.5rem;">Haltung für diese Reise:</p>
+  <ul class="checklist">
+    <li>Nimm dir Zeit. Diese Seiten sind kein Sprint.</li>
+    <li>Finde einen ruhigen Ort und schalte Ablenkendes aus.</li>
+    <li>Sei ehrlich zu dir, auch wenn es unbequem wird.</li>
+    <li>Schreib auf, was wirklich in dir auftaucht. Nicht was "richtig" klingt.</li>
+    <li>Kehre zu einzelnen Stationen zurück, so oft du möchtest.</li>
+  </ul>
+  <h3 style="font-family: 'Fraunces', serif; font-size: 1.3rem; color: #9B5B55; margin: 2.5rem 0 1.5rem;">Die Route im Überblick:</h3>
+  <div class="toc">
+    <div class="toc-item"><div><span class="toc-label">Station 0</span> &nbsp;Warum bin ich hier?</div><span style="color: #9B5B55;">4</span></div>
+    <div class="toc-item"><div><span class="toc-label">Station 1</span> &nbsp;Was passiert in meinem Nervensystem?</div><span style="color: #9B5B55;">5</span></div>
+    <div class="toc-item"><div><span class="toc-label">Station 2</span> &nbsp;Was verbindet Darm und Gehirn?</div><span style="color: #9B5B55;">7</span></div>
+    <div class="toc-item"><div><span class="toc-label">Station 3</span> &nbsp;Was hält mich fest?</div><span style="color: #9B5B55;">9</span></div>
+    <div class="toc-item"><div><span class="toc-label">Station 4</span> &nbsp;Was bedeutet Regulation?</div><span style="color: #9B5B55;">11</span></div>
+    <div class="toc-item"><div><span class="toc-label">Station 5</span> &nbsp;Wie finde ich zurück zu mir?</div><span style="color: #9B5B55;">13</span></div>
+  </div>
+  <div class="pf"><span>Theresa Ross</span><span>3</span></div>
+</div>
 
-  <img src="images/14.png" alt="" class="full-image" style="max-height: 220px; object-fit: cover;">
+<!-- STATION 0 -->
+<div class="page">
+  <p class="station">Station 0 | Dein Zuhause | Der Aufbruch</p>
+  <h2 class="grundfrage">Warum bin ich hier?</h2>
+  <h3 class="section-title">Der Moment, bevor alles beginnt</h3>
+  <p>Jede große Reise beginnt mit einem inneren Unbehagen. Einem Gefühl, das sich nicht mehr wegschieben lässt. Vielleicht kennst du das: Du funktionierst, du leistest, du hältst durch. Und doch spürst du: Da muss noch mehr sein.</p>
+  <p>Vielleicht ist es dein Bauch, der seit Monaten rebelliert. Vielleicht die Erschöpfung, die kein Schlaf auflöst. Vielleicht die Anspannung, die einfach nicht weichen will. Und du hast schon so vieles versucht.</p>
+  <p>Dieser Aufbruch hier, mit diesem Workbook, ist ein bewusster Schritt. Raus aus dem Lautsein des Alltags. Raus aus dem ständigen Reagieren. Rein in die Stille, in der du dich selbst hören kannst.</p>
+  <div class="quote-block">
+    <span class="quote-marks">&#8220;&#8221;</span>
+    <p class="quote-text">"Die meisten Menschen warten, bis der Leidensdruck unerträglich wird. Was wäre, wenn du nicht wartest?"</p>
+    <p class="quote-author">Theresa Ross</p>
+  </div>
+  <p class="reflexion-label">Reflexion</p>
+  <div class="question"><p>1. Was hat dich zu diesem Workbook geführt? Was ist der Moment, der dich bewegt hat?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>2. Wenn du ehrlich bist: Wie fühlst du dich gerade in deinem Körper?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>3. Was würdest du dir von dieser inneren Reise wünschen?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="pf"><span>Theresa Ross</span><span>4</span></div>
+</div>
 
-  <p>Dein Nervensystem hängt im Überlebensmodus fest. Es reagiert auf alles, als wäre es eine Bedrohung: Essen, Stress, Lärm, sogar Ruhe fühlt sich falsch an.</p>
-
+<!-- STATION 1 -->
+<div class="page">
+  <p class="station">Station 1 | Das Nervensystem | Vagusnerv</p>
+  <h2 class="grundfrage">Was passiert in meinem Nervensystem?</h2>
+  <img src="images/3.png" alt="" class="full-img">
+  <h3 class="section-title">Dein Vagusnerv: Die Schaltzentrale</h3>
+  <p>Der Vagusnerv ist der längste Nerv deines Körpers. Er verbindet dein Gehirn mit deinem Darm, deinem Herzen, deiner Lunge. Er ist der Hauptkanal zwischen Kopf und Bauch.</p>
+  <p>Wenn er funktioniert, reguliert er alles: Atmung, Verdauung, Herzschlag, Schlaf, Regeneration. Er sagt deinem Körper: Du bist sicher. Du darfst dich entspannen.</p>
+  <p class="bold">Wenn er überreizt ist, sagt er das Gegenteil: Alarm. Gefahr. Überleben.</p>
   <div class="info-box">
-    <p class="info-title">Was der Vagusnerv damit zu tun hat</p>
-    <p>Der Vagusnerv ist dein wichtigster Ruhenerv. Er verbindet Darm und Gehirn. Wenn er dauerhaft überreizt ist, bleibt dein Körper im Alarmmodus. Verdauung, Schlaf und Regeneration werden heruntergefahren.</p>
+    <p class="info-title">Der Vagusnerv in Zahlen</p>
+    <p>80% der Informationen fließen vom Darm zum Gehirn, nicht umgekehrt.</p>
+    <p>Der Vagusnerv beeinflusst Entzündungsreaktionen im gesamten Körper.</p>
+    <p>Chronischer Stress reduziert den Vagustonus: der Nerv wird "taub" für Ruhe-Signale.</p>
   </div>
-
-  <div class="reflexion">
-    <p class="reflexion-label">Reflexion</p>
-    <div class="question">
-      <p>1. Wann hast du dich zuletzt wirklich entspannt gefühlt? Nicht müde, sondern ruhig?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
-    <div class="question">
-      <p>2. Wie reagiert dein Körper auf Stille? Kannst du sie aushalten?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
+  <h3 class="section-title">Sympathikus vs. Parasympathikus</h3>
+  <p>Dein autonomes Nervensystem hat zwei Modi: den Sympathikus (Gas, Alarm, Leistung) und den Parasympathikus (Bremse, Ruhe, Regeneration). Der Vagusnerv ist der wichtigste Teil des Parasympathikus.</p>
+  <p>Bei chronischem Stress bleibt der Sympathikus dauerhaft aktiv. Dein Körper vergisst, wie sich Ruhe anfühlt. Verdauung wird heruntergefahren. Schlaf wird flach. Regeneration stoppt. Das ist kein psychisches Problem. Das ist Biologie.</p>
+  <div class="quote-block">
+    <span class="quote-marks">&#8220;&#8221;</span>
+    <p class="quote-text">"Du kannst deinen Vagusnerv nicht durch Willenskraft beruhigen. Aber du kannst deinem Körper beibringen, es wieder zu tun."</p>
+    <p class="quote-author">Theresa Ross</p>
   </div>
-
-  <div class="page-footer"><span>Theresa Ross</span><span>3</span></div>
+  <div class="pf"><span>Theresa Ross</span><span>5</span></div>
 </div>
 
-<!-- ==================== MUSTER 2 ==================== -->
+<!-- STATION 1 REFLEXION -->
 <div class="page">
-  <p class="station">Muster 2 | Verhalten</p>
-  <h2 class="page-title">DIE SYMPTOM-JAGD</h2>
-  <h3 class="page-subtitle">Immer das Nächste probieren</h3>
+  <p class="reflexion-label">Reflexion | Station 1</p>
+  <div class="question"><p>1. Wann hast du dich zuletzt wirklich entspannt gefühlt? Nicht müde, sondern ruhig.</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>2. In welchen Situationen merkst du, dass dein Körper in den Alarm-Modus schaltet?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>3. Wie reagiert dein Bauch auf Stress? Beschreibe es so genau wie möglich.</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>4. Kannst du Stille aushalten? Was passiert, wenn du 5 Minuten nichts tust?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>5. Wenn dein Nervensystem sprechen könnte: Was würde es dir sagen?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="pf"><span>Theresa Ross</span><span>6</span></div>
+</div>
 
-  <p>Du behandelst Symptome, nicht die Ursache. Jede Woche ein neues Supplement, eine neue Diät, ein neuer Tipp. Nichts hält länger als ein paar Wochen. Denn das eigentliche Problem sitzt tiefer.</p>
-  <p class="bold">Der Grund: Wenn dein Nervensystem im Alarmmodus ist, kann kein Supplement der Welt deinen Darm beruhigen.</p>
-
-  <div class="reflexion">
-    <p class="reflexion-label">Reflexion</p>
-    <div class="question">
-      <p>1. Liste alles auf, was du in den letzten 2 Jahren für deine Gesundheit ausprobiert hast.</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
-    <div class="question">
-      <p>2. Was davon hat kurzfristig geholfen? Was davon hat langfristig etwas verändert?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
-    <div class="question">
-      <p>3. Wie fühlt es sich an, ständig nach der nächsten Lösung zu suchen?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
+<!-- STATION 2 -->
+<div class="page">
+  <p class="station">Station 2 | Die Darm-Hirn-Achse | Verbindung</p>
+  <h2 class="grundfrage">Was verbindet Darm und Gehirn?</h2>
+  <img src="images/13.png" alt="" class="full-img">
+  <h3 class="section-title">Das zweite Gehirn</h3>
+  <p>Dein Darm besitzt ein eigenes Nervensystem: das enterische Nervensystem. Über 100 Millionen Nervenzellen. Mehr als in deinem Rückenmark. Deshalb nennt man den Darm auch das "zweite Gehirn".</p>
+  <p>Dieses Bauchhirn kommuniziert ständig mit deinem Kopf. Über den Vagusnerv, über Hormone, über Botenstoffe. 95% deines Serotonins werden im Darm produziert. Nicht im Kopf.</p>
+  <div class="info-box">
+    <p class="info-title">Die Darm-Hirn-Achse</p>
+    <p>Dein Darm beeinflusst Stimmung, Schlaf, Energie und Stresstoleranz.</p>
+    <p>Chronischer Stress verändert die Darmflora innerhalb weniger Tage.</p>
+    <p>Entzündungen im Darm können Angstzustände und depressive Verstimmungen auslösen.</p>
   </div>
+  <h3 class="section-title">Warum Ernährung allein nicht reicht</h3>
+  <p>Viele Menschen mit Darmproblemen konzentrieren sich nur auf Ernährung. Sie streichen Lebensmittel, nehmen Probiotika, machen Eliminationsdiäten. Und trotzdem wird es nicht besser.</p>
+  <p class="bold">Der Grund: Wenn dein Nervensystem im Dauerstress ist, kann dein Darm nicht heilen. Die Verdauung wird heruntergefahren, die Darmschleimhaut wird durchlässig, Entzündungen nehmen zu.</p>
+  <p>Die Lösung beginnt nicht auf dem Teller. Sie beginnt im Nervensystem.</p>
+  <div class="quote-block">
+    <span class="quote-marks">&#8220;&#8221;</span>
+    <p class="quote-text">"Dein Darm hört nicht auf, was du isst. Er hört auf, wie dein Nervensystem die Welt verarbeitet."</p>
+    <p class="quote-author">Theresa Ross</p>
+  </div>
+  <div class="pf"><span>Theresa Ross</span><span>7</span></div>
+</div>
 
+<!-- STATION 2 REFLEXION -->
+<div class="page">
+  <p class="reflexion-label">Reflexion | Station 2</p>
+  <div class="question"><p>1. Welche Lebensmittel oder Diäten hast du schon ausprobiert? Was hat kurzfristig geholfen, was langfristig nicht?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>2. Gibt es einen Zusammenhang zwischen deinen stressigen Phasen und deinen Darmbeschwerden?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>3. Wie beeinflusst dein Bauchgefühl deine Stimmung? Gibt es Tage, an denen dein Darm deine Laune bestimmt?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>4. Was wäre, wenn dein Darmproblem kein Ernährungsproblem wäre, sondern ein Nervensystem-Problem?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>5. Wenn du deinen Darm als eigenständiges Wesen betrachtest: Was braucht er gerade am meisten?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="pf"><span>Theresa Ross</span><span>8</span></div>
+</div>
+
+<!-- STATION 3 -->
+<div class="page">
+  <p class="station">Station 3 | Die Muster | Was dich festhält</p>
+  <h2 class="grundfrage">Was hält mich fest?</h2>
+  <img src="images/14.png" alt="" class="full-img">
+  <h3 class="section-title">Stress ist Widerstand gegen das, was ist</h3>
+  <p>Die meisten Menschen glauben, Stress kommt von außen. Vom Job, von den Kindern, von der Situation. Aber Stress entsteht im Nervensystem. Stress ist die Art, wie dein Körper auf die Welt reagiert. Und diese Reaktion ist trainiert. Seit der Kindheit.</p>
+  <p>Dein Nervensystem hat gelernt: Kontrolle bedeutet Sicherheit. Durchhalten bedeutet Überleben. Fühlen ist gefährlich.</p>
+  <h3 class="section-title">Die Kontrolle-Illusion</h3>
+  <p>Warum klammern wir uns so an Kontrolle? Weil wir Angst haben. Angst, dass der Körper versagt. Angst, dass die Symptome schlimmer werden. Angst, loszulassen.</p>
+  <p class="bold">Doch Kontrolle ist eine Illusion. Du kannst nicht kontrollieren, wie dein Darm reagiert. Das Einzige, was du steuern kannst, ist deine innere Haltung.</p>
+  <div class="info-box">
+    <p class="info-title">Die fünf Muster</p>
+    <p>1. Der Dauer-Alarm: Dein Nervensystem kommt nicht mehr runter.</p>
+    <p>2. Die Symptom-Jagd: Du behandelst Symptome, nicht die Ursache.</p>
+    <p>3. Die Kopf-Bauch-Trennung: Du spürst deinen Körper nicht mehr.</p>
+    <p>4. Die stille Überforderung: Außen stabil, innen auf Reserve.</p>
+    <p>5. Der fehlende Schlüssel: Niemand hat dir gesagt, wo du ansetzen sollst.</p>
+  </div>
   <div class="quote-block">
     <span class="quote-marks">&#8220;&#8221;</span>
     <p class="quote-text">"Die Lösung liegt nicht in noch mehr Optimierung. Sondern in der Rückkehr zu dem, was dein Körper eigentlich kann."</p>
     <p class="quote-author">Theresa Ross</p>
   </div>
-
-  <div class="page-footer"><span>Theresa Ross</span><span>4</span></div>
+  <div class="pf"><span>Theresa Ross</span><span>9</span></div>
 </div>
 
-<!-- ==================== MUSTER 3 ==================== -->
+<!-- STATION 3 REFLEXION -->
 <div class="page">
-  <p class="station">Muster 3 | Körpergefühl</p>
-  <h2 class="page-title">DIE KOPF-BAUCH-TRENNUNG</h2>
-  <h3 class="page-subtitle">Funktionieren statt Fühlen</h3>
-
-  <img src="images/19.png" alt="" class="full-image" style="max-height: 220px; object-fit: cover;">
-
-  <p>Du lebst im Kopf. Dein Körper sendet Signale, aber du hörst sie nicht mehr. Vielleicht hast du sogar gelernt, sie zu ignorieren.</p>
-  <p>Dein Darm grummelt? Ignorieren. Dein Nacken ist hart? Durchhalten. Dein Schlaf ist schlecht? Kaffee.</p>
-  <p class="bold">Du spürst deinen Körper erst, wenn er laut wird. Schmerz, Erschöpfung, Zusammenbruch.</p>
-
-  <div class="reflexion">
-    <p class="reflexion-label">Reflexion</p>
-    <div class="question">
-      <p>1. Wie fühlt sich dein Körper gerade an, in diesem Moment? Beschreibe es ohne zu bewerten.</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
-    <div class="question">
-      <p>2. Welche Signale deines Körpers ignorierst du regelmäßig?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
-    <div class="question">
-      <p>3. Was würde passieren, wenn du einen Tag lang auf alles hörst, was dein Körper dir sagt?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
-  </div>
-
-  <div class="page-footer"><span>Theresa Ross</span><span>5</span></div>
+  <p class="reflexion-label">Reflexion | Station 3</p>
+  <div class="question"><p>1. In welchen Bereichen deines Lebens versuchst du, die Kontrolle zu behalten, auch wenn es dich erschöpft?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>2. Welches der fünf Muster erkennst du am stärksten bei dir?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>3. Welche Botschaft hast du als Kind gelernt, wie du sein musst, um geliebt zu werden?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>4. Was wäre das Schlimmste, was passieren könnte, wenn du loslassen würdest? Und ist das wirklich so wahrscheinlich?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>5. Erinnere dich an eine Situation, wo du keine Kontrolle hattest und es trotzdem gut ausging. Was hast du dabei gelernt?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="pf"><span>Theresa Ross</span><span>10</span></div>
 </div>
 
-<!-- ==================== MUSTER 4 ==================== -->
+<!-- STATION 4 -->
 <div class="page">
-  <p class="station">Muster 4 | Überlastung</p>
-  <h2 class="page-title">DIE STILLE ÜBERFORDERUNG</h2>
-  <h3 class="page-subtitle">Außen stabil, innen auf Reserve</h3>
-
-  <p>Von außen sieht alles gut aus. Du funktionierst, du leistest, du hältst durch. Aber innen läuft dein System auf Reserve. Dein Vagusnerv sendet ständig das Signal: zu viel.</p>
-
+  <p class="station">Station 4 | Regulation | Der Weg zurück</p>
+  <h2 class="grundfrage">Was bedeutet Regulation?</h2>
+  <img src="images/19.png" alt="" class="full-img">
+  <h3 class="section-title">Regulation statt Optimierung</h3>
+  <p>Im Westen definieren wir Gesundheit über Optimierung: besser essen, mehr bewegen, effizienter schlafen. Doch dein Nervensystem lässt sich nicht optimieren. Es will reguliert werden.</p>
+  <p>Regulation bedeutet: Dein Körper lernt wieder, zwischen Anspannung und Entspannung zu wechseln. Nicht dauerhaft entspannt sein, sondern fähig sein, nach Stress wieder runterzukommen.</p>
   <div class="info-box">
-    <p class="info-title">Was du merkst</p>
-    <p>Reizdarm, Histaminintoleranz, Energielöcher am Nachmittag, emotionale Taubheit, das Gefühl neben dir zu stehen.</p>
+    <p class="info-title">Drei Wege der Regulation</p>
+    <p><strong>Atem:</strong> Langsames Ausatmen aktiviert den Vagusnerv. 4 Sekunden ein, 8 Sekunden aus.</p>
+    <p><strong>Körper:</strong> Sanfte Bewegung, Summen, kaltes Wasser stimulieren den Parasympathikus.</p>
+    <p><strong>Verbindung:</strong> Sichere soziale Kontakte regulieren das Nervensystem stärker als jede Technik.</p>
   </div>
-
-  <p>Das ist kein Versagen. Das ist Biologie. Dein Nervensystem schützt dich, indem es abschaltet, was nicht überlebenswichtig ist. Verdauung, Regeneration, Gefühle.</p>
-
-  <img src="images/12.png" alt="" class="full-image" style="max-height: 220px; object-fit: cover;">
-
-  <div class="reflexion">
-    <p class="reflexion-label">Reflexion</p>
-    <div class="question">
-      <p>1. Wem gegenüber gibst du zu, dass es dir nicht gut geht?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
-    <div class="question">
-      <p>2. Was wäre, wenn "stark sein" nicht mehr deine Aufgabe wäre?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
+  <h3 class="section-title">Warum es Zeit braucht</h3>
+  <p>Dein Nervensystem hat Jahre gebraucht, um diese Muster zu lernen. Es braucht Zeit, um neue aufzubauen. Nicht durch einmalige Übungen, sondern durch regelmäßige, kleine Impulse.</p>
+  <p class="bold">Das ist kein Versagen. Das ist Neuroplastizität. Dein Gehirn baut neue Bahnen. Dein Vagusnerv wird wieder sensibler. Dein Darm bekommt die Chance zu heilen.</p>
+  <div class="quote-block">
+    <span class="quote-marks">&#8220;&#8221;</span>
+    <p class="quote-text">"Regulation ist kein Zustand. Es ist eine Fähigkeit. Und Fähigkeiten kann man trainieren."</p>
+    <p class="quote-author">Theresa Ross</p>
   </div>
-
-  <div class="page-footer"><span>Theresa Ross</span><span>6</span></div>
+  <div class="pf"><span>Theresa Ross</span><span>11</span></div>
 </div>
 
-<!-- ==================== MUSTER 5 + SCHLÜSSEL ==================== -->
+<!-- STATION 4 REFLEXION -->
 <div class="page">
-  <p class="station">Muster 5 | Der Schlüssel</p>
-  <h2 class="page-title">DER FEHLENDE SCHLÜSSEL</h2>
-  <h3 class="page-subtitle">Was dir niemand gesagt hat</h3>
+  <p class="reflexion-label">Reflexion | Station 4</p>
+  <div class="question"><p>1. Was tust du aktuell, um nach einem stressigen Tag runterzukommen? Funktioniert es wirklich?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>2. Probiere jetzt: Atme 4 Sekunden ein, 8 Sekunden aus. 5 Mal. Was spürst du danach?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>3. Bei welchen Menschen fühlst du dich wirklich sicher? Was genau machen sie, das dich beruhigt?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>4. Was würde sich verändern, wenn du für 10 Minuten am Tag wirklich still wirst?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>5. Bist du bereit, deinem Körper Zeit zu geben? Was bedeutet Geduld für dich?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <img src="images/12.png" alt="" class="full-img" style="margin-top: 1rem;">
+  <div class="pf"><span>Theresa Ross</span><span>12</span></div>
+</div>
 
-  <p>Du weißt, dass etwas nicht stimmt. Aber du weißt nicht, wo du ansetzen sollst. Du warst bei Ärzten, Heilpraktikern, hast Blogs gelesen und Podcasts gehört.</p>
-  <p class="bold">Die Antwort, die dir niemand gegeben hat: Dein Vagusnerv ist die Schaltzentrale. Er verbindet Darm und Hirn. Er reguliert Stress, Verdauung, Schlaf und Stimmung. Wenn er überreizt ist, steckt alles fest.</p>
-
-  <div class="divider"></div>
-
-  <h3 class="section-title" style="text-align: center; font-size: 1.4rem; color: #2C2820;">Die gute Nachricht.</h3>
-  <p style="text-align: center; max-width: 42ch; margin: 1rem auto;">Alle fünf Muster haben denselben Ursprung. Und derselbe Ursprung hat eine Lösung: Dein Nervensystem lernen zu regulieren. Nicht mit Willenskraft. Sondern mit deinem Körper.</p>
-
-  <div class="reflexion">
-    <p class="reflexion-label">Reflexion</p>
-    <div class="question">
-      <p>1. Welches der fünf Muster erkennst du am stärksten bei dir?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
-    <div class="question">
-      <p>2. Wenn du dir eine Sache wünschen könntest: Was soll sich in 8 Wochen verändert haben?</p>
-      <div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
-    </div>
+<!-- STATION 5 -->
+<div class="page">
+  <p class="station">Station 5 | Integration | Körper und Geist</p>
+  <h2 class="grundfrage">Wie finde ich zurück zu mir?</h2>
+  <img src="images/17.png" alt="" class="full-img">
+  <h3 class="section-title">Die Verbindung wiederherstellen</h3>
+  <p>Integration bedeutet: Körper und Geist arbeiten wieder zusammen. Nicht gegeneinander. Du denkst nicht mehr gegen deinen Bauch an. Du hörst, was er sagt. Du spürst, was dein Nervensystem braucht.</p>
+  <h3 class="section-title">Dein Körper lügt nicht</h3>
+  <p>Dein Körper hat dir nie etwas vorgemacht. Jedes Symptom war ein Signal. Jede Erschöpfung war eine Warnung. Jeder Darmkrampf war ein Hilferuf.</p>
+  <p class="bold">Die Frage ist nicht: Wie bringe ich die Symptome zum Schweigen? Die Frage ist: Was versucht mein Körper mir zu sagen?</p>
+  <div class="info-box">
+    <p class="info-title">Integration im Alltag</p>
+    <p>Morgens: 3 bewusste Atemzüge bevor du aufstehst.</p>
+    <p>Mittags: Eine Mahlzeit ohne Bildschirm. Schmecke, was du isst.</p>
+    <p>Abends: Hand auf den Bauch. Spüre die Wärme. 2 Minuten Stille.</p>
   </div>
+  <div class="quote-block">
+    <span class="quote-marks">&#8220;&#8221;</span>
+    <p class="quote-text">"Das wahre Leben beginnt dort, wo wir innehalten und fragen: Was brauche ich wirklich?"</p>
+    <p class="quote-author">Theresa Ross</p>
+  </div>
+  <div class="pf"><span>Theresa Ross</span><span>13</span></div>
+</div>
 
+<!-- STATION 5 REFLEXION -->
+<div class="page">
+  <p class="reflexion-label">Reflexion | Station 5</p>
+  <div class="question"><p>1. Wie hast du dich in den letzten Monaten wirklich gefühlt, jenseits von "es geht" oder "gut"?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>2. In welchen Momenten lebst du wirklich? Wann bist du vollständig präsent?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>3. Gibt es eine innere Stimme, die du seit längerer Zeit ignorierst? Was sagt sie dir?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>4. Was wäre "genug" für dich? Wann wärst du wirklich zufrieden mit deiner Gesundheit?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
+  <div class="question"><p>5. Welches Gefühl möchtest du jeden Abend haben, wenn du ins Bett gehst?</p><div class="write-box"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div></div>
   <div class="quote-block">
     <span class="quote-marks">&#8220;&#8221;</span>
     <p class="quote-text">"Dein Körper flüstert, bevor er schreit. Lerne, das Flüstern zu hören."</p>
     <p class="quote-author">Theresa Ross</p>
   </div>
-
-  <div class="page-footer"><span>Theresa Ross</span><span>7</span></div>
+  <div class="pf"><span>Theresa Ross</span><span>14</span></div>
 </div>
 
-<!-- ==================== VAGUSFLOW TEASER ==================== -->
+<!-- NÄCHSTER SCHRITT -->
 <div class="page">
   <span class="eyebrow">Der nächste Schritt</span>
-  <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; margin-bottom: 1.5rem;">Du hast die Muster erkannt.<br>Jetzt kannst du sie verändern.</h2>
-
+  <h2 style="font-family: 'Fraunces', serif; font-size: 1.7rem; margin-bottom: 1.5rem;">Du hast die Muster erkannt. Jetzt kannst du sie verändern.</h2>
   <p>Dieses Workbook war der Anfang. Es zeigt dir, wo dein Körper feststeckt. Aber Erkenntnis allein reicht nicht. Dein Nervensystem braucht neue Erfahrungen, nicht nur neue Informationen.</p>
-
-  <img src="images/20.png" alt="" class="full-image" style="max-height: 200px; object-fit: cover;">
-
+  <img src="images/7.png" alt="" class="full-img" style="margin-top: 1rem;">
   <div class="cta-box">
-    <span style="font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9B5B55; display: block; margin-bottom: 1rem;">Coaching-Programm</span>
+    <span style="font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9B5B55; display: block; margin-bottom: 0.75rem;">Coaching-Programm</span>
     <h2>VAGUS FLOW</h2>
     <p>Mehrere Wochen. Dein Nervensystem. Deine Regulation.<br>Der Weg, der funktioniert, wenn alles andere nicht funktioniert hat.</p>
     <p style="color: #F5EDE4; font-size: 1rem;">Nächster Start: Herbst 2026</p>
-    <a href="https://preview.mailerlite.io/forms/1206562/180395596623906730/share" class="cta-btn">Zur Warteliste</a>
+    <a href="https://preview.mailerlite.io/forms/1206562/180395596623906730/share" class="cta-btn" style="margin-top: 0.5rem;">Zur Warteliste</a>
   </div>
-
   <div style="margin-top: 2rem; text-align: center;">
-    <p class="c-muted" style="font-size: 0.85rem;">Du kannst auch erstmal den kostenlosen Selbsttest machen:</p>
+    <p style="font-size: 0.85rem; color: #7A6F65;">Oder mach den kostenlosen Selbsttest:</p>
     <a href="https://juliabergles.github.io/theresa-ross/selbsttest.html" style="color: #9B5B55; text-decoration: underline; font-size: 0.9rem;">Zum Nervensystem-Selbsttest</a>
   </div>
-
-  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #E8E3D9; text-align: center;">
+  <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #D5CBC0; text-align: center;">
     <p style="font-size: 0.85rem; color: #7A6F65;">Theresa Ross | Darm- und Nervensystem Mentorin</p>
-    <p style="font-size: 0.8rem; color: #B5AC9E; margin-top: 0.25rem;">theresaross-coach@outlook.de</p>
-    <p style="font-size: 0.7rem; color: #B5AC9E; margin-top: 1.5rem;">
-      Hinweis: VAGUS FLOW ist ein kostenpflichtiges Coaching-Programm von Theresa Ross.<br>
-      Dieses E-Book ist kostenlos und du gehst keine Verpflichtung ein.
-    </p>
+    <p style="font-size: 0.75rem; color: #B5AC9E; margin-top: 0.25rem;">theresaross-coach@outlook.de</p>
+    <p style="font-size: 0.6rem; color: #B5AC9E; margin-top: 1rem;">Hinweis: VAGUS FLOW ist ein kostenpflichtiges Coaching-Programm von Theresa Ross. Dieses Workbook ist kostenlos und du gehst keine Verpflichtung ein.</p>
   </div>
 </div>
 
-<!-- Print Button -->
 <div class="no-print" style="text-align: center; padding: 2rem;">
-  <button onclick="window.print()" style="background: linear-gradient(135deg, #B87272, #9B5B55); color: #fff; border: none; padding: 1rem 2.5rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.85rem; cursor: pointer; letter-spacing: 0.08em; text-transform: uppercase;">Als PDF speichern</button>
+  <button onclick="window.print()" style="background: linear-gradient(135deg, #B87272, #9B5B55); color: #fff; border: none; padding: 0.875rem 2rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.8rem; cursor: pointer; letter-spacing: 0.08em; text-transform: uppercase;">Als PDF speichern</button>
 </div>
 
 </body>
