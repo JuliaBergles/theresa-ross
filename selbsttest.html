@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nervensystem-Selbsttest | Theresa Ross</title>
-  <meta name="description" content="Wo steht dein Nervensystem? 15 Fragen. 3 Minuten. Klarheit.">
+  <meta name="description" content="Finde heraus, wo dein Nervensystem gerade steht. Ehrlich, anonym, in 10-15 Minuten.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,6 +14,8 @@
     body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.7; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
     a { text-decoration: none; color: inherit; }
+
+    /* Nav */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(244,241,237,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(232,227,220,0.5); }
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--bordeaux); }
@@ -24,67 +26,103 @@
     .nav-cta:hover { background: var(--terracotta) !important; }
     .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-dark); cursor: pointer; }
 
-    /* Test Styles */
-    .test-container { max-width: 700px; margin: 0 auto; padding: 140px 24px 100px; min-height: 80vh; }
+    /* Test */
+    .test-container { max-width: 660px; margin: 0 auto; padding: 120px 24px 100px; min-height: 80vh; }
     .btn-primary { display: inline-block; background: var(--bordeaux); color: var(--bg-light); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; padding: 16px 32px; border-radius: 6px; transition: background 0.2s; border: none; cursor: pointer; }
     .btn-primary:hover { background: var(--terracotta); }
+    .btn-secondary { display: inline-block; border: 2px solid var(--bordeaux); color: var(--bordeaux); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.9rem; padding: 12px 28px; border-radius: 6px; transition: all 0.2s; background: transparent; cursor: pointer; }
+    .btn-secondary:hover { background: var(--bordeaux); color: var(--bg-light); }
+    .btn-ghost { background: none; border: none; font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(58,54,51,0.4); cursor: pointer; text-decoration: underline; transition: color 0.2s; }
+    .btn-ghost:hover { color: var(--bordeaux); }
 
     /* Progress */
-    .progress-bar { width: 100%; height: 8px; background: var(--bg-medium); border-radius: 99px; overflow: hidden; margin-bottom: 32px; }
+    .progress-wrap { margin-bottom: 40px; }
+    .progress-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.8rem; color: rgba(58,54,51,0.45); }
+    .progress-bar { width: 100%; height: 6px; background: var(--bg-medium); border-radius: 99px; overflow: hidden; }
     .progress-fill { height: 100%; background: var(--mint); border-radius: 99px; transition: width 0.5s ease; }
-    .progress-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.85rem; color: rgba(58,54,51,0.5); }
+
+    /* Section label */
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--terracotta); margin-bottom: 12px; }
 
     /* Question */
-    .question-text { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 500; text-align: center; margin-bottom: 40px; line-height: 1.3; }
+    .question-text { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 500; margin-bottom: 32px; line-height: 1.35; }
 
-    /* Scale */
-    .scale-options { display: flex; flex-direction: column; gap: 12px; }
-    .scale-btn {
+    /* Options */
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option-btn {
       width: 100%; text-align: left; padding: 16px 20px; border-radius: 12px;
       border: 2px solid var(--bg-medium); background: transparent;
+      font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text-dark);
+      cursor: pointer; transition: all 0.15s; line-height: 1.5;
+    }
+    .option-btn:hover { border-color: var(--bordeaux); background: rgba(122,59,59,0.03); }
+    .option-btn.selected { border-color: var(--bordeaux); background: rgba(122,59,59,0.06); }
+
+    /* Multi-select */
+    .multi-btn { position: relative; padding-left: 48px; }
+    .multi-btn::before {
+      content: ''; position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+      width: 20px; height: 20px; border-radius: 4px; border: 2px solid var(--bg-medium);
+      transition: all 0.15s;
+    }
+    .multi-btn.selected::before { background: var(--bordeaux); border-color: var(--bordeaux); }
+    .multi-btn.selected::after {
+      content: '✓'; position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+      color: var(--bg-light); font-size: 0.75rem; font-weight: 700;
+    }
+
+    /* Textarea */
+    .text-input {
+      width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--bg-medium);
+      font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text-dark);
+      background: transparent; outline: none; resize: none; min-height: 120px;
+      transition: border-color 0.2s; line-height: 1.6;
+    }
+    .text-input:focus { border-color: var(--bordeaux); }
+    .text-input::placeholder { color: rgba(58,54,51,0.35); }
+
+    /* Skip */
+    .skip-hint { font-size: 0.8rem; color: rgba(58,54,51,0.4); margin-top: 12px; }
+
+    /* Navigation */
+    .q-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+
+    /* Result */
+    .result-text { font-size: 1.1rem; line-height: 1.8; }
+    .result-text p { margin-bottom: 20px; }
+    .result-cta { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .result-disclosure { font-size: 0.8rem; color: rgba(58,54,51,0.5); margin-top: 24px; padding: 16px; background: var(--bg-medium); border-radius: 12px; line-height: 1.6; }
+
+    /* E-Book Form */
+    .ebook-form { margin-top: 40px; padding: 32px; background: var(--bg-medium); border-radius: 16px; }
+    .form-field { margin-bottom: 16px; }
+    .form-field label { display: block; font-size: 0.85rem; color: rgba(58,54,51,0.6); margin-bottom: 6px; }
+    .form-input {
+      width: 100%; padding: 14px 16px; border-radius: 10px; border: 2px solid rgba(232,227,220,0.8);
       font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--text-dark);
-      cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 16px;
+      background: var(--bg-light); outline: none; transition: border-color 0.2s;
     }
-    .scale-btn:hover { border-color: var(--bordeaux); background: rgba(122,59,59,0.03); }
-    .scale-num {
-      width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--bg-medium);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; font-weight: 600; flex-shrink: 0;
-    }
-
-    /* Back */
-    .back-btn { background: none; border: none; font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(58,54,51,0.4); cursor: pointer; margin-top: 24px; transition: color 0.2s; }
-    .back-btn:hover { color: var(--bordeaux); }
-
-    /* Email */
-    .email-input {
-      width: 100%; padding: 16px 20px; border-radius: 12px; border: 2px solid var(--bg-medium);
-      font-family: 'Inter', sans-serif; font-size: 1.1rem; color: var(--text-dark);
-      text-align: center; background: transparent; transition: border-color 0.2s; outline: none;
-    }
-    .email-input:focus { border-color: var(--bordeaux); }
-    .checkbox-label { display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; text-align: left; cursor: pointer; }
+    .form-input:focus { border-color: var(--bordeaux); }
+    .checkbox-label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin-bottom: 12px; }
     .checkbox-label input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--bordeaux); flex-shrink: 0; }
     .checkbox-label span { font-size: 0.85rem; color: rgba(58,54,51,0.6); line-height: 1.5; }
     .checkbox-label a { color: var(--bordeaux); text-decoration: underline; }
-    .hint { font-size: 0.75rem; color: rgba(58,54,51,0.35); margin-top: 16px; }
 
-    /* Result */
-    .result-circle {
-      width: 128px; height: 128px; border-radius: 50%; display: inline-flex;
-      align-items: center; justify-content: center; margin-bottom: 24px; border-width: 4px; border-style: solid;
+    /* Crisis overlay */
+    .crisis-overlay {
+      position: fixed; inset: 0; background: rgba(244,241,237,0.97); z-index: 200;
+      display: flex; align-items: center; justify-content: center; padding: 24px;
     }
-    .result-circle span { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; }
-    .result-card { padding: 32px; border-radius: 16px; margin: 32px 0; border-width: 1px; border-style: solid; }
-    .result-card p { margin-bottom: 16px; }
-    .result-card p:last-child { margin-bottom: 0; font-style: italic; color: rgba(58,54,51,0.7); }
-    .share-btn { background: none; border: none; font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--bordeaux); cursor: pointer; text-decoration: underline; transition: color 0.2s; }
-    .share-btn:hover { color: var(--terracotta); }
+    .crisis-card { max-width: 520px; text-align: center; }
+    .crisis-card h2 { font-size: 1.8rem; color: var(--bordeaux); margin-bottom: 24px; }
+    .crisis-card p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 16px; }
+    .crisis-phone { font-size: 1.5rem; font-weight: 700; color: var(--bordeaux); margin: 24px 0; }
 
     /* Animation */
     .fade-in { animation: fadeIn 0.4s ease-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
+    /* Footer */
     footer { background: var(--text-dark); color: var(--bg-light); padding: 64px 24px; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
     .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 16px; }
@@ -96,11 +134,13 @@
     .footer-bottom { max-width: 1200px; margin: 48px auto 0; padding-top: 32px; border-top: 1px solid rgba(244,241,237,0.1); text-align: center; font-size: 0.75rem; color: rgba(244,241,237,0.4); }
 
     @media (max-width: 768px) {
-      .test-container { padding: 100px 24px 60px; }
+      .test-container { padding: 100px 20px 60px; }
       .question-text { font-size: 1.4rem; }
       .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-light); padding: 24px; gap: 20px; border-bottom: 1px solid var(--bg-medium); }
       .nav-links.active { display: flex; } .menu-toggle { display: block; }
       .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .result-cta { align-items: stretch; }
+      .result-cta .btn-primary, .result-cta .btn-secondary { text-align: center; }
     }
   </style>
 </head>
@@ -120,7 +160,7 @@
     </div>
   </nav>
 
-  <div class="test-container" id="test-app"></div>
+  <div class="test-container" id="app"></div>
 
   <footer>
     <div class="footer-inner">
@@ -131,182 +171,582 @@
     <div class="footer-bottom">&copy; 2025 Theresa Ross. Alle Rechte vorbehalten.</div>
   </footer>
 
-  <script>
-    const questions = [
-      { id: 1, text: "Ich fühle mich auch in ruhigen Momenten innerlich angespannt." },
-      { id: 2, text: "Mein Schlaf bringt mir keine wirkliche Erholung." },
-      { id: 3, text: "Meine Verdauung reagiert empfindlich auf Stress." },
-      { id: 4, text: "Meine Energie schwankt stark über den Tag." },
-      { id: 5, text: "Ich reagiere oft heftiger, als mir lieb ist." },
-      { id: 6, text: "Mein Körper kommt nach Belastung nur schwer zur Ruhe." },
-      { id: 7, text: "Ich habe das Gefühl, ständig im Funktionsmodus zu sein." },
-      { id: 8, text: "Ich wache nachts auf und kann nicht wieder einschlafen." },
-      { id: 9, text: "Blähungen, Krämpfe oder Unwohlsein begleiten mich regelmäßig." },
-      { id: 10, text: "Nachmittags falle ich in ein tiefes Energieloch." },
-      { id: 11, text: "Ich fühle mich emotional abgestumpft oder überreizt." },
-      { id: 12, text: "Ich schrecke bei Geräuschen leicht zusammen." },
-      { id: 13, text: "Ich kann nicht mehr klar priorisieren — alles fühlt sich dringend an." },
-      { id: 14, text: "Tiefes Durchatmen fällt mir schwer — mein Atem bleibt flach." },
-      { id: 15, text: "Ich brauche Koffein, Zucker oder Ablenkung, um durch den Tag zu kommen." }
-    ];
+<script>
+// ============================================================
+// SELBSTTEST — Theresa Ross
+// Ehrlich differenzierend. Keine Diagnosen. Keine Heilversprechen.
+// ============================================================
 
-    const scaleLabels = ["Trifft nicht zu", "Trifft selten zu", "Teils-teils", "Trifft oft zu", "Trifft voll zu"];
+const CRISIS_WORDS = [
+  'nicht mehr leben', 'aufgeben', 'verschwinden', 'kein sinn',
+  'alles vorbei', 'will nicht mehr', 'will weg', 'suizid',
+  'umbringen', 'sterben', 'tod', 'hoffnungslos'
+];
 
-    const results = {
-      balance: { title: "Du bist in Balance.", color: "mint", description: "Dein Nervensystem zeigt eine gute Grundregulation. Du hast Strategien, die funktionieren — und dein Körper dankt es dir.", recommendation: "Bleib dran. Kleine, regelmäßige Impulse halten dein System stabil.", cta: "Gratis-Workbook holen", link: "bibliothek.html#workbook" },
-      warning: { title: "Erste Warnsignale.", color: "gold", description: "Dein Körper sendet leise Signale. Noch ist nichts entgleist — aber dein Nervensystem zeigt, dass es mehr Unterstützung braucht.", recommendation: "Jetzt ist der perfekte Zeitpunkt, aktiv zu werden. Nicht wenn es zu spät ist.", cta: "Gratis-Workbook herunterladen", link: "bibliothek.html#workbook" },
-      attention: { title: "Dein Nervensystem braucht Aufmerksamkeit.", color: "terracotta", description: "Die Signale sind deutlich. Dein System ist überlastet und findet allein nicht mehr in die Balance. Das ist kein Versagen — das ist Biologie.", recommendation: "Ein strukturiertes Programm kann dir helfen, die Regulation wiederherzustellen.", cta: "Mehr über VAGUSFLOW", link: "privatpersonen.html#vagusflow" },
-      acute: { title: "Akuter Handlungsbedarf.", color: "bordeaux", description: "Dein Nervensystem ist im Dauerstress-Modus. Was du erlebst, ist die Konsequenz eines Systems, das zu lange überlastet wurde. Aber: Es ist reversibel.", recommendation: "Individuelle Begleitung ist jetzt der sinnvollste nächste Schritt.", cta: "Erstgespräch vereinbaren", link: "kontakt.html" }
-    };
+const SECTIONS = {
+  A: 'Über dich',
+  B: 'Körper und Beschwerden',
+  C: 'Nervensystem und Stress',
+  D: 'Verbindung und Alltag',
+  E: 'Abschluss'
+};
 
-    const colorMap = {
-      mint: { bg: 'rgba(168,201,188,0.2)', border: '#A8C9BC' },
-      gold: { bg: 'rgba(184,149,106,0.2)', border: '#B8956A' },
-      terracotta: { bg: 'rgba(200,155,140,0.2)', border: '#C89B8C' },
-      bordeaux: { bg: 'rgba(122,59,59,0.2)', border: '#7A3B3B' }
-    };
+const questions = [
+  // === A — Über dich ===
+  {
+    id: 'A1', section: 'A', type: 'single',
+    text: 'Wie alt bist du?',
+    options: [
+      { label: 'Unter 25', value: 'u25' },
+      { label: '25 bis 35', value: '25-35' },
+      { label: '35 bis 45', value: '35-45' },
+      { label: '45 bis 55', value: '45-55' },
+      { label: 'Über 55', value: '55+' },
+    ],
+    points: {} // kein Scoring
+  },
+  {
+    id: 'A2', section: 'A', type: 'single',
+    text: 'Wie sieht dein Alltag gerade aus?',
+    options: [
+      { label: 'Ich lebe allein', value: 'allein' },
+      { label: 'Ich lebe mit Partner/Partnerin', value: 'partner' },
+      { label: 'Ich lebe mit Kindern', value: 'kinder' },
+      { label: 'Ich pflege Angehörige', value: 'pflege' },
+      { label: 'Anderes', value: 'anderes' },
+    ],
+    points: {}
+  },
+  {
+    id: 'A3', section: 'A', type: 'text', optional: true,
+    text: 'Was hat dich heute zu diesem Test geführt?',
+    placeholder: 'Du musst hier nichts schreiben. Aber wenn du magst, hilft es dir vielleicht, es einmal in Worte zu fassen.',
+    crisisCheck: true
+  },
 
-    let currentQuestion = 0;
-    let answers = [];
-    const app = document.getElementById('test-app');
+  // === B — Körper und Beschwerden ===
+  {
+    id: 'B1', section: 'B', type: 'multi',
+    text: 'Hast du eine oder mehrere ärztlich gestellte Diagnosen?',
+    options: [
+      { label: 'Reizdarm', value: 'reizdarm' },
+      { label: 'Histaminintoleranz', value: 'histamin' },
+      { label: 'Zöliakie / Glutenunverträglichkeit', value: 'zoeliakie' },
+      { label: 'Andere Unverträglichkeiten', value: 'unvertraeglichkeit' },
+      { label: 'Allergien', value: 'allergien' },
+      { label: 'Endometriose', value: 'endometriose' },
+      { label: 'Hashimoto', value: 'hashimoto' },
+      { label: 'Burn-out / chronische Erschöpfung', value: 'burnout' },
+      { label: 'Andere', value: 'andere' },
+      { label: 'Keine Diagnose', value: 'keine', exclusive: true },
+    ],
+    scoring: function(selected) {
+      if (selected.includes('keine') || selected.length === 0) return 0;
+      if (selected.length <= 2) return 1;
+      if (selected.length <= 4) return 2;
+      return 3;
+    }
+  },
+  {
+    id: 'B2', section: 'B', type: 'single',
+    text: 'Wie oft hast du Bauchbeschwerden?',
+    options: [
+      { label: 'Selten oder nie', value: 'selten', points: 0 },
+      { label: 'Ungefähr einmal im Monat', value: 'monatlich', points: 1 },
+      { label: 'Mehrmals pro Woche', value: 'woechentlich', points: 2 },
+      { label: 'Fast täglich', value: 'taeglich', points: 3 },
+    ]
+  },
+  {
+    id: 'B3', section: 'B', type: 'single',
+    text: 'Wie schläfst du?',
+    options: [
+      { label: 'Ich schlafe meistens gut', value: 'gut', points: 0 },
+      { label: 'Ich brauche lange zum Einschlafen', value: 'einschlafen', points: 1 },
+      { label: 'Ich wache nachts oft auf', value: 'nachts_wach', points: 2 },
+      { label: 'Ich wache morgens erschöpft auf', value: 'erschoepft', points: 3 },
+    ]
+  },
+  {
+    id: 'B4', section: 'B', type: 'single',
+    text: 'Wie ist dein Energielevel im Alltag?',
+    options: [
+      { label: 'Gut und stabil', value: 'gut', points: 0 },
+      { label: 'Wechselnd, mal gut, mal nicht', value: 'wechselnd', points: 1 },
+      { label: 'Oft müde', value: 'oft_muede', points: 2 },
+      { label: 'Meistens erschöpft', value: 'erschoepft', points: 3 },
+    ]
+  },
+  {
+    id: 'B5', section: 'B', type: 'single',
+    text: 'Wie oft fühlst du dich angespannt oder nervös?',
+    options: [
+      { label: 'Selten', value: 'selten', points: 0 },
+      { label: 'Manchmal', value: 'manchmal', points: 1 },
+      { label: 'Oft', value: 'oft', points: 2 },
+      { label: 'Fast immer', value: 'immer', points: 3 },
+    ]
+  },
 
-    function render(phase) {
-      switch(phase) {
-        case 'intro': renderIntro(); break;
-        case 'question': renderQuestion(); break;
-        case 'email': renderEmail(); break;
-        case 'result': renderResult(); break;
+  // === C — Nervensystem und Stress ===
+  {
+    id: 'C1', section: 'C', type: 'multi',
+    text: 'Wie reagiert dein Körper auf Stress?',
+    options: [
+      { label: 'Magen-Darm-Beschwerden', value: 'magen' },
+      { label: 'Hautprobleme', value: 'haut' },
+      { label: 'Kopfschmerzen / Migräne', value: 'kopf' },
+      { label: 'Schlaf gestört', value: 'schlaf' },
+      { label: 'Konzentration lässt nach', value: 'konzentration' },
+      { label: 'Stimmung kippt', value: 'stimmung' },
+      { label: 'Sonstiges', value: 'sonstiges' },
+    ],
+    scoring: function(selected) {
+      if (selected.length <= 1) return 0;
+      if (selected.length === 2) return 1;
+      if (selected.length <= 4) return 2;
+      return 3;
+    }
+  },
+  {
+    id: 'C2', section: 'C', type: 'multi',
+    text: 'Was hast du schon ausprobiert, um dich besser zu fühlen?',
+    options: [
+      { label: 'Ernährungsumstellung', value: 'ernaehrung' },
+      { label: 'Sport / Bewegung', value: 'sport' },
+      { label: 'Therapie / Psychotherapie', value: 'therapie' },
+      { label: 'Meditation / Achtsamkeit', value: 'meditation' },
+      { label: 'Yoga', value: 'yoga' },
+      { label: 'Atemübungen', value: 'atem' },
+      { label: 'Heilpraktiker', value: 'heilpraktiker' },
+      { label: 'Supplements / Nahrungsergänzung', value: 'supplements' },
+      { label: 'Anderes', value: 'anderes' },
+      { label: 'Noch nichts', value: 'nichts', exclusive: true },
+    ],
+    scoring: function(selected) {
+      if (selected.includes('nichts') || selected.length <= 2) return 0;
+      if (selected.length <= 4) return 1;
+      if (selected.length <= 6) return 2;
+      return 3;
+    }
+  },
+  {
+    id: 'C3', section: 'C', type: 'single',
+    text: 'Wie leicht fällt es dir, tagsüber zur Ruhe zu kommen?',
+    options: [
+      { label: 'Leicht, das gelingt mir meistens', value: 'leicht', points: 0 },
+      { label: 'Mal so, mal so', value: 'mittel', points: 1 },
+      { label: 'Schwer, ich bin meistens angespannt', value: 'schwer', points: 2 },
+      { label: 'Fast unmöglich', value: 'unmoeglich', points: 3 },
+    ]
+  },
+  {
+    id: 'C4', section: 'C', type: 'text', optional: true,
+    text: 'Was tust du für dich, das dir gut tut?',
+    placeholder: 'Das kann alles sein. Ein Spaziergang, ein Buch, eine Tasse Tee.',
+    crisisCheck: true
+  },
+  {
+    id: 'C5', section: 'C', type: 'single',
+    text: 'Wie fühlt sich dein Körper meistens an?',
+    options: [
+      { label: 'Entspannt und beweglich', value: 'entspannt', points: 0 },
+      { label: 'Wechselnd', value: 'wechselnd', points: 1 },
+      { label: 'Oft angespannt', value: 'angespannt', points: 2 },
+      { label: 'Hart und blockiert', value: 'blockiert', points: 3 },
+    ]
+  },
+
+  // === D — Verbindung und Alltag ===
+  {
+    id: 'D1', section: 'D', type: 'single',
+    text: 'Wie ist dein Verhältnis zu Freundinnen und Familie?',
+    options: [
+      { label: 'Unterstützend', value: 'unterstuetzend', points: 0 },
+      { label: 'Sehr eng', value: 'eng', points: 0 },
+      { label: 'Neutral', value: 'neutral', points: 1 },
+      { label: 'Schwierig', value: 'schwierig', points: 2 },
+      { label: 'Distanziert', value: 'distanziert', points: 3 },
+    ]
+  },
+  {
+    id: 'D2', section: 'D', type: 'single',
+    text: 'Hast du jemanden, mit dem du wirklich offen sprechen kannst?',
+    options: [
+      { label: 'Ja, jederzeit', value: 'ja', points: 0 },
+      { label: 'Jemanden, den ich anrufen könnte', value: 'jemand', points: 1 },
+      { label: 'Niemand, der wirklich versteht', value: 'niemand', points: 2 },
+      { label: 'Ich rede meistens mit niemandem', value: 'keiner', points: 3 },
+    ]
+  },
+  {
+    id: 'D3', section: 'D', type: 'single',
+    text: 'Wie oft bewegst du dich in der Natur?',
+    options: [
+      { label: 'Täglich', value: 'taeglich', points: 0 },
+      { label: 'Wöchentlich', value: 'woechentlich', points: 1 },
+      { label: 'Selten', value: 'selten', points: 2 },
+      { label: 'Fast nie', value: 'nie', points: 3 },
+    ]
+  },
+  {
+    id: 'D4', section: 'D', type: 'single',
+    text: 'Wie verbunden fühlst du dich mit deinem Körper?',
+    options: [
+      { label: 'Sehr verbunden', value: 'sehr', points: 0 },
+      { label: 'Okay, könnte besser sein', value: 'okay', points: 1 },
+      { label: 'Wenig, ich spüre ihn kaum', value: 'wenig', points: 2 },
+      { label: 'Ich habe das Gefühl, wir sind getrennt', value: 'getrennt', points: 3 },
+    ]
+  },
+
+  // === E — Abschluss ===
+  {
+    id: 'E1', section: 'E', type: 'text', optional: true,
+    text: 'Wenn du jetzt eine Sache an deinem Leben sofort ändern könntest, was wäre es?',
+    placeholder: 'Nimm dir einen Moment. Es gibt keine falsche Antwort.',
+    crisisCheck: true
+  },
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let currentIndex = 0;
+let answers = {};
+let crisisDetected = false;
+const app = document.getElementById('app');
+
+// ============================================================
+// CRISIS CHECK
+// ============================================================
+function checkCrisis(text) {
+  if (!text) return false;
+  const lower = text.toLowerCase();
+  return CRISIS_WORDS.some(w => lower.includes(w));
+}
+
+function showCrisisOverlay() {
+  crisisDetected = true;
+  const overlay = document.createElement('div');
+  overlay.className = 'crisis-overlay fade-in';
+  overlay.innerHTML = `
+    <div class="crisis-card">
+      <h2>Einen Moment.</h2>
+      <p>Du hast gerade etwas geschrieben, das mich aufmerksam macht.</p>
+      <p>Wenn du wirklich in einer dunklen Phase bist, ist ein Selbsttest nicht das, was du jetzt brauchst.</p>
+      <p>Die Telefonseelsorge ist 24 Stunden kostenfrei und anonym:</p>
+      <div class="crisis-phone">0800 111 0 111</div>
+      <p>Bitte melde dich dort. Du musst das nicht alleine schaffen.</p>
+      <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 12px; align-items: center;">
+        <a href="tel:08001110111" class="btn-primary" style="text-decoration:none;">Telefonseelsorge anrufen</a>
+        <button class="btn-ghost" style="margin-top: 8px;" onclick="this.closest('.crisis-overlay').remove()">Trotzdem mit dem Test weitermachen</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+}
+
+// ============================================================
+// SCORING
+// ============================================================
+function calculateResult() {
+  let totalPoints = 0;
+
+  questions.forEach(q => {
+    const answer = answers[q.id];
+    if (!answer) return;
+
+    if (q.type === 'multi' && q.scoring) {
+      totalPoints += q.scoring(answer);
+    } else if (q.type === 'single' && q.options) {
+      const selected = q.options.find(o => o.value === answer);
+      if (selected && typeof selected.points === 'number') {
+        totalPoints += selected.points;
       }
     }
+  });
 
-    function renderIntro() {
-      app.innerHTML = `
-        <div class="fade-in" style="text-align: center;">
-          <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; color: var(--bordeaux); margin-bottom: 24px;">Nervensystem-Selbsttest</h1>
-          <p style="font-size: 1.15rem; margin-bottom: 8px; max-width: 500px; margin-left: auto; margin-right: auto;">Wo steht dein Nervensystem? 15 Fragen. Ehrliche Antworten. Klarheit.</p>
-          <p style="font-size: 0.85rem; color: rgba(58,54,51,0.5); margin-bottom: 40px;">Dauer: ca. 3 Minuten</p>
-          <button class="btn-primary" onclick="render('question')">Test starten</button>
+  // Cluster D override
+  const b3 = answers['B3'], b4 = answers['B4'], b5 = answers['B5'];
+  const severeOverride = (b3 === 'erschoepft' && b4 === 'erschoepft' && b5 === 'immer');
+
+  if (severeOverride || totalPoints >= 28) return 'D';
+  if (totalPoints >= 18) return 'C';
+  if (totalPoints >= 9) return 'B';
+  return 'A';
+}
+
+// ============================================================
+// RENDER
+// ============================================================
+function render(phase) {
+  switch(phase) {
+    case 'intro': renderIntro(); break;
+    case 'question': renderQuestion(); break;
+    case 'result': renderResult(); break;
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderIntro() {
+  app.innerHTML = `
+    <div class="fade-in" style="text-align: center; padding-top: 60px;">
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; color: var(--bordeaux); margin-bottom: 20px; line-height: 1.2;">Nervensystem-Selbsttest</h1>
+      <p style="font-size: 1.1rem; max-width: 480px; margin: 0 auto 8px; line-height: 1.7;">Finde heraus, wo du gerade stehst. Ehrlich, anonym, in 10-15 Minuten.</p>
+      <p style="font-size: 0.85rem; color: rgba(58,54,51,0.45); margin-bottom: 40px;">18 Fragen in 4 Abschnitten. Deine Antworten bleiben in deinem Browser und werden nicht gespeichert.</p>
+      <button class="btn-primary" onclick="render('question')">Test starten</button>
+    </div>
+  `;
+}
+
+function renderQuestion() {
+  const q = questions[currentIndex];
+  const total = questions.length;
+  const progress = (currentIndex / total) * 100;
+  const sectionName = SECTIONS[q.section];
+
+  let optionsHTML = '';
+  let navHTML = '';
+
+  if (q.type === 'single') {
+    const current = answers[q.id] || null;
+    optionsHTML = `<div class="options">${q.options.map(o =>
+      `<button class="option-btn ${current === o.value ? 'selected' : ''}" data-value="${o.value}">${o.label}</button>`
+    ).join('')}</div>`;
+  } else if (q.type === 'multi') {
+    const current = answers[q.id] || [];
+    optionsHTML = `<div class="options">${q.options.map(o =>
+      `<button class="multi-btn ${current.includes(o.value) ? 'selected' : ''}" data-value="${o.value}" ${o.exclusive ? 'data-exclusive="true"' : ''}>${o.label}</button>`
+    ).join('')}</div>
+    <div class="q-nav"><div>${currentIndex > 0 ? '<button class="btn-ghost" id="back-btn">&larr; Zurück</button>' : ''}</div><button class="btn-primary" id="next-btn" style="font-size: 0.9rem; padding: 12px 28px;">Weiter</button></div>`;
+  } else if (q.type === 'text') {
+    const current = answers[q.id] || '';
+    optionsHTML = `
+      <textarea class="text-input" id="text-answer" placeholder="${q.placeholder || ''}">${current}</textarea>
+      ${q.optional ? '<p class="skip-hint">Diese Frage ist optional.</p>' : ''}
+      <div class="q-nav"><div>${currentIndex > 0 ? '<button class="btn-ghost" id="back-btn">&larr; Zurück</button>' : ''}</div><button class="btn-primary" id="next-btn" style="font-size: 0.9rem; padding: 12px 28px;">${q.optional ? 'Weiter' : 'Weiter'}</button></div>
+    `;
+  }
+
+  app.innerHTML = `
+    <div class="fade-in">
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span>${sectionName}</span>
+          <span>${currentIndex + 1} / ${total}</span>
         </div>
-      `;
-    }
+        <div class="progress-bar"><div class="progress-fill" style="width: ${progress}%"></div></div>
+      </div>
+      <p class="section-label">${sectionName}</p>
+      <h2 class="question-text">${q.text}</h2>
+      ${optionsHTML}
+    </div>
+  `;
 
-    function renderQuestion() {
-      const q = questions[currentQuestion];
-      const progress = (currentQuestion / questions.length) * 100;
-      app.innerHTML = `
-        <div class="fade-in">
-          <div class="progress-info">
-            <span>Frage ${currentQuestion + 1} von ${questions.length}</span>
-            <span>${Math.round(progress)}%</span>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width: ${progress}%"></div></div>
-          <h2 class="question-text">${q.text}</h2>
-          <div class="scale-options">
-            ${scaleLabels.map((label, i) => `
-              <button class="scale-btn" onclick="answerQuestion(${i + 1})">
-                <span class="scale-num">${i + 1}</span>
-                <span>${label}</span>
-              </button>
-            `).join('')}
-          </div>
-          ${currentQuestion > 0 ? '<button class="back-btn" onclick="goBack()">&larr; Zurück</button>' : ''}
-        </div>
-      `;
-    }
-
-    function answerQuestion(value) {
-      answers[currentQuestion] = value;
-      if (currentQuestion < questions.length - 1) {
-        currentQuestion++;
-        renderQuestion();
-      } else {
-        render('email');
-      }
-    }
-
-    function goBack() {
-      currentQuestion--;
-      renderQuestion();
-    }
-
-    function renderEmail() {
-      app.innerHTML = `
-        <div class="fade-in" style="text-align: center;">
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: var(--bordeaux); margin-bottom: 16px;">Geschafft.</h2>
-          <p style="font-size: 1.15rem; margin-bottom: 32px; max-width: 450px; margin-left: auto; margin-right: auto;">
-            Dein Ergebnis ist bereit. Gib deine E-Mail-Adresse ein — du bekommst dein Ergebnis sofort angezeigt und zusätzlich per Mail.
-          </p>
-          <form id="email-form" style="max-width: 400px; margin: 0 auto;">
-            <input type="email" id="email-input" required placeholder="deine@email.de" class="email-input">
-            <label class="checkbox-label">
-              <input type="checkbox" id="privacy-check" required>
-              <span>Ich stimme zu, dass meine E-Mail-Adresse und mein Testergebnis zur Zusendung meines Ergebnisses verarbeitet werden. <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a></span>
-            </label>
-            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">Ergebnis anzeigen</button>
-            <p class="hint">Kein Spam. Abmeldung jederzeit möglich.</p>
-          </form>
-        </div>
-      `;
-      document.getElementById('email-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (!document.getElementById('privacy-check').checked) return;
-        // Hier könnte Tally oder Mailerlite Integration hin
-        console.log('Email:', document.getElementById('email-input').value);
-        console.log('Score:', calculateScore());
-        render('result');
+  // Event handlers
+  if (q.type === 'single') {
+    app.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        answers[q.id] = btn.dataset.value;
+        goNext();
       });
-    }
+    });
+  } else if (q.type === 'multi') {
+    app.querySelectorAll('.multi-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!answers[q.id]) answers[q.id] = [];
+        const val = btn.dataset.value;
+        const isExclusive = btn.dataset.exclusive === 'true';
 
-    function calculateScore() {
-      const total = answers.reduce((sum, a) => sum + a, 0);
-      return Math.round((total / (questions.length * 5)) * 100);
-    }
-
-    function getCategory(score) {
-      if (score <= 30) return 'balance';
-      if (score <= 55) return 'warning';
-      if (score <= 80) return 'attention';
-      return 'acute';
-    }
-
-    function renderResult() {
-      const score = calculateScore();
-      const cat = getCategory(score);
-      const r = results[cat];
-      const c = colorMap[r.color];
-      app.innerHTML = `
-        <div class="fade-in" style="text-align: center;">
-          <div class="result-circle" style="background: ${c.bg}; border-color: ${c.border};">
-            <span>${score}%</span>
-          </div>
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: var(--bordeaux); margin-bottom: 8px;">${r.title}</h2>
-          <div class="result-card" style="background: ${c.bg}; border-color: ${c.border}; text-align: left;">
-            <p style="font-size: 1.05rem; line-height: 1.7;">${r.description}</p>
-            <p style="font-size: 1.05rem; line-height: 1.7;">${r.recommendation}</p>
-          </div>
-          <a href="${r.link}" class="btn-primary">${r.cta}</a>
-          <div style="margin-top: 32px;">
-            <p style="font-size: 0.85rem; color: rgba(58,54,51,0.35); margin-bottom: 8px;">Du kennst jemanden, dem dieser Test helfen könnte?</p>
-            <button class="share-btn" onclick="shareTest()">Test teilen</button>
-          </div>
-        </div>
-      `;
-    }
-
-    function shareTest() {
-      const url = window.location.href;
-      if (navigator.share) {
-        navigator.share({ title: 'Nervensystem-Selbsttest', url: url });
-      } else {
-        navigator.clipboard.writeText(url);
-        document.querySelector('.share-btn').textContent = 'Link kopiert!';
-        setTimeout(() => { document.querySelector('.share-btn').textContent = 'Test teilen'; }, 2000);
+        if (isExclusive) {
+          answers[q.id] = [val];
+        } else {
+          answers[q.id] = answers[q.id].filter(v => {
+            const opt = q.options.find(o => o.value === v);
+            return !opt?.exclusive;
+          });
+          if (answers[q.id].includes(val)) {
+            answers[q.id] = answers[q.id].filter(v => v !== val);
+          } else {
+            answers[q.id].push(val);
+          }
+        }
+        renderQuestion(); // re-render to show selection
+      });
+    });
+    document.getElementById('next-btn')?.addEventListener('click', goNext);
+  } else if (q.type === 'text') {
+    document.getElementById('next-btn')?.addEventListener('click', () => {
+      const val = document.getElementById('text-answer').value.trim();
+      answers[q.id] = val;
+      if (q.crisisCheck && checkCrisis(val)) {
+        showCrisisOverlay();
       }
-    }
+      goNext();
+    });
+  }
 
-    // Start
-    render('intro');
-  </script>
+  document.getElementById('back-btn')?.addEventListener('click', () => {
+    if (currentIndex > 0) { currentIndex--; renderQuestion(); }
+  });
+}
+
+function goNext() {
+  if (currentIndex < questions.length - 1) {
+    currentIndex++;
+    renderQuestion();
+  } else {
+    render('result');
+  }
+}
+
+// ============================================================
+// RESULTS
+// ============================================================
+const clusterTexts = {
+  A: {
+    title: 'Was dein Test zeigt',
+    paragraphs: [
+      'Du scheinst gerade in einer relativ stabilen Phase zu sein.',
+      'Dein Körper findet seinen Rhythmus. Du hörst auf dich. Vieles davon machst du intuitiv schon gut.',
+      'Falls du dich trotzdem weiter mit dem Thema Vagusnerv und Nervensystem beschäftigen möchtest, kannst du dir kostenlos Theresas E-Book holen. Es ist eine schöne Vertiefung — aber nichts, wovon du dich gedrängt fühlen solltest.',
+    ],
+    showEbook: true,
+    ebookTone: 'soft', // "vielleicht interessant"
+    showCoaching: false,
+  },
+  B: {
+    title: 'Was dein Test zeigt',
+    paragraphs: [
+      'Es gibt ein paar Bereiche, in denen sich dein Körper gerade weniger gehalten anfühlen könnte.',
+      'Vielleicht der Bauch. Vielleicht der Schlaf. Vielleicht die innere Ruhe tagsüber.',
+      'Das ist kein Alarmsignal. Das sind kleine Hinweise.',
+      'Oft helfen schon einfache Veränderungen — Atmung, Pausen, Bewegung in der Natur, gemeinsame Mahlzeiten.',
+      'Theresa Ross hat dazu ein E-Book geschrieben, das du dir gerne kostenlos holen kannst. Es geht um die Verbindung zwischen Darm, Nervensystem und Geist.',
+    ],
+    showEbook: true,
+    ebookTone: 'warm', // "naheliegende Hilfe"
+    showCoaching: false,
+  },
+  C: {
+    title: 'Was dein Test zeigt',
+    paragraphs: [
+      'Mehrere deiner Antworten passen zu einem Muster, das viele Menschen mit chronischen Beschwerden kennen — der Körper steht unter dauerhafter Anspannung.',
+      'Schlaf, Verdauung, Energie, vielleicht auch Stimmung — wirken mitgenommen.',
+      'Das ist nicht deine Schuld. Das ist eine nachvollziehbare Reaktion auf das, was du gerade trägst.',
+      'Es gibt verschiedene Wege, das zu adressieren. Theresa Ross arbeitet seit Jahren mit der Verbindung von Darm-Hirn-Achse, Vagusnerv und Körper-Geist.',
+      'Ihr kostenloses E-Book wäre ein ruhiger erster Schritt. Wenn du tiefer gehen möchtest, ist das Coaching VagusFlow gerade im Herbstspecial.',
+      'Wichtig: Bei anhaltenden körperlichen Beschwerden sprich bitte zusätzlich mit deiner Hausärztin.',
+    ],
+    showEbook: true,
+    ebookTone: 'clear', // "gut passend"
+    showCoaching: true,
+  },
+  D: {
+    title: 'Was dein Test zeigt',
+    paragraphs: [
+      'Deine Antworten beschreiben eine sehr starke Belastung.',
+      'Erschöpfung in diesem Ausmaß, anhaltende Schmerzen oder das Gefühl, abgeschnitten zu sein, verdienen mehr als einen Online-Test als Antwort.',
+      'Mein erster Vorschlag wäre nicht ein E-Book oder ein Coaching.',
+      'Mein erster Vorschlag wäre: Sprich mit jemandem, dem du vertraust. Vereinbare einen Termin bei deiner Hausärztin.',
+      'Wenn die Gedanken dunkel werden, ist die Telefonseelsorge 24 Stunden erreichbar: 0800 111 0 111 (kostenfrei, anonym).',
+      'Wenn du danach trotzdem das E-Book lesen möchtest, ist es weiter da. Aber bitte hol dir zuerst echte Hilfe.',
+    ],
+    showEbook: true,
+    ebookTone: 'careful', // "wenn du trotzdem möchtest"
+    showCoaching: false,
+  }
+};
+
+function renderResult() {
+  const cluster = calculateResult();
+  const data = clusterTexts[cluster];
+
+  let paragraphsHTML = data.paragraphs.map(p => `<p>${p}</p>`).join('');
+
+  let ctaHTML = '<div class="result-cta">';
+
+  if (cluster === 'D') {
+    ctaHTML += `<a href="tel:08001110111" class="btn-primary" style="text-decoration:none; text-align:center;">Telefonseelsorge anrufen</a>`;
+    ctaHTML += `<button class="btn-secondary" onclick="showEbookForm()">Wenn ich trotzdem das E-Book möchte</button>`;
+  } else {
+    ctaHTML += `<button class="btn-primary" onclick="showEbookForm()">E-Book kostenlos holen</button>`;
+    if (data.showCoaching) {
+      ctaHTML += `<a href="privatpersonen.html#vagusflow" class="btn-secondary" style="text-decoration:none; text-align:center;">Mehr über das Coaching</a>`;
+    }
+  }
+  ctaHTML += `<button class="btn-ghost" onclick="resetTest()" style="margin-top: 8px;">Test wiederholen</button>`;
+  ctaHTML += '</div>';
+
+  app.innerHTML = `
+    <div class="fade-in" style="padding-top: 40px;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--bordeaux); margin-bottom: 32px;">${data.title}</h2>
+      <div class="result-text">${paragraphsHTML}</div>
+      ${ctaHTML}
+      <div id="ebook-form-container"></div>
+    </div>
+  `;
+}
+
+function showEbookForm() {
+  const container = document.getElementById('ebook-form-container');
+  container.innerHTML = `
+    <div class="ebook-form fade-in">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; margin-bottom: 20px;">E-Book anfordern</h3>
+      <form id="ebook-form">
+        <div class="form-field">
+          <label>Vorname (optional)</label>
+          <input type="text" class="form-input" id="ebook-name" placeholder="Dein Vorname">
+        </div>
+        <div class="form-field">
+          <label>E-Mail</label>
+          <input type="email" class="form-input" id="ebook-email" required placeholder="deine@email.de">
+        </div>
+        <label class="checkbox-label">
+          <input type="checkbox" required>
+          <span>Ich möchte das E-Book per E-Mail erhalten und akzeptiere die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="newsletter-optin">
+          <span>Ich möchte gelegentlich weitere Tipps von Theresa per E-Mail erhalten. (optional)</span>
+        </label>
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">E-Book senden</button>
+      </form>
+      <div class="result-disclosure">
+        Hinweis: Dieses E-Book ist von Theresa Ross. Es führt zu ihrem kostenpflichtigen Coaching-Programm VagusFlow. Du bekommst das E-Book kostenlos und kannst es ohne weitere Verpflichtung lesen.
+      </div>
+    </div>
+  `;
+  container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  document.getElementById('ebook-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('ebook-name').value;
+    const email = document.getElementById('ebook-email').value;
+    const newsletter = document.getElementById('newsletter-optin').checked;
+    console.log('E-Book Anfrage:', { name, email, newsletter, cluster: calculateResult() });
+
+    container.innerHTML = `
+      <div class="ebook-form fade-in" style="text-align: center;">
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--bordeaux); margin-bottom: 12px;">Geschafft!</h3>
+        <p style="font-size: 1rem;">Prüfe dein Postfach — das E-Book ist unterwegs.</p>
+        <p style="font-size: 0.8rem; color: rgba(58,54,51,0.4); margin-top: 12px;">Hinweis: Die E-Mail-Integration wird noch eingerichtet. Sobald ein Mail-Dienst verbunden ist, wird das E-Book automatisch versendet.</p>
+      </div>
+    `;
+  });
+}
+
+function resetTest() {
+  currentIndex = 0;
+  answers = {};
+  crisisDetected = false;
+  render('intro');
+}
+
+// Start
+render('intro');
+</script>
 
 </body>
 </html>
