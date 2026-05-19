@@ -4,13 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Theresa Ross | Coaching für Nervensystem & Darm-Hirn-Achse</title>
-  <meta name="description" content="Wenn dein Körper schon lange müde ist und dein Kopf nicht aufhört zu kreisen. Es gibt einen Weg zurück.">
+  <meta name="description" content="Wenn dein Körper schon lange müde ist und dein Kopf nicht aufhört zu kreisen. Es gibt einen Weg zurück. Coaching mit Theresa Ross.">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border-light); }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      font-family: var(--font-body); font-size: 1.0625rem; font-weight: 500;
+      color: var(--text-on-light); text-align: left;
+      padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--accent); transition: transform 0.2s; }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
+    .faq-answer p { color: var(--text-on-light-muted); font-size: 0.95rem; line-height: 1.7; }
+
+    /* Cards grid */
+    .cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+  </style>
 </head>
 <body>
 
+  <!-- Nav -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Theresa Ross</a>
@@ -23,188 +43,178 @@
     </div>
   </nav>
 
-  <!-- 1. HERO — Vollbild, dunkel, dramatisch -->
-  <section style="position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="images/13.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.25;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,22,21,0.6) 0%, rgba(28,22,21,0.95) 100%);"></div>
-    <div class="container" style="position: relative; z-index: 2; text-align: center; padding: 2rem;">
+  <!-- 1. Hero mit Hintergrundbild -->
+  <section style="position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <img src="images/5.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(234,224,213,0.88) 0%, rgba(234,224,213,0.5) 50%, rgba(234,224,213,0.88) 100%);"></div>
+    <div class="container" style="position: relative; z-index: 2; text-align: center; padding: 2rem 1.5rem;">
       <span class="eyebrow fade-up">Coaching für Nervensystem & Darm-Hirn-Achse</span>
-      <h1 class="h1 fade-up" style="max-width: 14ch; margin: 0 auto 2rem;">Komm an in deinem Körper.</h1>
-      <div class="divider fade-up"></div>
-      <p class="body-large fade-up" style="max-width: 36ch; margin: 2rem auto 3rem; color: var(--text-light-muted);">
+      <h1 class="h1 fade-up" style="max-width: 16ch; margin: 0 auto 1.5rem;">Komm an in deinem Körper.</h1>
+      <p class="body-large fade-up" style="max-width: 38ch; margin: 0 auto 3rem; color: var(--text-on-light-muted);">
         Wenn dein Körper schon lange müde ist und dein Kopf nicht aufhört zu kreisen. Es gibt einen Weg zurück.
       </p>
-      <div class="fade-up" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="selbsttest.html" class="btn btn--primary">Selbsttest starten</a>
-        <a href="#ansatz" class="btn btn--ghost">Mehr erfahren</a>
-      </div>
+      <a href="selbsttest.html" class="btn btn--primary fade-up">Selbsttest starten</a>
     </div>
   </section>
 
-  <!-- 2. STIMMEN — dunkler elevated Hintergrund -->
+  <!-- 2. Vertrauen — hell elevated -->
   <section class="section section--elevated">
-    <div class="container" style="max-width: 800px;">
+    <div class="container">
       <span class="eyebrow fade-up">Stimmen</span>
-      <h2 class="h2 fade-up" style="margin-bottom: 4rem;">Was Menschen sagen, die mit mir gearbeitet haben.</h2>
-      <div style="display: grid; gap: 3rem;">
+      <h2 class="h2 fade-up">Was Menschen sagen, die mit mir gearbeitet haben.</h2>
+      <div style="margin-top: 4rem; display: grid; gap: 3rem; max-width: 800px;">
         <blockquote class="quote fade-up">
           <p class="text">"Nach drei Monaten Reizdarm und ständiger Anspannung habe ich zum ersten Mal das Gefühl, dass mein Körper mir wieder gehört."</p>
-          <p class="author">Sandra, 42</p>
+          <p class="author">— Sandra, 42, Lehrerin</p>
         </blockquote>
         <blockquote class="quote fade-up">
           <p class="text">"Theresa kombiniert echtes Fachwissen mit einer Ruhe, die sich überträgt."</p>
-          <p class="author">Markus, 51</p>
+          <p class="author">— Markus, 51, Selbstständig</p>
         </blockquote>
       </div>
-      <p class="fade-up" style="font-size: 0.75rem; color: var(--text-light-muted); margin-top: 3rem; opacity: 0.4;">
-        Platzhalter. Bitte mit echten Testimonials ersetzen.
+      <p class="fade-up" style="font-size: 0.8rem; color: var(--text-on-light-muted); margin-top: 2rem;">
+        Hinweis: Platzhalter-Testimonials. Bitte mit echten Stimmen ersetzen (mit Einwilligung).
       </p>
     </div>
   </section>
 
-  <!-- Bild-Trenner -->
-  <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent);"></div>
-
-  <!-- 3. DREI SÄULEN — dunkel -->
-  <section class="section" id="ansatz">
+  <!-- 3. Drei Säulen — DUNKEL -->
+  <section class="section section--dark">
     <div class="container">
-      <div class="text-center fade-up" style="max-width: 500px; margin: 0 auto 5rem;">
+      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto 5rem;">
         <span class="eyebrow">Mein Ansatz</span>
         <h2 class="h2">Drei Wege zurück zu dir.</h2>
       </div>
       <div class="three-columns">
         <div class="column fade-up">
-          <img src="images/3.png" alt="" style="width: 64px; height: 64px; object-fit: cover; border-radius: 50%; margin: 0 auto 1.5rem; opacity: 0.6;">
+          <img src="images/3.png" alt="Vagusnerv" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin: 0 auto 1.5rem; opacity: 0.7;">
           <span class="number">01</span>
           <h3 class="h3">Vagusnerv</h3>
-          <p style="color: var(--text-light-muted); font-weight: 300; margin-top: 0.75rem;">Dein längster Nerv reguliert Atmung, Verdauung und Ruhe. Wir lernen, ihn wieder zu hören.</p>
+          <p style="color: var(--text-on-dark-muted);">Dein längster Nerv reguliert Atmung, Verdauung und Ruhe. Wir lernen, ihn wieder zu hören.</p>
         </div>
         <div class="column fade-up">
-          <img src="images/4.png" alt="" style="width: 64px; height: 64px; object-fit: cover; border-radius: 50%; margin: 0 auto 1.5rem; opacity: 0.6;">
+          <img src="images/4.png" alt="Darm-Hirn-Achse" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin: 0 auto 1.5rem; opacity: 0.7;">
           <span class="number">02</span>
           <h3 class="h3">Darm-Hirn-Achse</h3>
-          <p style="color: var(--text-light-muted); font-weight: 300; margin-top: 0.75rem;">Was im Bauch passiert, beeinflusst den Geist. Und umgekehrt. Beide Enden brauchen Aufmerksamkeit.</p>
+          <p style="color: var(--text-on-dark-muted);">Was im Bauch passiert, beeinflusst den Geist. Und umgekehrt. Beide Enden brauchen Aufmerksamkeit.</p>
         </div>
         <div class="column fade-up">
-          <img src="images/6.png" alt="" style="width: 64px; height: 64px; object-fit: cover; border-radius: 50%; margin: 0 auto 1.5rem; opacity: 0.6;">
+          <img src="images/6.png" alt="Körper und Geist" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin: 0 auto 1.5rem; opacity: 0.7;">
           <span class="number">03</span>
           <h3 class="h3">Körper & Geist</h3>
-          <p style="color: var(--text-light-muted); font-weight: 300; margin-top: 0.75rem;">Erst wenn beide auf einer Seite stehen, kommt Ruhe. Das ist kein Mindset. Das ist Biologie.</p>
+          <p style="color: var(--text-on-dark-muted);">Erst wenn beide auf einer Seite stehen, kommt Ruhe. Das ist kein Mindset. Das ist Biologie.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. ÜBER THERESA — helle Sektion für Kontrast -->
-  <section class="section section--light">
+  <!-- 4. Über Theresa — hell -->
+  <section class="section">
     <div class="container">
       <div class="two-col">
         <div class="fade-up">
-          <img src="images/1.png" alt="Theresa Ross" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px;">
+          <img src="images/1.png" alt="Theresa Ross" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px;">
         </div>
         <div>
           <span class="eyebrow fade-up">Über mich</span>
           <h2 class="h2 fade-up">Ich bin Theresa.</h2>
-          <p class="fade-up" style="margin-top: 1.5rem; color: var(--text-dark-muted);">
+          <p class="fade-up" style="margin-top: 1.5rem;">
             Vor einigen Jahren saß ich in einer Praxis und bekam zum dritten Mal die Diagnose "psychosomatisch". Mein Darm rebellierte, mein Schlaf war weg, meine Energie auch.
           </p>
-          <p class="fade-up" style="margin-top: 1rem; color: var(--text-dark-muted);">
+          <p class="fade-up" style="margin-top: 1rem;">
             Was mich rausgeholt hat, war nicht eine weitere Diät und nicht ein weiteres Supplement. Es war zu verstehen, wie mein Nervensystem funktioniert. Und wie es sich beruhigen lässt.
           </p>
-          <a href="ueber-mich.html" class="btn btn--ghost-dark fade-up" style="margin-top: 2.5rem;">Mehr über mich</a>
+          <p class="fade-up" style="margin-top: 1rem;">
+            Seitdem begleite ich Menschen, die ähnlich festgefahren sind. Mit fundierter Methodik. Ruhig. Persönlich.
+          </p>
+          <a href="ueber-mich.html" class="btn btn--ghost-light fade-up" style="margin-top: 2rem;">Mehr über mich</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. ANGEBOTE — dunkel, Karten -->
-  <section class="section">
+  <!-- 5. Angebote — hell elevated -->
+  <section class="section section--elevated">
     <div class="container">
-      <div class="text-center fade-up" style="max-width: 500px; margin: 0 auto 4rem;">
+      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto 4rem;">
         <span class="eyebrow">Angebote</span>
         <h2 class="h2">Wo du anfangen kannst.</h2>
       </div>
       <div class="cards-grid">
         <article class="card fade-up">
           <span class="eyebrow">Kostenlos</span>
-          <h3 class="h3" style="margin: 0.75rem 0 1rem;">Selbsttest</h3>
-          <p style="color: var(--text-light-muted); font-weight: 300;">10 Minuten, dann weißt du, wo dein Körper gerade steht.</p>
-          <a href="selbsttest.html" class="btn btn--ghost fade-up" style="margin-top: 2rem;">Starten</a>
+          <h3 class="h3" style="margin: 0.75rem 0;">Selbsttest</h3>
+          <p style="color: var(--text-on-light-muted);">10 Minuten, dann weißt du, wo dein Körper gerade steht.</p>
+          <a href="selbsttest.html" class="btn btn--ghost-light" style="margin-top: 2rem;">Starten</a>
         </article>
         <article class="card fade-up">
           <span class="eyebrow">Kostenlos</span>
-          <h3 class="h3" style="margin: 0.75rem 0 1rem;">E-Book</h3>
-          <p style="color: var(--text-light-muted); font-weight: 300;">Wie Darm und Nervensystem zusammenarbeiten. Zum Mitnehmen.</p>
-          <a href="#ebook" class="btn btn--ghost fade-up" style="margin-top: 2rem;">E-Book holen</a>
+          <h3 class="h3" style="margin: 0.75rem 0;">E-Book</h3>
+          <p style="color: var(--text-on-light-muted);">Wie Darm und Nervensystem zusammenarbeiten. Zum Mitnehmen.</p>
+          <a href="#newsletter" class="btn btn--ghost-light" style="margin-top: 2rem;">E-Book holen</a>
         </article>
-        <article class="card fade-up" style="border-color: rgba(196, 122, 69, 0.25);">
-          <span class="eyebrow" style="color: var(--accent-light);">Coaching</span>
-          <h3 class="h3" style="margin: 0.75rem 0 1rem;">VagusFlow</h3>
-          <p style="color: var(--text-light-muted); font-weight: 300;">Mein mehrwöchiges Begleit-Programm. Gerade im Herbstspecial.</p>
-          <a href="coaching.html" class="btn btn--primary fade-up" style="margin-top: 2rem;">Mehr erfahren</a>
+        <article class="card card--dark fade-up">
+          <span class="eyebrow">Coaching</span>
+          <h3 class="h3" style="margin: 0.75rem 0;">VagusFlow</h3>
+          <p>Mein mehrwöchiges Begleit-Programm. Gerade im Herbstspecial.</p>
+          <a href="coaching.html" class="btn btn--primary" style="margin-top: 2rem;">Mehr erfahren</a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Vollbild-Bild Trenner -->
-  <div style="position: relative; height: 50vh; min-height: 300px; overflow: hidden;">
-    <img src="images/15.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, var(--bg-dark) 0%, transparent 30%, transparent 70%, var(--bg-dark) 100%);"></div>
-  </div>
-
-  <!-- 6. TESTIMONIALS — dunkel elevated -->
-  <section class="section section--elevated">
+  <!-- 6. Testimonials — DUNKEL -->
+  <section class="section section--dark">
     <div class="container" style="max-width: 800px;">
       <span class="eyebrow fade-up">Erfahrungen</span>
-      <h2 class="h2 fade-up" style="margin-bottom: 4rem;">Geschichten, die mich antreiben.</h2>
-      <div style="display: grid; gap: 3rem;">
+      <h2 class="h2 fade-up">Geschichten, die mich antreiben.</h2>
+      <div style="margin-top: 4rem; display: grid; gap: 3rem;">
         <blockquote class="quote fade-up">
-          <p class="text">"Ich hatte sechs Ärzte, fünf Diagnosen und null Lösungen. Bei Theresa habe ich zum ersten Mal verstanden, warum mein Körper so reagiert."</p>
-          <p class="author">Katrin, 38</p>
+          <p class="text" style="color: var(--text-on-dark);">"Ich hatte sechs Ärzte, fünf Diagnosen und null Lösungen. Bei Theresa habe ich zum ersten Mal verstanden, warum mein Körper so reagiert."</p>
+          <p class="author">— Katrin, 38</p>
         </blockquote>
         <blockquote class="quote fade-up">
-          <p class="text">"Keine schnellen Hacks. Kein Bullshit. Sondern jemand, der zuhört und weiß, wovon sie spricht."</p>
-          <p class="author">Jasmin, 45</p>
+          <p class="text" style="color: var(--text-on-dark);">"Keine schnellen Hacks. Kein Bullshit. Sondern jemand, der zuhört und weiß, wovon sie spricht."</p>
+          <p class="author">— Jasmin, 45</p>
         </blockquote>
       </div>
-      <p class="fade-up" style="font-size: 0.75rem; color: var(--text-light-muted); margin-top: 3rem; opacity: 0.4;">
-        Platzhalter. Bitte mit echten Testimonials ersetzen.
+      <p class="fade-up" style="font-size: 0.8rem; color: var(--text-on-dark-muted); margin-top: 2rem;">
+        Hinweis: Platzhalter. Bitte mit echten Testimonials ersetzen.
       </p>
     </div>
   </section>
 
-  <!-- 7. VAGUSFLOW HERBSTSPECIAL — dunkel -->
+  <!-- 7. VagusFlow Herbstspecial — hell -->
   <section class="section" id="herbstspecial">
     <div class="container--mid text-center">
       <span class="eyebrow fade-up">Aktuelles</span>
       <h2 class="h2 fade-up">VagusFlow Herbstspecial</h2>
-      <div class="divider fade-up"></div>
-      <p class="fade-up" style="margin: 2rem auto; max-width: 45ch; color: var(--text-light-muted); font-weight: 300;">
-        Mein Begleit-Programm in einer besonderen Konstellation. Mehrere Wochen, persönliche Begleitung, Vagusnerv-Arbeit und Darm-Hirn-Regulation.
+      <p class="fade-up" style="margin: 2rem auto; max-width: 50ch; color: var(--text-on-light-muted);">
+        Mein Begleit-Programm in einer besonderen Konstellation. Mehrere Wochen, persönliche Begleitung, Vagusnerv-Arbeit und Darm-Hirn-Regulation in der Gruppe oder 1:1.
       </p>
-      <div class="fade-up" style="display: grid; gap: 1.5rem; grid-template-columns: 1fr 1fr; max-width: 420px; margin: 3rem auto;">
+      <div class="fade-up" style="display: grid; gap: 1.5rem; grid-template-columns: 1fr 1fr; max-width: 500px; margin: 3rem auto;">
         <div style="text-align: left; padding: 1.25rem; border-left: 2px solid var(--accent);">
           <span class="eyebrow" style="margin-bottom: 0.5rem;">Dauer</span>
-          <p style="font-size: 1.25rem; font-weight: 400;">[X] Wochen</p>
+          <p style="font-size: 1.25rem; font-weight: 500;">[X] Wochen</p>
         </div>
         <div style="text-align: left; padding: 1.25rem; border-left: 2px solid var(--accent);">
           <span class="eyebrow" style="margin-bottom: 0.5rem;">Start</span>
-          <p style="font-size: 1.25rem; font-weight: 400;">[Datum]</p>
+          <p style="font-size: 1.25rem; font-weight: 500;">[Datum]</p>
         </div>
       </div>
-      <a href="coaching.html" class="btn btn--primary fade-up">Details ansehen</a>
-      <p class="fade-up" style="font-size: 0.8rem; color: var(--text-light-muted); margin-top: 1.5rem; font-weight: 300;">
+      <a href="coaching.html" class="btn btn--primary fade-up" style="margin-top: 1rem;">Details ansehen</a>
+      <p class="fade-up" style="font-size: 0.85rem; color: var(--text-on-light-muted); margin-top: 1rem;">
         Begrenzte Teilnehmerzahl, weil ich persönlich begleite.
       </p>
     </div>
   </section>
 
-  <!-- 8. FAQ — dunkel elevated -->
+  <!-- 8. FAQ — hell elevated -->
   <section class="section section--elevated">
     <div class="container--narrow">
       <span class="eyebrow fade-up">Häufige Fragen</span>
       <h2 class="h2 fade-up" style="margin-bottom: 3rem;">Was du wissen willst.</h2>
+
       <div class="fade-up">
         <div class="faq-item">
           <button class="faq-question">Für wen ist VagusFlow geeignet?</button>
@@ -230,36 +240,33 @@
     </div>
   </section>
 
-  <!-- 9. E-BOOK / NEWSLETTER — mit Hintergrundbild -->
-  <section id="ebook" style="position: relative; padding: clamp(6rem, 12vh, 10rem) 2rem; overflow: hidden;">
-    <img src="images/14.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15;">
-    <div style="position: absolute; inset: 0; background: var(--bg-dark); opacity: 0.85;"></div>
-    <div class="container--narrow text-center" style="position: relative; z-index: 2;">
+  <!-- 9. Newsletter / E-Book — DUNKEL -->
+  <section class="section section--dark" id="newsletter">
+    <div class="container--narrow text-center">
       <span class="eyebrow fade-up">Sanfter Anfang</span>
       <h2 class="h2 fade-up">Mein E-Book. Kostenlos.</h2>
-      <div class="divider fade-up"></div>
-      <p class="fade-up" style="margin: 2rem auto; color: var(--text-light-muted); max-width: 38ch; font-weight: 300;">
+      <p class="fade-up" style="margin: 1.5rem auto 2rem; color: var(--text-on-dark-muted); max-width: 40ch;">
         "Wenn dein Körper schon lange müde ist."<br>
         Über Nervensystem, Darm und den Weg zurück zur Ruhe.
       </p>
-      <form id="ebook-form" class="fade-up" style="max-width: 400px; margin: 2rem auto; display: grid; gap: 1rem;">
+      <form id="ebook-form" class="fade-up" style="max-width: 400px; margin: 0 auto; display: grid; gap: 1rem;">
         <input type="email" placeholder="deine@email.de" required class="form-input">
-        <label class="checkbox-label">
+        <label class="checkbox-label" style="color: var(--text-on-dark-muted);">
           <input type="checkbox" required>
           <span>Ich möchte das E-Book per E-Mail erhalten und akzeptiere die <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
         </label>
         <button type="submit" class="btn btn--primary" style="width: 100%; justify-content: center;">E-Book holen</button>
       </form>
-      <p class="fade-up" style="font-size: 0.8rem; color: var(--text-light-muted); margin-top: 1.5rem; font-weight: 300;">
+      <p class="fade-up" style="font-size: 0.85rem; color: var(--text-on-dark-muted); margin-top: 1.5rem;">
         Du bekommst gelegentlich weitere E-Mails von mir. Abmelden jederzeit per Klick.
       </p>
-      <p class="fade-up" style="font-size: 0.7rem; color: var(--text-light-muted); margin-top: 1rem; opacity: 0.4;">
+      <p class="fade-up" style="font-size: 0.75rem; color: var(--text-on-dark-muted); margin-top: 1rem; opacity: 0.6;">
         Hinweis: Dieses E-Book ist von Theresa Ross. Es enthält Verweise auf ihr Coaching-Programm VagusFlow. Du bekommst es kostenlos und ohne weitere Verpflichtung.
       </p>
     </div>
   </section>
 
-  <!-- 10. FOOTER -->
+  <!-- 10. Footer — hell -->
   <footer class="footer">
     <div class="footer-inner">
       <div>
@@ -289,7 +296,7 @@
   <script>
     document.getElementById('ebook-form')?.addEventListener('submit', function(e) {
       e.preventDefault();
-      this.innerHTML = '<p style="font-family: var(--font-display); font-size: 1.5rem; padding: 2rem 0;">Prüfe dein Postfach.</p><p style="color: var(--text-light-muted); font-size: 0.9rem; font-weight: 300;">Das E-Book ist unterwegs.</p>';
+      this.innerHTML = '<p style="color: var(--text-on-dark); font-family: var(--font-display); font-size: 1.5rem; padding: 2rem 0;">Prüfe dein Postfach.</p><p style="color: var(--text-on-dark-muted); font-size: 0.9rem;">Das E-Book ist unterwegs. (Mail-Integration wird noch eingerichtet.)</p>';
     });
   </script>
 
