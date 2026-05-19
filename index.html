@@ -234,30 +234,7 @@
     </div>
   </section>
 
-  <!-- Erfahrungsberichte — aufklappbar, ganz unten -->
-  <section class="section section--elevated">
-    <div class="container--narrow text-center">
-      <span class="eyebrow fade-up">Erfahrungsberichte</span>
-      <h2 class="h2 fade-up">Was Klienten sagen.</h2>
-      <button id="toggle-testimonials" class="btn btn--ghost-light fade-up" style="margin-top: 1.5rem; border-color: var(--border-light); color: var(--text-on-light-muted);">Erfahrungsberichte lesen</button>
-      <div id="testimonials-content" style="display: none; margin-top: 3rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
-        <div style="display: grid; gap: 2.5rem;">
-          <blockquote class="quote">
-            <p class="text">"Es geht mir deutlich besser. Wichtig waren mir die intensive Betreuung und ihr umfangreiches Wissen. Ich hab viele Dinge gelernt, die mich im Alltag weiter bringen. Ich kann Theresa absolut weiterempfehlen. Danke für alles."</p>
-            <p class="author">Michael</p>
-          </blockquote>
-          <blockquote class="quote">
-            <p class="text">"Schon nach kurzer Zeit habe ich große Fortschritte gemacht. Der Kurs ist super strukturiert, verständlich erklärt und gibt mir endlich die Klarheit, die ich mir so lange gewünscht habe. Ich fühle mich zum ersten Mal seit Jahren wirklich wohl mit meiner Ernährung. Ich kann den Kurs nur weiterempfehlen!"</p>
-            <p class="author">Vanessa</p>
-          </blockquote>
-          <blockquote class="quote">
-            <p class="text">"Du bist sehr einfühlsam und nimmst dir sehr viel Zeit. Du hast mir paar Sachen empfohlen und seit 2 Wochen geht es mir gut. Ich kann Theresa weiter empfehlen."</p>
-            <p class="author">C.M. aus Frankfurt am Main</p>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Testimonials kompakt entfernt -->
 
   <!-- Footer -->
   <footer class="footer">
@@ -290,18 +267,6 @@
 
   <script src="assets/js/main.js"></script>
   <script>
-    // Testimonials Toggle
-    document.getElementById('toggle-testimonials')?.addEventListener('click', function() {
-      const content = document.getElementById('testimonials-content');
-      if (content.style.display === 'none') {
-        content.style.display = 'block';
-        this.textContent = 'Erfahrungsberichte schließen';
-      } else {
-        content.style.display = 'none';
-        this.textContent = 'Erfahrungsberichte lesen';
-      }
-    });
-
     document.getElementById('ebook-form')?.addEventListener('submit', function(e) {
       e.preventDefault();
       this.innerHTML = '<p style="color: var(--text-on-dark); font-family: var(--font-display); font-size: 1.5rem; padding: 2rem 0;">Prüfe dein Postfach.</p><p style="color: var(--text-on-dark-muted); font-size: 0.9rem;">Das E-Book ist unterwegs. (Mail-Integration wird noch eingerichtet.)</p>';
