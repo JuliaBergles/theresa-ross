@@ -36,9 +36,10 @@
       <a href="index.html" class="nav-logo">Theresa Ross</a>
       <button class="menu-toggle">&#9776;</button>
       <div class="nav-links">
-        <a href="ueber-mich.html">Über mich</a>
-        <a href="coaching.html">Coaching</a>
+        <a href="privatpersonen.html">Privatpersonen</a>
         <a href="unternehmen.html">Unternehmen</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="rabattcodes.html">Rabattcodes</a>
         <a href="selbsttest.html" class="nav-cta">Selbsttest</a>
       </div>
     </div>
@@ -58,27 +59,7 @@
     </div>
   </section>
 
-  <!-- 2. Vertrauen — hell elevated -->
-  <section class="section section--elevated">
-    <div class="container">
-      <span class="eyebrow fade-up">Stimmen</span>
-      <h2 class="h2 fade-up">Was Menschen sagen, die mit mir gearbeitet haben.</h2>
-      <div style="margin-top: 4rem; display: grid; gap: 3rem; max-width: 800px;">
-        <blockquote class="quote fade-up">
-          <p class="text">"Es geht mir deutlich besser. Wichtig waren mir die intensive Betreuung und ihr umfangreiches Wissen. Ich hab viele Dinge gelernt, die mich im Alltag weiter bringen. Ich kann Theresa absolut weiterempfehlen."</p>
-          <p class="author">Michael</p>
-        </blockquote>
-        <blockquote class="quote fade-up">
-          <p class="text">"Schon nach kurzer Zeit habe ich große Fortschritte gemacht. Besonders das Modul zur Ernährung hilft mir enorm, meinen Körper besser zu verstehen. Der Kurs ist super strukturiert, verständlich erklärt und gibt mir endlich die Klarheit, die ich mir so lange gewünscht habe."</p>
-          <p class="author">Vanessa</p>
-        </blockquote>
-        <blockquote class="quote fade-up">
-          <p class="text">"Du bist sehr einfühlsam und nimmst dir sehr viel Zeit. Du hast mir paar Sachen empfohlen und seit 2 Wochen geht es mir gut. Ich kann Theresa weiter empfehlen."</p>
-          <p class="author">C.M. aus Frankfurt am Main</p>
-        </blockquote>
-      </div>
-    </div>
-  </section>
+  <!-- 2. Direkt zu den Säulen -->
 
   <!-- 3. Drei Säulen — DUNKEL -->
   <section class="section section--dark">
@@ -165,23 +146,11 @@
     </div>
   </section>
 
-  <!-- 6. Testimonials — DUNKEL -->
-  <section class="section section--dark">
-    <div class="container" style="max-width: 800px;">
-      <span class="eyebrow fade-up">Erfahrungen</span>
-      <h2 class="h2 fade-up">Geschichten, die mich antreiben.</h2>
-      <div style="margin-top: 4rem; display: grid; gap: 3rem;">
-        <blockquote class="quote fade-up">
-          <p class="text" style="color: var(--text-on-dark);">"Ich fühle mich zum ersten Mal seit Jahren wirklich wohl mit meiner Ernährung. Meine Beschwerden sind schon jetzt deutlich weniger geworden. Ich kann den Kurs nur weiterempfehlen!"</p>
-          <p class="author">Vanessa</p>
-        </blockquote>
-        <blockquote class="quote fade-up">
-          <p class="text" style="color: var(--text-on-dark);">"Für mich hat sich der Kurs auf jeden Fall gelohnt. Danke für alles."</p>
-          <p class="author">Michael</p>
-        </blockquote>
-      </div>
-    </div>
-  </section>
+  <!-- Bild-Trenner -->
+  <div style="position: relative; height: 40vh; min-height: 250px; overflow: hidden;">
+    <img src="images/14.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, var(--bg-primary) 0%, transparent 30%, transparent 70%, var(--bg-primary) 100%);"></div>
+  </div>
 
   <!-- 7. VagusFlow Herbstspecial — hell -->
   <section class="section" id="herbstspecial">
@@ -265,7 +234,32 @@
     </div>
   </section>
 
-  <!-- 10. Footer — hell -->
+  <!-- Erfahrungsberichte — aufklappbar, ganz unten -->
+  <section class="section section--elevated">
+    <div class="container--narrow text-center">
+      <span class="eyebrow fade-up">Erfahrungsberichte</span>
+      <h2 class="h2 fade-up">Was Klienten sagen.</h2>
+      <button id="toggle-testimonials" class="btn btn--ghost-light fade-up" style="margin-top: 1.5rem; border-color: var(--border-light); color: var(--text-on-light-muted);">Erfahrungsberichte lesen</button>
+      <div id="testimonials-content" style="display: none; margin-top: 3rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <div style="display: grid; gap: 2.5rem;">
+          <blockquote class="quote">
+            <p class="text">"Es geht mir deutlich besser. Wichtig waren mir die intensive Betreuung und ihr umfangreiches Wissen. Ich hab viele Dinge gelernt, die mich im Alltag weiter bringen. Ich kann Theresa absolut weiterempfehlen. Danke für alles."</p>
+            <p class="author">Michael</p>
+          </blockquote>
+          <blockquote class="quote">
+            <p class="text">"Schon nach kurzer Zeit habe ich große Fortschritte gemacht. Der Kurs ist super strukturiert, verständlich erklärt und gibt mir endlich die Klarheit, die ich mir so lange gewünscht habe. Ich fühle mich zum ersten Mal seit Jahren wirklich wohl mit meiner Ernährung. Ich kann den Kurs nur weiterempfehlen!"</p>
+            <p class="author">Vanessa</p>
+          </blockquote>
+          <blockquote class="quote">
+            <p class="text">"Du bist sehr einfühlsam und nimmst dir sehr viel Zeit. Du hast mir paar Sachen empfohlen und seit 2 Wochen geht es mir gut. Ich kann Theresa weiter empfehlen."</p>
+            <p class="author">C.M. aus Frankfurt am Main</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <div>
@@ -275,8 +269,11 @@
       <div>
         <p class="footer-heading">Seiten</p>
         <div class="footer-links">
+          <a href="privatpersonen.html">Privatpersonen</a>
+          <a href="unternehmen.html">Unternehmen</a>
           <a href="ueber-mich.html">Über mich</a>
           <a href="coaching.html">Coaching</a>
+          <a href="rabattcodes.html">Rabattcodes</a>
           <a href="selbsttest.html">Selbsttest</a>
         </div>
       </div>
@@ -288,11 +285,23 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2025 Theresa Ross</div>
+    <div class="footer-bottom">&copy; 2026 Theresa Ross. Alle Rechte vorbehalten.</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script>
+    // Testimonials Toggle
+    document.getElementById('toggle-testimonials')?.addEventListener('click', function() {
+      const content = document.getElementById('testimonials-content');
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        this.textContent = 'Erfahrungsberichte schließen';
+      } else {
+        content.style.display = 'none';
+        this.textContent = 'Erfahrungsberichte lesen';
+      }
+    });
+
     document.getElementById('ebook-form')?.addEventListener('submit', function(e) {
       e.preventDefault();
       this.innerHTML = '<p style="color: var(--text-on-dark); font-family: var(--font-display); font-size: 1.5rem; padding: 2rem 0;">Prüfe dein Postfach.</p><p style="color: var(--text-on-dark-muted); font-size: 0.9rem;">Das E-Book ist unterwegs. (Mail-Integration wird noch eingerichtet.)</p>';
