@@ -9,24 +9,15 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <style>
-    .benefit-item { padding: 2rem 0; border-bottom: 1px solid var(--border-light); }
-    .benefit-item:last-child { border-bottom: none; }
-    .benefit-item p { color: var(--text-on-light-muted); font-size: 1.05rem; line-height: 1.7; }
-    .benefit-item strong { color: var(--text-on-light); font-weight: 500; }
-    .ideal-list { display: grid; gap: 1.25rem; margin-top: 2rem; }
-    .ideal-item { display: flex; gap: 1rem; align-items: flex-start; }
-    .ideal-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 0.6rem; flex-shrink: 0; }
-    .ideal-item p { color: var(--text-on-light-muted); font-size: 1rem; line-height: 1.6; }
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label { display: block; font-size: 0.85rem; color: var(--text-on-light-muted); margin-bottom: 0.5rem; }
-    .form-input-light {
-      width: 100%; padding: 0.875rem 1rem; border-radius: 4px;
-      border: 1px solid var(--border-light); background: var(--bg-primary);
-      font-family: var(--font-body); font-size: 1rem; color: var(--text-on-light);
-      outline: none; transition: border-color 0.2s;
-    }
-    .form-input-light:focus { border-color: var(--accent); }
-    .form-textarea { resize: none; min-height: 120px; }
+    .faq-item { border-bottom: 1px solid var(--border-light); }
+    .faq-question { width: 100%; background: none; border: none; cursor: pointer; font-family: var(--font-body); font-size: 1rem; font-weight: 500; color: var(--text-on-light); text-align: left; padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; }
+    .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--accent); transition: transform 0.2s; }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
+    .faq-answer p { color: var(--text-on-light-muted); font-size: 0.95rem; line-height: 1.7; }
+    .cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
   </style>
 </head>
 <body>
@@ -36,8 +27,9 @@
       <a href="index.html" class="nav-logo">Theresa Ross</a>
       <button class="menu-toggle">&#9776;</button>
       <div class="nav-links">
-        <a href="privatpersonen.html" class="active">Privatpersonen</a>
+        <a href="privatpersonen.html">Privatpersonen</a>
         <a href="unternehmen.html">Unternehmen</a>
+        <a href="coaching.html">VagusFlow</a>
         <a href="ueber-mich.html">Über mich</a>
         <a href="rabattcodes.html">Rabattcodes</a>
         <a href="selbsttest.html" class="nav-cta">Selbsttest</a>
@@ -47,186 +39,176 @@
 
   <!-- Hero -->
   <section style="position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="images/15.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(234,224,213,0.92) 0%, rgba(234,224,213,0.7) 50%, rgba(234,224,213,0.92) 100%);"></div>
+    <img src="images/15.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(234,224,213,0.92) 0%, rgba(234,224,213,0.65) 50%, rgba(234,224,213,0.92) 100%);"></div>
     <div class="container" style="position: relative; z-index: 2; text-align: center; padding: 2rem 1.5rem;">
-      <span class="eyebrow fade-up">Für Privatpersonen</span>
-      <h1 class="h1 fade-up" style="max-width: 16ch; margin: 0 auto 1.5rem; color: #1A1510;">Finde zurück in deine Balance.</h1>
-      <p class="body-large fade-up" style="max-width: 42ch; margin: 0 auto; color: #3D3530;">
+      <span class="eyebrow fade-up" style="color: #7A4440; letter-spacing: 0.3em;">Für Privatpersonen</span>
+      <h1 class="h1 fade-up" style="max-width: 14ch; margin: 0 auto 1.5rem; color: #1A1510;">Finde zurück in deine Balance.</h1>
+      <p class="body-large fade-up" style="max-width: 36ch; margin: 0 auto 3rem; color: #3D3530;">
         Für alle, die schon lange zwischen Stress und Verdauungschaos feststecken.
       </p>
+      <div class="fade-up" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#vagusflow" class="btn btn--primary">Vagus Flow entdecken</a>
+        <a href="selbsttest.html" class="btn btn--ghost-light" style="border-color: #3D3530; color: #3D3530;">Selbsttest starten</a>
+      </div>
     </div>
   </section>
 
-  <!-- VagusFlow Intro -->
-  <section class="section">
+  <!-- Vagus Flow Intro -->
+  <section class="section section--dark" id="vagusflow">
     <div class="container--narrow text-center">
       <span class="eyebrow fade-up">Das Programm</span>
-      <h2 class="h2 fade-up">Vagus Flow</h2>
-      <p class="fade-up" style="margin-top: 1.5rem; color: var(--text-on-light-muted); font-size: 1.1rem; line-height: 1.7;">
-        Für Darm und Nervensystem. Weniger Stress, ruhiger Bauch.
+      <h2 class="h2 fade-up" style="color: var(--text-on-dark);">Weniger Stress. Ruhiger Bauch.</h2>
+      <p class="fade-up" style="margin-top: 1.5rem; color: var(--text-on-dark-muted);">
+        Wenn Meditation, Ernährung, Probiotika und klassische Darm-Tipps nie langfristig geholfen haben.
       </p>
-      <p class="fade-up" style="margin-top: 1rem; color: var(--text-on-light-muted); line-height: 1.7;">
-        Für Menschen, bei denen Meditation, Ernährung, Probiotika und klassische Darm-Tipps nie langfristig geholfen haben.
-      </p>
-      <p class="fade-up" style="margin-top: 1rem; color: var(--text-on-light); font-weight: 500;">
-        Mentale Stabilität und eine ruhige Verdauung hängen miteinander zusammen.
-      </p>
+      <a href="#was-macht-vagusflow" class="btn btn--primary fade-up" style="margin-top: 2.5rem;">Was Vagus Flow anders macht</a>
     </div>
   </section>
 
   <!-- Was VagusFlow macht -->
-  <section class="section section--dark">
-    <div class="container--narrow">
-      <span class="eyebrow fade-up">Was Vagus Flow macht</span>
-      <h2 class="h2 fade-up" style="color: var(--text-on-dark); margin-bottom: 3rem;">Was VAGUS FLOW so einzigartig macht.</h2>
-      <div>
-        <div class="benefit-item fade-up">
-          <p><strong style="color: var(--text-on-dark);">Beruhigt deinen überaktiven Vagusnerv,</strong><br>
-          <span style="color: var(--text-on-dark-muted);">damit dein Körper endlich wieder in den Ruhemodus schalten kann.</span></p>
+  <section class="section" id="was-macht-vagusflow">
+    <div class="container">
+      <div class="text-center fade-up" style="max-width: 500px; margin: 0 auto 4rem;">
+        <span class="eyebrow">Warum es funktioniert</span>
+        <h2 class="h2">Was VAGUS FLOW so einzigartig macht.</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card fade-up">
+          <span class="eyebrow">Vagusnerv</span>
+          <h3 class="h3" style="margin: 0.75rem 0 1rem;">Ruhemodus aktivieren</h3>
+          <p style="color: var(--text-on-light-muted);">Beruhigt deinen überaktiven Vagusnerv, damit dein Körper endlich wieder in den Ruhemodus schalten kann.</p>
         </div>
-        <div class="benefit-item fade-up" style="border-color: var(--border-dark);">
-          <p><strong style="color: var(--text-on-dark);">Verändert die Stressreaktion deines Nervensystems,</strong><br>
-          <span style="color: var(--text-on-dark-muted);">statt nur Symptome zu dämpfen.</span></p>
+        <div class="card fade-up">
+          <span class="eyebrow">Nervensystem</span>
+          <h3 class="h3" style="margin: 0.75rem 0 1rem;">Ursache statt Symptom</h3>
+          <p style="color: var(--text-on-light-muted);">Verändert die Stressreaktion deines Nervensystems, statt nur Symptome zu dämpfen.</p>
         </div>
-        <div class="benefit-item fade-up" style="border-color: var(--border-dark); border-bottom: none;">
-          <p><strong style="color: var(--text-on-dark);">Stabilisiert deine Verdauung langfristig,</strong><br>
-          <span style="color: var(--text-on-dark-muted);">durch eine Kombination aus somatischer Regulation und Darmaufbau.</span></p>
+        <div class="card fade-up">
+          <span class="eyebrow">Verdauung</span>
+          <h3 class="h3" style="margin: 0.75rem 0 1rem;">Langfristig stabil</h3>
+          <p style="color: var(--text-on-light-muted);">Stabilisiert deine Verdauung langfristig, durch somatische Regulation und Darmaufbau.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Warum es funktioniert -->
-  <section class="section">
-    <div class="container--narrow">
-      <p class="fade-up" style="font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.7rem); line-height: 1.5; font-weight: 400; font-style: italic; color: var(--text-on-light-muted);">
-        Wenn dein Nervensystem ständig in Alarmbereitschaft hängt, kann dein Darm gar nicht gesund werden. Egal, welche Lebensmittel du noch weglässt, welche Probiotika du nimmst oder wie viel du schon "an dir gearbeitet" hast.
-      </p>
-      <p class="fade-up" style="margin-top: 2rem; font-size: 1.05rem; color: var(--text-on-light);">
+  <!-- Kernaussage -->
+  <section class="section section--dark">
+    <div class="container--narrow text-center">
+      <h2 class="h2 fade-up" style="color: var(--text-on-dark); font-style: italic; font-weight: 400;">
+        Wenn dein Nervensystem ständig in Alarmbereitschaft hängt, kann dein Darm gar nicht gesund werden.
+      </h2>
+      <p class="fade-up" style="margin-top: 2rem; color: var(--text-on-dark-muted);">
         Die meisten Programme behandeln nur die Symptome.<br>
-        <strong>VAGUS FLOW reguliert das System, das die Symptome verursacht.</strong>
+        VAGUS FLOW reguliert das System, das die Symptome verursacht.
       </p>
-      <p class="fade-up" style="margin-top: 1rem; color: var(--text-on-light-muted);">
-        Genau deshalb funktioniert es, wenn alles andere nicht funktioniert hat.
-      </p>
+      <a href="https://preview.mailerlite.io/forms/1206562/180395596623906730/share" target="_blank" rel="noopener" class="btn btn--primary fade-up" style="margin-top: 2.5rem;">Auf die Warteliste</a>
     </div>
   </section>
 
   <!-- Herbst-Special -->
   <section class="section section--elevated">
     <div class="container--narrow text-center">
-      <span class="eyebrow fade-up">Aktuelles</span>
-      <h2 class="h2 fade-up">VAGUS FLOW Herbst-Special</h2>
-      <p class="fade-up" style="margin-top: 1.5rem; font-size: 1.1rem; color: var(--text-on-light);">Nächster Start: September 2026</p>
+      <span class="eyebrow fade-up">Herbst-Special</span>
+      <h2 class="h2 fade-up">Nächster Start: September 2026</h2>
       <p class="fade-up" style="margin-top: 1rem; color: var(--text-on-light-muted);">
-        Bereits jetzt auf die Warteliste setzen und von Frühbucher-Konditionen profitieren.
+        Jetzt auf die Warteliste setzen. Frühbucher-Konditionen sichern.
       </p>
       <a href="https://preview.mailerlite.io/forms/1206562/180395596623906730/share" target="_blank" rel="noopener" class="btn btn--primary fade-up" style="margin-top: 2rem;">VAGUS FLOW Warteliste</a>
-      <p class="fade-up" style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-on-light-muted);">
-        Verdauungsbeschwerden und Stress hängen miteinander zusammen. Hier ist die Lösung.
-      </p>
     </div>
   </section>
 
   <!-- Gratis Einstieg -->
   <section class="section section--dark">
     <div class="container--narrow text-center">
-      <span class="eyebrow fade-up">Gratis Einstieg</span>
-      <h2 class="h2 fade-up" style="color: var(--text-on-dark);">Lerne die 5 neurologischen Muster kennen, die deine Gesundheit ruinieren.</h2>
+      <span class="eyebrow fade-up">Gratis</span>
+      <h2 class="h2 fade-up" style="color: var(--text-on-dark);">5 neurologische Muster, die deine Gesundheit ruinieren.</h2>
+      <p class="fade-up" style="margin-top: 1rem; color: var(--text-on-dark-muted);">Lerne sie zum Einstieg kennen.</p>
       <a href="#ebook" class="btn btn--primary fade-up" style="margin-top: 2rem;">Für 0 &euro; sichern</a>
     </div>
   </section>
 
   <!-- Bild-Trenner -->
-  <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent);"></div>
+  <div style="position: relative; height: 40vh; min-height: 250px; overflow: hidden;">
+    <img src="images/21.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, var(--bg-primary) 0%, transparent 30%, transparent 70%, var(--bg-primary) 100%);"></div>
+  </div>
 
   <!-- 1:1 Beratung -->
-  <section class="section" id="beratung">
-    <div class="container">
-      <div class="two-col">
-        <div>
-          <span class="eyebrow fade-up">Individuell</span>
-          <h2 class="h2 fade-up">Individuelle Gesundheitsberatung</h2>
-          <p class="fade-up" style="margin-top: 0.5rem; color: var(--text-on-light-muted); font-style: italic;">Persönlich, tiefgehend & effektiv</p>
-          <p class="fade-up" style="margin-top: 1.5rem; color: var(--text-on-light-muted); line-height: 1.7;">
-            Manchmal braucht es mehr als ein Programm.
-          </p>
-          <p class="fade-up" style="margin-top: 1rem; color: var(--text-on-light-muted); line-height: 1.7;">
-            Wenn deine Beschwerden komplex sind oder du eine individuelle Analyse und persönliche Begleitung suchst, ist meine 1:1-Beratung der direkteste Weg zu Klarheit und Stabilität.
-          </p>
-          <p class="fade-up" style="margin-top: 1rem; color: var(--text-on-light-muted); line-height: 1.7;">
-            Ich kombiniere dafür moderne Erkenntnisse aus Darmgesundheit, Nervensystemregulation und Stresspsychologie und entwickle für dich einen Plan, der genau zu deinem Körper passt.
-          </p>
-        </div>
-        <div class="fade-up">
-          <img src="images/21.png" alt="Beratung" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px;">
-        </div>
-      </div>
+  <section class="section">
+    <div class="container--narrow text-center">
+      <span class="eyebrow fade-up">Individuell</span>
+      <h2 class="h2 fade-up">1:1 Gesundheitsberatung</h2>
+      <p class="fade-up" style="margin-top: 1.5rem; color: var(--text-on-light-muted);">
+        Manchmal braucht es mehr als ein Programm. Persönliche Analyse, individuelle Begleitung, der direkteste Weg zu Klarheit.
+      </p>
+      <a href="#kontakt" class="btn btn--primary fade-up" style="margin-top: 2rem;">Gespräch anfragen</a>
     </div>
   </section>
 
-  <!-- Für wen -->
-  <section class="section section--elevated">
+  <!-- Für wen - 1:1 -->
+  <section class="section section--dark">
     <div class="container--narrow">
       <span class="eyebrow fade-up">Für wen</span>
-      <h2 class="h2 fade-up">Für wen ist die 1:1-Beratung ideal?</h2>
-      <div class="ideal-list fade-up">
-        <div class="ideal-item">
-          <span class="ideal-dot"></span>
-          <p>Wenn du seit längerem unter Verdauungsbeschwerden leidest und einen strukturierten individuellen Ansatz brauchst.</p>
+      <h2 class="h2 fade-up" style="color: var(--text-on-dark);">Ist die 1:1-Beratung das Richtige?</h2>
+      <div style="margin-top: 2rem; display: grid; gap: 1rem;">
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Du leidest seit längerem unter Verdauungsbeschwerden.</p>
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Dein Nervensystem reagiert auf Stress, Ernährung oder innere Konflikte.</p>
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Du willst zeitnah Lösungen und persönliche Begleitung.</p>
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Du kennst VAGUS FLOW bereits, willst aber tiefer gehen.</p>
+      </div>
+      <div class="text-center fade-up" style="margin-top: 3rem;">
+        <a href="#kontakt" class="btn btn--primary">Erstgespräch anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--elevated">
+    <div class="container--narrow">
+      <span class="eyebrow fade-up">Fragen</span>
+      <h2 class="h2 fade-up" style="margin-bottom: 3rem;">Bevor du dich entscheidest.</h2>
+      <div class="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">Was ist der Unterschied zwischen VAGUS FLOW und der 1:1-Beratung?</button>
+          <div class="faq-answer"><p>VAGUS FLOW ist ein strukturiertes Gruppenprogramm über mehrere Wochen. Die 1:1-Beratung ist individuell auf dich zugeschnitten und geht tiefer in deine persönliche Situation.</p></div>
         </div>
-        <div class="ideal-item">
-          <span class="ideal-dot"></span>
-          <p>Wenn du ein überreiztes Nervensystem hast, das auf Stress, Ernährung oder innere Konflikte reagiert.</p>
+        <div class="faq-item">
+          <button class="faq-question">Brauche ich eine ärztliche Diagnose?</button>
+          <div class="faq-answer"><p>Nein. Viele kommen ohne klare Diagnose. Das Angebot richtet sich an Menschen, die spüren, dass etwas nicht stimmt.</p></div>
         </div>
-        <div class="ideal-item">
-          <span class="ideal-dot"></span>
-          <p>Wenn du zeitnah Lösungen möchtest und persönliche Begleitung bevorzugst.</p>
+        <div class="faq-item">
+          <button class="faq-question">Ersetzt das eine Therapie?</button>
+          <div class="faq-answer"><p>Nein. Mein Angebot ist Coaching, keine Therapie und keine medizinische Behandlung. Bei akuten Beschwerden sprich bitte zuerst mit deiner Ärztin.</p></div>
         </div>
-        <div class="ideal-item">
-          <span class="ideal-dot"></span>
-          <p>Wenn du VAGUS FLOW bereits kennst, aber tiefer gehen willst.</p>
+        <div class="faq-item">
+          <button class="faq-question">Ich habe schon alles ausprobiert. Warum sollte das hier anders sein?</button>
+          <div class="faq-answer"><p>Weil die meisten Ansätze nur Symptome behandeln. Hier arbeiten wir am Nervensystem, das die Symptome verursacht. Genau deshalb funktioniert es, wenn anderes nicht funktioniert hat.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Kontaktformular -->
+  <!-- Kontakt -->
   <section class="section" id="kontakt">
-    <div class="container" style="max-width: 600px;">
-      <div class="text-center fade-up" style="margin-bottom: 3rem;">
-        <span class="eyebrow">Kontakt</span>
-        <h2 class="h2">Gespräch anfragen</h2>
+    <div class="container--narrow text-center">
+      <span class="eyebrow fade-up">Kontakt</span>
+      <h2 class="h2 fade-up">Gespräch anfragen</h2>
+      <p class="fade-up" style="margin-top: 1rem; color: var(--text-on-light-muted);">
+        Schreib mir eine Nachricht. Ich melde mich persönlich.
+      </p>
+      <div class="fade-up" style="margin-top: 2rem;">
+        <a href="mailto:theresaross-coach@outlook.de" class="btn btn--primary">E-Mail schreiben</a>
       </div>
-      <form id="contact-form" class="fade-up">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div class="form-group">
-            <label>Vorname*</label>
-            <input type="text" required class="form-input-light">
-          </div>
-          <div class="form-group">
-            <label>Nachname*</label>
-            <input type="text" required class="form-input-light">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email*</label>
-          <input type="email" required class="form-input-light">
-        </div>
-        <div class="form-group">
-          <label>Deine Nachricht*</label>
-          <textarea required class="form-input-light form-textarea"></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary" style="width: 100%; justify-content: center;">Absenden</button>
-      </form>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <div><div class="footer-logo">Theresa Ross</div><p class="footer-text">Darm- und Nervensystem Mentorin</p></div>
-      <div><p class="footer-heading">Seiten</p><div class="footer-links"><a href="privatpersonen.html">Privatpersonen</a><a href="unternehmen.html">Unternehmen</a><a href="ueber-mich.html">Über mich</a><a href="coaching.html">Coaching</a><a href="rabattcodes.html">Rabattcodes</a><a href="selbsttest.html">Selbsttest</a></div></div>
+      <div><p class="footer-heading">Seiten</p><div class="footer-links"><a href="privatpersonen.html">Privatpersonen</a><a href="unternehmen.html">Unternehmen</a><a href="ueber-mich.html">Über mich</a><a href="rabattcodes.html">Rabattcodes</a><a href="selbsttest.html">Selbsttest</a></div></div>
       <div><p class="footer-heading">Rechtliches</p><div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
     </div>
     <div class="footer-bottom">&copy; 2026 Theresa Ross. Alle Rechte vorbehalten.</div>
