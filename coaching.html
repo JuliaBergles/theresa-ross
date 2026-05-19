@@ -93,29 +93,70 @@
     </div>
   </section>
 
-  <!-- Was drin ist -->
+  <!-- Module als Zeitleiste -->
   <section class="section">
-    <div class="container">
-      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto 4rem;">
+    <div class="container--narrow">
+      <div class="text-center fade-up" style="max-width: 500px; margin: 0 auto 4rem;">
         <span class="eyebrow">Inhalt</span>
         <h2 class="h2">Was dich erwartet.</h2>
       </div>
-      <div class="cards-grid">
-        <div class="card card--dark fade-up">
-          <span class="eyebrow">Modul 1</span>
-          <h3 class="h3" style="margin: 0.75rem 0;">Vagusnerv verstehen</h3>
-          <p>Wie dein Vagusnerv funktioniert, warum er überreizt ist und wie du ihn beruhigst. Theorie und praktische Übungen.</p>
+
+      <!-- Zeitleiste -->
+      <div style="position: relative; padding-left: 3rem;">
+        <!-- Vertikale Linie -->
+        <div style="position: absolute; left: 0.75rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--accent-text), var(--border-light));"></div>
+
+        <!-- Modul 1 -->
+        <div class="fade-up timeline-item" style="position: relative; margin-bottom: 2rem;">
+          <div style="position: absolute; left: -2.65rem; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-text); display: flex; align-items: center; justify-content: center;">
+            <span style="color: #fff; font-size: 0.7rem; font-weight: 600;">1</span>
+          </div>
+          <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'; this.querySelector('.tl-arrow').style.transform = this.nextElementSibling.style.display === 'none' ? '' : 'rotate(90deg)'" style="width: 100%; text-align: left; background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: 4px; padding: 1.5rem 2rem; cursor: pointer; font-family: var(--font-body); display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
+            <div>
+              <span style="font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-text);">Modul 1</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--text-on-light); margin-top: 0.25rem;">Vagusnerv verstehen</h3>
+            </div>
+            <span class="tl-arrow" style="color: var(--accent-text); font-size: 1.25rem; transition: transform 0.3s;">&#9654;</span>
+          </button>
+          <div style="display: none; padding: 1.5rem 2rem; background: var(--bg-dark); border-radius: 0 0 4px 4px; margin-top: -1px;">
+            <p style="color: var(--text-on-dark-muted); line-height: 1.7;">Wie dein Vagusnerv funktioniert, warum er überreizt ist und wie du ihn beruhigst. Theorie und praktische Übungen für den Alltag.</p>
+          </div>
         </div>
-        <div class="card card--dark fade-up">
-          <span class="eyebrow">Modul 2</span>
-          <h3 class="h3" style="margin: 0.75rem 0;">Darm-Hirn-Achse</h3>
-          <p>Die Verbindung zwischen Bauch und Kopf. Was dein Darm mit deiner Stimmung macht und wie du beide Seiten unterstützt.</p>
+
+        <!-- Modul 2 -->
+        <div class="fade-up timeline-item" style="position: relative; margin-bottom: 2rem;">
+          <div style="position: absolute; left: -2.65rem; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-text); display: flex; align-items: center; justify-content: center;">
+            <span style="color: #fff; font-size: 0.7rem; font-weight: 600;">2</span>
+          </div>
+          <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'; this.querySelector('.tl-arrow').style.transform = this.nextElementSibling.style.display === 'none' ? '' : 'rotate(90deg)'" style="width: 100%; text-align: left; background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: 4px; padding: 1.5rem 2rem; cursor: pointer; font-family: var(--font-body); display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
+            <div>
+              <span style="font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-text);">Modul 2</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--text-on-light); margin-top: 0.25rem;">Darm-Hirn-Achse</h3>
+            </div>
+            <span class="tl-arrow" style="color: var(--accent-text); font-size: 1.25rem; transition: transform 0.3s;">&#9654;</span>
+          </button>
+          <div style="display: none; padding: 1.5rem 2rem; background: var(--bg-dark); border-radius: 0 0 4px 4px; margin-top: -1px;">
+            <p style="color: var(--text-on-dark-muted); line-height: 1.7;">Die Verbindung zwischen Bauch und Kopf. Was dein Darm mit deiner Stimmung macht und wie du beide Seiten unterstützt.</p>
+          </div>
         </div>
-        <div class="card card--dark fade-up">
-          <span class="eyebrow">Modul 3</span>
-          <h3 class="h3" style="margin: 0.75rem 0;">Körper & Geist</h3>
-          <p>Integration. Wie du das Gelernte in deinen Alltag bringst und dein Nervensystem langfristig stabil hältst.</p>
+
+        <!-- Modul 3 -->
+        <div class="fade-up timeline-item" style="position: relative;">
+          <div style="position: absolute; left: -2.65rem; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-text); display: flex; align-items: center; justify-content: center;">
+            <span style="color: #fff; font-size: 0.7rem; font-weight: 600;">3</span>
+          </div>
+          <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'; this.querySelector('.tl-arrow').style.transform = this.nextElementSibling.style.display === 'none' ? '' : 'rotate(90deg)'" style="width: 100%; text-align: left; background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: 4px; padding: 1.5rem 2rem; cursor: pointer; font-family: var(--font-body); display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
+            <div>
+              <span style="font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-text);">Modul 3</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--text-on-light); margin-top: 0.25rem;">Körper & Geist</h3>
+            </div>
+            <span class="tl-arrow" style="color: var(--accent-text); font-size: 1.25rem; transition: transform 0.3s;">&#9654;</span>
+          </button>
+          <div style="display: none; padding: 1.5rem 2rem; background: var(--bg-dark); border-radius: 0 0 4px 4px; margin-top: -1px;">
+            <p style="color: var(--text-on-dark-muted); line-height: 1.7;">Integration. Wie du das Gelernte in deinen Alltag bringst und dein Nervensystem langfristig stabil hältst.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
