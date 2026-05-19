@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theresa Ross | Gesundheitsmentorin & Nervensystem-Spezialistin</title>
+  <meta name="description" content="Wahre Gesundheit beginnt im Nervensystem. Coaching für Stressregulation, Vagusnerv und ganzheitliche Gesundheit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #7A3B3B;
+      --terracotta: #C89B8C;
+      --mint: #A8C9BC;
+      --gold: #B8956A;
+      --bg-light: #F4F1ED;
+      --bg-medium: #E8E3DC;
+      --text-dark: #3A3633;
+      --white: #fffdf9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+
+    a { text-decoration: none; color: inherit; }
+
+    img { max-width: 100%; height: auto; }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(244,241,237,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(232,227,220,0.5);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 18px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--bordeaux); letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      font-size: 0.9rem; color: rgba(58,54,51,0.7);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--bordeaux); }
+    .nav-cta {
+      background: var(--bordeaux) !important; color: var(--bg-light) !important;
+      padding: 10px 24px; border-radius: 6px;
+      font-weight: 600; font-size: 0.9rem !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--terracotta) !important; }
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 1.5rem; color: var(--text-dark); cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block; background: var(--bordeaux); color: var(--bg-light);
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem;
+      padding: 16px 32px; border-radius: 6px;
+      transition: background 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--terracotta); }
+    .btn-secondary {
+      display: inline-block; border: 2px solid var(--bordeaux); color: var(--bordeaux);
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem;
+      padding: 14px 32px; border-radius: 6px;
+      transition: all 0.2s; background: transparent;
+    }
+    .btn-secondary:hover { background: var(--bordeaux); color: var(--bg-light); }
+
+    /* Sections */
+    .section { padding: 100px 24px; }
+    .section-medium { background: var(--bg-medium); }
+    .section-dark { background: var(--text-dark); color: var(--bg-light); }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .container-narrow { max-width: 700px; margin: 0 auto; }
+    .container-mid { max-width: 900px; margin: 0 auto; }
+    .text-center { text-align: center; }
+
+    /* Hero */
+    .hero { padding: 140px 24px 100px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero h1 { font-size: 3.5rem; font-weight: 600; color: var(--bordeaux); margin-bottom: 24px; }
+    .hero p { font-size: 1.15rem; margin-bottom: 40px; }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-image {
+      aspect-ratio: 4/5; background: var(--bg-medium); border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-image p { font-size: 0.85rem; color: rgba(58,54,51,0.4); padding: 32px; }
+
+    /* Typography */
+    .h2 { font-size: 2.8rem; font-weight: 500; color: var(--bordeaux); margin-bottom: 32px; }
+    .h3 { font-size: 1.8rem; font-weight: 500; color: var(--text-dark); margin-bottom: 16px; }
+    .body-large { font-size: 1.15rem; line-height: 1.7; }
+    .text-gold { color: var(--gold); }
+
+    /* Cards */
+    .card {
+      background: var(--bg-light); border-radius: 16px;
+      overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    }
+    .card-accent { height: 4px; }
+    .card-body { padding: 32px; }
+
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+
+    /* VAGUSFLOW Card */
+    .vagusflow-card {
+      background: var(--bg-light); border-radius: 20px;
+      padding: 56px; box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+    }
+
+    /* Footer */
+    footer { background: var(--text-dark); color: var(--bg-light); padding: 64px 24px; }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; margin-bottom: 16px;
+    }
+    .footer-text { font-size: 0.85rem; color: rgba(244,241,237,0.6); }
+    .footer-heading { font-size: 0.85rem; font-weight: 600; color: rgba(244,241,237,0.8); margin-bottom: 16px; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a { font-size: 0.85rem; color: var(--terracotta); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--bg-light); }
+    .footer-bottom {
+      max-width: 1200px; margin: 48px auto 0;
+      padding-top: 32px; border-top: 1px solid rgba(244,241,237,0.1);
+      text-align: center; font-size: 0.75rem; color: rgba(244,241,237,0.4);
+    }
+
+    /* Animations */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero { padding: 100px 24px 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-image { display: none; }
+      .section { padding: 60px 24px; }
+      .h2 { font-size: 2rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-light); padding: 24px; gap: 20px; border-bottom: 1px solid var(--bg-medium); }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: block; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .vagusflow-card { padding: 32px; }
+      .hero-buttons { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Theresa Ross</a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">&#9776;</button>
+      <div class="nav-links">
+        <a href="privatpersonen.html">Für dich</a>
+        <a href="unternehmen.html">Für Unternehmen</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="bibliothek.html">Bibliothek</a>
+        <a href="selbsttest.html" class="nav-cta">Selbsttest</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1 class="fade-up">Wahre Gesundheit beginnt im Nervensystem.</h1>
+          <p class="body-large fade-up">Du spürst, dass mehr dahintersteckt als Symptome. Dass dein Körper dir etwas sagen will. Hier beginnt der Weg zurück zu dir.</p>
+          <div class="hero-buttons fade-up">
+            <a href="selbsttest.html" class="btn-primary">Mach den Selbsttest</a>
+            <a href="#problem" class="btn-secondary">Mehr erfahren</a>
+          </div>
+        </div>
+        <div class="hero-image fade-up">
+          <p>Theresa-Porträt<br>ruhiger Blick, Natur-Setting</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problem" class="section section-medium">
+    <div class="container-narrow text-center">
+      <h2 class="h2 fade-up">Nicht der Stress macht dich krank. Sondern was dein Nervensystem daraus macht.</h2>
+      <p class="body-large fade-up" style="margin-bottom: 24px;">
+        Erschöpfung, Verdauungsprobleme, innere Unruhe, Schlafstörungen — das sind keine Einzelprobleme. Das sind Signale eines Nervensystems, das im Überlebensmodus festhängt.
+      </p>
+      <p class="body-large fade-up">
+        Die Lösung liegt nicht in noch mehr Optimierung. Sondern in der Rückkehr zu dem, was dein Körper eigentlich kann: regulieren, heilen, zur Ruhe kommen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Theresa Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h2 class="h2 fade-up">Ich bin Theresa.</h2>
+          <p class="body-large fade-up" style="margin-bottom: 16px;">
+            Gesundheitsmentorin. Nervensystem-Spezialistin. Und jemand, der den Weg vom Funktionieren zurück zum Fühlen selbst gegangen ist.
+          </p>
+          <p class="body-large fade-up" style="margin-bottom: 32px;">
+            Ich arbeite an der Schnittstelle von Körper, Geist und Seele — weil Gesundheit kein Einzelteil-Problem ist. Mein Ansatz verbindet Vagusnerv-Arbeit, Stressregulation und die Weisheit deines Körpers.
+          </p>
+          <a href="ueber-mich.html" class="btn-secondary fade-up">Meine Geschichte</a>
+        </div>
+        <div class="hero-image fade-up">
+          <p>Theresa authentisch,<br>warm, nahbar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VAGUSFLOW -->
+  <section class="section section-medium">
+    <div class="container-mid text-center">
+      <div class="vagusflow-card fade-up">
+        <h2 class="h2" style="margin-bottom: 8px;">VAGUSFLOW</h2>
+        <p class="body-large text-gold" style="font-weight: 500; margin-bottom: 32px;">Das Coaching-Programm für dein Nervensystem.</p>
+        <p class="body-large" style="margin-bottom: 16px;">
+          8 Wochen. Dein Vagusnerv. Deine Regulation. In der Gruppe oder 1:1 — ab Herbst 2025 in der zweiten Runde.
+        </p>
+        <p class="body-large" style="margin-bottom: 40px;">
+          VAGUSFLOW ist für dich, wenn du verstanden hast, dass kein Supplement und kein Ernährungsplan die Antwort ist. Sondern die Art, wie dein Nervensystem die Welt verarbeitet.
+        </p>
+        <a href="privatpersonen.html#vagusflow" class="btn-primary">Zur Warteliste</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selbsttest CTA -->
+  <section class="section">
+    <div class="container-narrow text-center">
+      <h2 class="h2 fade-up">Wo steht dein Nervensystem?</h2>
+      <p class="body-large fade-up" style="margin-bottom: 40px;">
+        Ein kurzer Test. 15 Fragen. Ehrliche Antworten. Am Ende weißt du, wo du stehst — und was der nächste sinnvolle Schritt für dich ist.
+      </p>
+      <a href="selbsttest.html" class="btn-primary fade-up">Jetzt Selbsttest starten</a>
+    </div>
+  </section>
+
+  <!-- Workbook -->
+  <section class="section section-medium">
+    <div class="container">
+      <div class="hero-grid">
+        <div style="display: flex; justify-content: center;">
+          <div class="fade-up" style="aspect-ratio: 3/4; background: var(--bg-light); border-radius: 20px; display: flex; align-items: center; justify-content: center; max-width: 280px; width: 100%;">
+            <p style="font-size: 0.85rem; color: rgba(58,54,51,0.4); padding: 32px; text-align: center;">Workbook-Mockup</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="h2 fade-up">Gratis-Workbook: Dein Nervensystem verstehen.</h2>
+          <p class="body-large fade-up" style="margin-bottom: 40px;">
+            12 Seiten, die dir zeigen, was dein Nervensystem braucht, um aus dem Überlebensmodus rauszufinden. Kein Blabla. Konkrete Übungen, die du heute starten kannst.
+          </p>
+          <a href="bibliothek.html#workbook" class="btn-primary fade-up">Workbook herunterladen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Theresa Ross</div>
+        <p class="footer-text">Gesundheitsmentorin &<br>Nervensystem-Spezialistin</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigation</p>
+        <div class="footer-links">
+          <a href="privatpersonen.html">Für dich</a>
+          <a href="unternehmen.html">Für Unternehmen</a>
+          <a href="ueber-mich.html">Über mich</a>
+          <a href="bibliothek.html">Bibliothek</a>
+          <a href="selbsttest.html">Selbsttest</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Rechtliches</p>
+        <div class="footer-links">
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="impressum.html">Impressum</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Theresa Ross. Alle Rechte vorbehalten.</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | Theresa Ross</title>
+  <meta name="description" content="Lass uns sprechen. Erstgespräch, Anfragen und Zusammenarbeit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bordeaux: #7A3B3B; --terracotta: #C89B8C; --mint: #A8C9BC; --gold: #B8956A; --bg-light: #F4F1ED; --bg-medium: #E8E3DC; --text-dark: #3A3633; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    h1, h2 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(244,241,237,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(232,227,220,0.5); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--bordeaux); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 0.9rem; color: rgba(58,54,51,0.7); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--bordeaux); }
+    .nav-cta { background: var(--bordeaux) !important; color: var(--bg-light) !important; padding: 10px 24px; border-radius: 6px; font-weight: 600; font-size: 0.9rem !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--terracotta) !important; }
+    .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-dark); cursor: pointer; }
+    .section { padding: 100px 24px; }
+    .section-medium { background: var(--bg-medium); }
+    .text-center { text-align: center; }
+    .h1 { font-size: 3rem; font-weight: 600; color: var(--bordeaux); margin-bottom: 24px; }
+    .h2 { font-size: 2rem; font-weight: 500; color: var(--bordeaux); margin-bottom: 32px; }
+    .body-large { font-size: 1.15rem; line-height: 1.7; }
+
+    /* Form */
+    .form-card { background: var(--bg-light); border-radius: 20px; padding: 48px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 30px rgba(0,0,0,0.05); }
+    .form-group { margin-bottom: 24px; }
+    .form-label { display: block; font-size: 0.85rem; color: rgba(58,54,51,0.6); margin-bottom: 8px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 14px 16px; border-radius: 12px; border: 2px solid var(--bg-medium);
+      font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--text-dark);
+      background: transparent; outline: none; transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--bordeaux); }
+    .form-textarea { resize: none; min-height: 140px; }
+    .checkbox-label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin-bottom: 24px; }
+    .checkbox-label input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--bordeaux); flex-shrink: 0; }
+    .checkbox-label span { font-size: 0.85rem; color: rgba(58,54,51,0.6); line-height: 1.5; }
+    .checkbox-label a { color: var(--bordeaux); text-decoration: underline; }
+    .btn-primary { display: inline-block; background: var(--bordeaux); color: var(--bg-light); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; padding: 16px 32px; border-radius: 6px; transition: background 0.2s; border: none; cursor: pointer; width: 100%; }
+    .btn-primary:hover { background: var(--terracotta); }
+    .hint { font-size: 0.8rem; color: rgba(58,54,51,0.35); margin-top: 16px; text-align: center; }
+
+    footer { background: var(--text-dark); color: var(--bg-light); padding: 64px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 16px; }
+    .footer-text { font-size: 0.85rem; color: rgba(244,241,237,0.6); }
+    .footer-heading { font-size: 0.85rem; font-weight: 600; color: rgba(244,241,237,0.8); margin-bottom: 16px; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a { font-size: 0.85rem; color: var(--terracotta); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--bg-light); }
+    .footer-bottom { max-width: 1200px; margin: 48px auto 0; padding-top: 32px; border-top: 1px solid rgba(244,241,237,0.1); text-align: center; font-size: 0.75rem; color: rgba(244,241,237,0.4); }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 768px) {
+      .h1 { font-size: 2.2rem; } .section { padding: 60px 24px; } .form-card { padding: 24px; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-light); padding: 24px; gap: 20px; border-bottom: 1px solid var(--bg-medium); }
+      .nav-links.active { display: flex; } .menu-toggle { display: block; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Theresa Ross</a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">&#9776;</button>
+      <div class="nav-links">
+        <a href="privatpersonen.html">Für dich</a>
+        <a href="unternehmen.html">Für Unternehmen</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="bibliothek.html">Bibliothek</a>
+        <a href="selbsttest.html" class="nav-cta">Selbsttest</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="section text-center" style="padding-top: 140px; padding-bottom: 40px;">
+    <h1 class="h1 fade-up">Lass uns sprechen.</h1>
+    <p class="body-large fade-up" style="max-width: 600px; margin: 0 auto;">
+      Ob Erstgespräch, Unternehmens-Anfrage oder einfach eine Frage — ich freue mich, von dir zu hören.
+    </p>
+  </section>
+
+  <!-- Form -->
+  <section class="section section-medium">
+    <div class="form-card fade-up">
+      <h2 class="h2 text-center">Schreib mir</h2>
+
+      <!-- Platzhalter: Hier kann ein Tally-Formular eingebettet werden -->
+      <!-- <iframe data-tally-src="https://tally.so/embed/FORM-ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0"></iframe> -->
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input type="text" required class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-Mail</label>
+          <input type="email" required class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Betreff</label>
+          <select class="form-select">
+            <option value="erstgespraech">Erstgespräch (Privatperson)</option>
+            <option value="vagusflow">VAGUSFLOW — Warteliste</option>
+            <option value="unternehmen">Anfrage für Unternehmen</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nachricht</label>
+          <textarea class="form-textarea" required></textarea>
+        </div>
+        <label class="checkbox-label">
+          <input type="checkbox" required>
+          <span>Ich stimme der Verarbeitung meiner Daten gemäß der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> zu.</span>
+        </label>
+        <button type="submit" class="btn-primary">Nachricht senden</button>
+        <p class="hint">Hinweis: Dieses Formular wird später durch ein Tally-Formular ersetzt, das Nachrichten direkt an Theresa sendet.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Direkt -->
+  <section class="section text-center">
+    <h2 class="h2 fade-up">Oder direkt:</h2>
+    <p class="body-large fade-up">
+      E-Mail: <a href="mailto:hallo@theresa-ross.com" style="color: var(--bordeaux); text-decoration: underline;">hallo@theresa-ross.com</a>
+    </p>
+    <p class="fade-up" style="font-size: 0.85rem; color: rgba(58,54,51,0.4); margin-top: 16px;">
+      Hinweis: E-Mail-Adresse mit Theresas echter Adresse ersetzen.
+    </p>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-logo">Theresa Ross</div><p class="footer-text">Gesundheitsmentorin &<br>Nervensystem-Spezialistin</p></div>
+      <div><p class="footer-heading">Navigation</p><div class="footer-links"><a href="privatpersonen.html">Für dich</a><a href="unternehmen.html">Für Unternehmen</a><a href="ueber-mich.html">Über mich</a><a href="bibliothek.html">Bibliothek</a><a href="selbsttest.html">Selbsttest</a></div></div>
+      <div><p class="footer-heading">Rechtliches</p><div class="footer-links"><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Theresa Ross. Alle Rechte vorbehalten.</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
