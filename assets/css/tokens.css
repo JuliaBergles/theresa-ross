@@ -16,6 +16,7 @@
   --accent: #FBD5B8;
   --accent-dark: #E4B896;
   --accent-light: #FDE8D5;
+  --accent-text: #9B5B55;        /* Rotgrau für Text auf hellem Hintergrund */
 
   /* Text */
   --text-on-light: #2C2820;
