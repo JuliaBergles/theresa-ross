@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VagusFlow Coaching | Theresa Ross</title>
+  <meta name="description" content="VagusFlow: Mehrwöchiges Coaching-Programm für Vagusnerv, Darm-Hirn-Achse und Körper-Geist-Verbindung.">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    .step-grid { display: grid; gap: 2rem; margin-top: 3rem; }
+    .step { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; }
+    .step-number {
+      font-family: var(--font-display); font-size: 2.5rem; font-weight: 500;
+      color: var(--accent); line-height: 1; min-width: 3rem;
+    }
+    .faq-item { border-bottom: 1px solid var(--border-light); }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      font-family: var(--font-body); font-size: 1.0625rem; font-weight: 500;
+      color: var(--text-on-light); text-align: left;
+      padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--accent); transition: transform 0.2s; }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
+    .faq-answer p { color: var(--text-on-light-muted); font-size: 0.95rem; line-height: 1.7; }
+    .cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Theresa Ross</a>
+      <button class="menu-toggle">&#9776;</button>
+      <div class="nav-links">
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="coaching.html" class="active">Coaching</a>
+        <a href="selbsttest.html" class="nav-cta">Selbsttest</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="section section--hero">
+    <div class="container">
+      <span class="eyebrow fade-up">Coaching-Programm</span>
+      <h1 class="h1 fade-up" style="max-width: 14ch; margin: 0 auto 1.5rem;">VagusFlow</h1>
+      <p class="body-large fade-up" style="max-width: 42ch; margin: 0 auto 3rem; color: var(--text-on-light-muted);">
+        Mehrere Wochen. Dein Nervensystem. Deine Regulation. Persönliche Begleitung für den Weg zurück in deinen Körper.
+      </p>
+    </div>
+  </section>
+
+  <!-- Was ist es -->
+  <section class="section section--elevated">
+    <div class="container--narrow">
+      <span class="eyebrow fade-up">Was ist VagusFlow</span>
+      <h2 class="h2 fade-up">Mehr als ein Kurs.</h2>
+      <p class="fade-up" style="margin-top: 1.5rem;">
+        VagusFlow ist ein mehrwöchiges Coaching-Programm, das an drei Ebenen gleichzeitig arbeitet: Vagusnerv, Darm-Hirn-Achse und die Verbindung zwischen Körper und Geist.
+      </p>
+      <p class="fade-up" style="margin-top: 1rem;">
+        Es ist kein Online-Kurs, den du alleine durcharbeitest. Es ist persönliche Begleitung. In der Gruppe oder 1:1.
+      </p>
+      <p class="fade-up" style="margin-top: 1rem; font-style: italic; color: var(--text-on-light-muted);">
+        Hinweis: VagusFlow ist mein eigenes kostenpflichtiges Coaching-Programm.
+      </p>
+    </div>
+  </section>
+
+  <!-- Für wen — DUNKEL -->
+  <section class="section section--dark">
+    <div class="container--narrow">
+      <span class="eyebrow fade-up">Für wen</span>
+      <h2 class="h2 fade-up">Du erkennst dich hier wieder.</h2>
+      <div style="margin-top: 2rem; display: grid; gap: 1rem;">
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Du hast chronische Beschwerden, die niemand richtig erklären kann.</p>
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Du hast schon Vieles ausprobiert — Ernährung, Supplements, Ärzte — und es reicht nicht.</p>
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Dein Schlaf, deine Energie oder deine Verdauung sind seit Langem aus dem Gleichgewicht.</p>
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Du spürst, dass dein Nervensystem eine Rolle spielt — aber weißt nicht, wo anfangen.</p>
+        <p class="fade-up" style="color: var(--text-on-dark-muted); padding-left: 1.5rem; border-left: 2px solid var(--accent-light);">Du willst keine schnellen Hacks, sondern nachhaltige Veränderung.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Was drin ist -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto 4rem;">
+        <span class="eyebrow">Inhalt</span>
+        <h2 class="h2">Was dich erwartet.</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card card--dark fade-up">
+          <span class="eyebrow">Modul 1</span>
+          <h3 class="h3" style="margin: 0.75rem 0;">Vagusnerv verstehen</h3>
+          <p>Wie dein Vagusnerv funktioniert, warum er überreizt ist und wie du ihn beruhigst. Theorie und praktische Übungen.</p>
+        </div>
+        <div class="card card--dark fade-up">
+          <span class="eyebrow">Modul 2</span>
+          <h3 class="h3" style="margin: 0.75rem 0;">Darm-Hirn-Achse</h3>
+          <p>Die Verbindung zwischen Bauch und Kopf. Was dein Darm mit deiner Stimmung macht und wie du beide Seiten unterstützt.</p>
+        </div>
+        <div class="card card--dark fade-up">
+          <span class="eyebrow">Modul 3</span>
+          <h3 class="h3" style="margin: 0.75rem 0;">Körper & Geist</h3>
+          <p>Integration. Wie du das Gelernte in deinen Alltag bringst und dein Nervensystem langfristig stabil hältst.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ablauf -->
+  <section class="section section--elevated">
+    <div class="container--narrow">
+      <span class="eyebrow fade-up">Ablauf</span>
+      <h2 class="h2 fade-up">So läuft es ab.</h2>
+      <div class="step-grid">
+        <div class="step fade-up">
+          <span class="step-number">1</span>
+          <div>
+            <h3 class="h3" style="margin-bottom: 0.5rem;">Erstgespräch</h3>
+            <p style="color: var(--text-on-light-muted);">Wir sprechen über deine Situation. Ob VagusFlow zu dir passt. Ohne Verpflichtung.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <span class="step-number">2</span>
+          <div>
+            <h3 class="h3" style="margin-bottom: 0.5rem;">Programm-Start</h3>
+            <p style="color: var(--text-on-light-muted);">Du bekommst Zugang zu den Modulen. Wir starten mit deinem Nervensystem-Status.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <span class="step-number">3</span>
+          <div>
+            <h3 class="h3" style="margin-bottom: 0.5rem;">Begleitung</h3>
+            <p style="color: var(--text-on-light-muted);">Wöchentliche Sessions. Persönliches Feedback. Übungen für den Alltag. Gruppe oder 1:1.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Herbstspecial — DUNKEL -->
+  <section class="section section--dark">
+    <div class="container--narrow text-center">
+      <span class="eyebrow fade-up">Herbstspecial</span>
+      <h2 class="h2 fade-up">Die nächste Runde.</h2>
+      <p class="fade-up" style="margin: 1.5rem auto; color: var(--text-on-dark-muted); max-width: 40ch;">
+        VagusFlow startet wieder — in einer besonderen Herbst-Konstellation.
+      </p>
+      <div class="fade-up" style="display: grid; gap: 1.5rem; grid-template-columns: 1fr 1fr; max-width: 400px; margin: 3rem auto;">
+        <div style="text-align: left; padding: 1.25rem; border-left: 2px solid var(--accent-light);">
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Dauer</span>
+          <p style="font-size: 1.25rem; color: var(--text-on-dark);">[X] Wochen</p>
+        </div>
+        <div style="text-align: left; padding: 1.25rem; border-left: 2px solid var(--accent-light);">
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Investition</span>
+          <p style="font-size: 1.25rem; color: var(--text-on-dark);">[Preis] &euro;</p>
+        </div>
+      </div>
+      <a href="mailto:hallo@theresa-ross.com" class="btn btn--primary fade-up">Erstgespräch anfragen</a>
+      <p class="fade-up" style="font-size: 0.85rem; color: var(--text-on-dark-muted); margin-top: 1rem;">
+        Begrenzte Teilnehmerzahl, weil ich persönlich begleite. Keine automatische Verlängerung.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--elevated">
+    <div class="container--narrow">
+      <span class="eyebrow fade-up">Fragen zu VagusFlow</span>
+      <h2 class="h2 fade-up" style="margin-bottom: 3rem;">Bevor du dich entscheidest.</h2>
+      <div class="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">Brauche ich eine ärztliche Diagnose?</button>
+          <div class="faq-answer"><p>Nein. Viele Teilnehmerinnen kommen ohne klare Diagnose. Das Programm richtet sich an Menschen, die spüren, dass etwas nicht stimmt — auch wenn kein Arzt es benennen konnte.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Ersetzt VagusFlow eine Therapie?</button>
+          <div class="faq-answer"><p>Nein. VagusFlow ist Coaching, keine Therapie und keine medizinische Behandlung. Bei akuten psychischen oder körperlichen Beschwerden sprich bitte zuerst mit deiner Ärztin.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Kann ich auch 1:1 arbeiten?</button>
+          <div class="faq-answer"><p>Ja. Das Programm gibt es in der Gruppenvariante und als individuelle 1:1-Begleitung. Sprich mich im Erstgespräch darauf an.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Was wenn es nicht zu mir passt?</button>
+          <div class="faq-answer"><p>Genau dafür ist das kostenlose Erstgespräch da. Wenn ich merke, dass VagusFlow nicht der richtige Weg für dich ist, sage ich das ehrlich.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><div class="footer-logo">Theresa Ross</div><p class="footer-text">Coaching für Nervensystem,<br>Darm-Hirn-Achse & Körper-Geist</p></div>
+      <div><p class="footer-heading">Seiten</p><div class="footer-links"><a href="ueber-mich.html">Über mich</a><a href="coaching.html">Coaching</a><a href="selbsttest.html">Selbsttest</a></div></div>
+      <div><p class="footer-heading">Rechtliches</p><div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Theresa Ross</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

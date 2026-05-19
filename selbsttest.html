@@ -5,140 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nervensystem-Selbsttest | Theresa Ross</title>
   <meta name="description" content="Finde heraus, wo dein Nervensystem gerade steht. Ehrlich, anonym, in 10-15 Minuten.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
   <style>
-    :root { --bordeaux: #7A3B3B; --terracotta: #C89B8C; --mint: #A8C9BC; --gold: #B8956A; --bg-light: #F4F1ED; --bg-medium: #E8E3DC; --text-dark: #3A3633; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
-    a { text-decoration: none; color: inherit; }
-
-    /* Nav */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(244,241,237,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(232,227,220,0.5); }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--bordeaux); }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { font-size: 0.9rem; color: rgba(58,54,51,0.7); transition: color 0.2s; }
-    .nav-links a:hover { color: var(--bordeaux); }
-    .nav-cta { background: var(--bordeaux) !important; color: var(--bg-light) !important; padding: 10px 24px; border-radius: 6px; font-weight: 600; font-size: 0.9rem !important; transition: background 0.2s !important; }
-    .nav-cta:hover { background: var(--terracotta) !important; }
-    .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-dark); cursor: pointer; }
-
     /* Test */
     .test-container { max-width: 660px; margin: 0 auto; padding: 120px 24px 100px; min-height: 80vh; }
-    .btn-primary { display: inline-block; background: var(--bordeaux); color: var(--bg-light); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; padding: 16px 32px; border-radius: 6px; transition: background 0.2s; border: none; cursor: pointer; }
-    .btn-primary:hover { background: var(--terracotta); }
-    .btn-secondary { display: inline-block; border: 2px solid var(--bordeaux); color: var(--bordeaux); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.9rem; padding: 12px 28px; border-radius: 6px; transition: all 0.2s; background: transparent; cursor: pointer; }
-    .btn-secondary:hover { background: var(--bordeaux); color: var(--bg-light); }
-    .btn-ghost { background: none; border: none; font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(58,54,51,0.4); cursor: pointer; text-decoration: underline; transition: color 0.2s; }
-    .btn-ghost:hover { color: var(--bordeaux); }
+    .btn-primary { display: inline-block; background: var(--accent); color: var(--text-on-dark); font-family: var(--font-body); font-weight: 600; font-size: 1rem; padding: 16px 32px; border-radius: 4px; transition: background 0.2s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-secondary { display: inline-block; border: 1px solid var(--text-on-light); color: var(--text-on-light); font-family: var(--font-body); font-weight: 500; font-size: 0.9rem; padding: 12px 28px; border-radius: 4px; transition: all 0.2s; background: transparent; cursor: pointer; }
+    .btn-secondary:hover { background: var(--text-on-light); color: var(--bg-primary); }
+    .btn-ghost { background: none; border: none; font-family: var(--font-body); font-size: 0.85rem; color: var(--text-on-light-muted); cursor: pointer; text-decoration: underline; transition: color 0.2s; }
+    .btn-ghost:hover { color: var(--accent); }
 
     /* Progress */
     .progress-wrap { margin-bottom: 40px; }
-    .progress-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.8rem; color: rgba(58,54,51,0.45); }
-    .progress-bar { width: 100%; height: 6px; background: var(--bg-medium); border-radius: 99px; overflow: hidden; }
-    .progress-fill { height: 100%; background: var(--mint); border-radius: 99px; transition: width 0.5s ease; }
+    .progress-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.8rem; color: var(--text-on-light-muted); }
+    .progress-bar { width: 100%; height: 6px; background: var(--bg-elevated); border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.5s ease; }
 
     /* Section label */
-    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--terracotta); margin-bottom: 12px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 12px; }
 
     /* Question */
-    .question-text { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 500; margin-bottom: 32px; line-height: 1.35; }
+    .question-text { font-family: var(--font-display); font-size: 1.7rem; font-weight: 500; margin-bottom: 32px; line-height: 1.35; }
 
     /* Options */
     .options { display: flex; flex-direction: column; gap: 10px; }
     .option-btn {
-      width: 100%; text-align: left; padding: 16px 20px; border-radius: 12px;
-      border: 2px solid var(--bg-medium); background: transparent;
-      font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text-dark);
+      width: 100%; text-align: left; padding: 16px 20px; border-radius: 6px;
+      border: 1px solid var(--border-light); background: transparent;
+      font-family: var(--font-body); font-size: 0.95rem; color: var(--text-on-light);
       cursor: pointer; transition: all 0.15s; line-height: 1.5;
     }
-    .option-btn:hover { border-color: var(--bordeaux); background: rgba(122,59,59,0.03); }
-    .option-btn.selected { border-color: var(--bordeaux); background: rgba(122,59,59,0.06); }
+    .option-btn:hover { border-color: var(--accent); background: rgba(184,125,75,0.04); }
+    .option-btn.selected { border-color: var(--accent); background: rgba(184,125,75,0.08); }
 
     /* Multi-select */
     .multi-btn { position: relative; padding-left: 48px; }
     .multi-btn::before {
       content: ''; position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
-      width: 20px; height: 20px; border-radius: 4px; border: 2px solid var(--bg-medium);
+      width: 20px; height: 20px; border-radius: 4px; border: 1px solid var(--border-light);
       transition: all 0.15s;
     }
-    .multi-btn.selected::before { background: var(--bordeaux); border-color: var(--bordeaux); }
+    .multi-btn.selected::before { background: var(--accent); border-color: var(--accent); }
     .multi-btn.selected::after {
       content: '✓'; position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
-      color: var(--bg-light); font-size: 0.75rem; font-weight: 700;
+      color: var(--text-on-dark); font-size: 0.75rem; font-weight: 700;
     }
 
     /* Textarea */
     .text-input {
-      width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--bg-medium);
-      font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text-dark);
+      width: 100%; padding: 16px; border-radius: 6px; border: 1px solid var(--border-light);
+      font-family: var(--font-body); font-size: 0.95rem; color: var(--text-on-light);
       background: transparent; outline: none; resize: none; min-height: 120px;
       transition: border-color 0.2s; line-height: 1.6;
     }
-    .text-input:focus { border-color: var(--bordeaux); }
-    .text-input::placeholder { color: rgba(58,54,51,0.35); }
+    .text-input:focus { border-color: var(--accent); }
+    .text-input::placeholder { color: var(--text-on-light-muted); }
 
     /* Skip */
-    .skip-hint { font-size: 0.8rem; color: rgba(58,54,51,0.4); margin-top: 12px; }
+    .skip-hint { font-size: 0.8rem; color: var(--text-on-light-muted); margin-top: 12px; }
 
     /* Navigation */
     .q-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
 
     /* Result */
-    .result-text { font-size: 1.1rem; line-height: 1.8; }
+    .result-text { font-size: 1.05rem; line-height: 1.8; }
     .result-text p { margin-bottom: 20px; }
     .result-cta { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-    .result-disclosure { font-size: 0.8rem; color: rgba(58,54,51,0.5); margin-top: 24px; padding: 16px; background: var(--bg-medium); border-radius: 12px; line-height: 1.6; }
+    .result-disclosure { font-size: 0.8rem; color: var(--text-on-light-muted); margin-top: 24px; padding: 16px; background: var(--bg-elevated); border-radius: 6px; line-height: 1.6; }
 
     /* E-Book Form */
-    .ebook-form { margin-top: 40px; padding: 32px; background: var(--bg-medium); border-radius: 16px; }
+    .ebook-form { margin-top: 40px; padding: 32px; background: var(--bg-elevated); border-radius: 8px; }
     .form-field { margin-bottom: 16px; }
-    .form-field label { display: block; font-size: 0.85rem; color: rgba(58,54,51,0.6); margin-bottom: 6px; }
+    .form-field label { display: block; font-size: 0.85rem; color: var(--text-on-light-muted); margin-bottom: 6px; }
     .form-input {
-      width: 100%; padding: 14px 16px; border-radius: 10px; border: 2px solid rgba(232,227,220,0.8);
-      font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--text-dark);
-      background: var(--bg-light); outline: none; transition: border-color 0.2s;
+      width: 100%; padding: 14px 16px; border-radius: 4px; border: 1px solid var(--border-light);
+      font-family: var(--font-body); font-size: 1rem; color: var(--text-on-light);
+      background: var(--bg-primary); outline: none; transition: border-color 0.2s;
     }
-    .form-input:focus { border-color: var(--bordeaux); }
+    .form-input:focus { border-color: var(--accent); }
     .checkbox-label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin-bottom: 12px; }
-    .checkbox-label input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--bordeaux); flex-shrink: 0; }
-    .checkbox-label span { font-size: 0.85rem; color: rgba(58,54,51,0.6); line-height: 1.5; }
-    .checkbox-label a { color: var(--bordeaux); text-decoration: underline; }
+    .checkbox-label input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--accent); flex-shrink: 0; }
+    .checkbox-label span { font-size: 0.85rem; color: var(--text-on-light-muted); line-height: 1.5; }
+    .checkbox-label a { color: var(--accent); text-decoration: underline; }
 
     /* Crisis overlay */
     .crisis-overlay {
-      position: fixed; inset: 0; background: rgba(244,241,237,0.97); z-index: 200;
+      position: fixed; inset: 0; background: rgba(232,227,217,0.97); z-index: 200;
       display: flex; align-items: center; justify-content: center; padding: 24px;
     }
     .crisis-card { max-width: 520px; text-align: center; }
-    .crisis-card h2 { font-size: 1.8rem; color: var(--bordeaux); margin-bottom: 24px; }
+    .crisis-card h2 { font-family: var(--font-display); font-size: 1.8rem; color: var(--text-on-light); margin-bottom: 24px; }
     .crisis-card p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 16px; }
-    .crisis-phone { font-size: 1.5rem; font-weight: 700; color: var(--bordeaux); margin: 24px 0; }
+    .crisis-phone { font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: 24px 0; }
 
     /* Animation */
     .fade-in { animation: fadeIn 0.4s ease-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Footer */
-    footer { background: var(--text-dark); color: var(--bg-light); padding: 64px 24px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 16px; }
-    .footer-text { font-size: 0.85rem; color: rgba(244,241,237,0.6); }
-    .footer-heading { font-size: 0.85rem; font-weight: 600; color: rgba(244,241,237,0.8); margin-bottom: 16px; }
-    .footer-links { display: flex; flex-direction: column; gap: 8px; }
-    .footer-links a { font-size: 0.85rem; color: var(--terracotta); transition: color 0.2s; }
-    .footer-links a:hover { color: var(--bg-light); }
-    .footer-bottom { max-width: 1200px; margin: 48px auto 0; padding-top: 32px; border-top: 1px solid rgba(244,241,237,0.1); text-align: center; font-size: 0.75rem; color: rgba(244,241,237,0.4); }
-
     @media (max-width: 768px) {
       .test-container { padding: 100px 20px 60px; }
       .question-text { font-size: 1.4rem; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-light); padding: 24px; gap: 20px; border-bottom: 1px solid var(--bg-medium); }
-      .nav-links.active { display: flex; } .menu-toggle { display: block; }
-      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
       .result-cta { align-items: stretch; }
       .result-cta .btn-primary, .result-cta .btn-secondary { text-align: center; }
     }
@@ -146,15 +115,13 @@
 </head>
 <body>
 
-  <nav>
+  <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Theresa Ross</a>
-      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">&#9776;</button>
+      <button class="menu-toggle">&#9776;</button>
       <div class="nav-links">
-        <a href="privatpersonen.html">Für dich</a>
-        <a href="unternehmen.html">Für Unternehmen</a>
         <a href="ueber-mich.html">Über mich</a>
-        <a href="bibliothek.html">Bibliothek</a>
+        <a href="coaching.html">Coaching</a>
         <a href="selbsttest.html" class="nav-cta">Selbsttest</a>
       </div>
     </div>
@@ -162,14 +129,15 @@
 
   <div class="test-container" id="app"></div>
 
-  <footer>
+  <footer class="footer">
     <div class="footer-inner">
-      <div><div class="footer-logo">Theresa Ross</div><p class="footer-text">Gesundheitsmentorin &<br>Nervensystem-Spezialistin</p></div>
-      <div><p class="footer-heading">Navigation</p><div class="footer-links"><a href="privatpersonen.html">Für dich</a><a href="unternehmen.html">Für Unternehmen</a><a href="ueber-mich.html">Über mich</a><a href="bibliothek.html">Bibliothek</a><a href="selbsttest.html">Selbsttest</a></div></div>
-      <div><p class="footer-heading">Rechtliches</p><div class="footer-links"><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></div></div>
+      <div><div class="footer-logo">Theresa Ross</div><p class="footer-text">Coaching für Nervensystem,<br>Darm-Hirn-Achse & Körper-Geist</p></div>
+      <div><p class="footer-heading">Seiten</p><div class="footer-links"><a href="ueber-mich.html">Über mich</a><a href="coaching.html">Coaching</a><a href="selbsttest.html">Selbsttest</a></div></div>
+      <div><p class="footer-heading">Rechtliches</p><div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
     </div>
-    <div class="footer-bottom">&copy; 2025 Theresa Ross. Alle Rechte vorbehalten.</div>
+    <div class="footer-bottom">&copy; 2025 Theresa Ross</div>
   </footer>
+  <script src="assets/js/main.js"></script>
 
 <script>
 // ============================================================

@@ -4,131 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datenschutz | Theresa Ross</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root { --bordeaux: #7A3B3B; --terracotta: #C89B8C; --mint: #A8C9BC; --gold: #B8956A; --bg-light: #F4F1ED; --bg-medium: #E8E3DC; --text-dark: #3A3633; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
-    a { color: var(--bordeaux); text-decoration: underline; }
-    a:hover { color: var(--terracotta); }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(244,241,237,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(232,227,220,0.5); }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--bordeaux); text-decoration: none; }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { font-size: 0.9rem; color: rgba(58,54,51,0.7); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--bordeaux); }
-    .nav-cta { background: var(--bordeaux) !important; color: var(--bg-light) !important; padding: 10px 24px; border-radius: 6px; font-weight: 600; font-size: 0.9rem !important; }
-    .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-dark); cursor: pointer; }
-    .content { max-width: 700px; margin: 0 auto; padding: 140px 24px 100px; }
-    .content h1 { font-size: 3rem; font-weight: 600; color: var(--bordeaux); margin-bottom: 48px; }
-    .content h2 { font-size: 1.8rem; font-weight: 500; color: var(--bordeaux); margin: 40px 0 16px; }
-    .content h3 { font-size: 1.3rem; font-weight: 500; margin: 24px 0 12px; }
-    .content p { margin-bottom: 16px; font-size: 1rem; }
-    .content ul { margin: 0 0 16px 24px; }
-    .content li { margin-bottom: 4px; }
-    .note { font-size: 0.85rem; color: rgba(58,54,51,0.45); padding-top: 32px; margin-top: 48px; border-top: 1px solid var(--bg-medium); }
-    footer { background: var(--text-dark); color: var(--bg-light); padding: 64px 24px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 16px; }
-    .footer-text { font-size: 0.85rem; color: rgba(244,241,237,0.6); }
-    .footer-heading { font-size: 0.85rem; font-weight: 600; color: rgba(244,241,237,0.8); margin-bottom: 16px; }
-    .footer-links { display: flex; flex-direction: column; gap: 8px; }
-    .footer-links a { font-size: 0.85rem; color: var(--terracotta); text-decoration: none; }
-    .footer-links a:hover { color: var(--bg-light); }
-    .footer-bottom { max-width: 1200px; margin: 48px auto 0; padding-top: 32px; border-top: 1px solid rgba(244,241,237,0.1); text-align: center; font-size: 0.75rem; color: rgba(244,241,237,0.4); }
-    @media (max-width: 768px) {
-      .content { padding: 100px 24px 60px; }
-      .content h1 { font-size: 2.2rem; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-light); padding: 24px; gap: 20px; border-bottom: 1px solid var(--bg-medium); }
-      .nav-links.active { display: flex; } .menu-toggle { display: block; }
-      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>.legal h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--text-on-light); margin: 2.5rem 0 1rem; } .legal h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; margin: 1.5rem 0 0.75rem; } .legal p { margin-bottom: 1rem; } .legal ul { margin: 0 0 1rem 1.5rem; } .legal li { margin-bottom: 0.25rem; } .legal a { color: var(--accent); text-decoration: underline; } .note { font-size: 0.85rem; color: var(--text-on-light-muted); border-top: 1px solid var(--border-light); padding-top: 2rem; margin-top: 3rem; }</style>
 </head>
 <body>
+  <nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo">Theresa Ross</a><button class="menu-toggle">&#9776;</button><div class="nav-links"><a href="ueber-mich.html">Über mich</a><a href="coaching.html">Coaching</a><a href="selbsttest.html" class="nav-cta">Selbsttest</a></div></div></nav>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Theresa Ross</a>
-      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">&#9776;</button>
-      <div class="nav-links">
-        <a href="privatpersonen.html">Für dich</a>
-        <a href="unternehmen.html">Für Unternehmen</a>
-        <a href="ueber-mich.html">Über mich</a>
-        <a href="bibliothek.html">Bibliothek</a>
-        <a href="selbsttest.html" class="nav-cta">Selbsttest</a>
-      </div>
+  <section class="section" style="padding-top: clamp(8rem, 12vh, 12rem);">
+    <div class="container--narrow legal">
+      <h1 class="h1" style="margin-bottom: 2rem;">Datenschutzerklärung</h1>
+
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>Theresa Ross<br>[Adresse einfügen]<br>E-Mail: [E-Mail einfügen]</p>
+
+      <h2>2. Hosting</h2>
+      <p>Diese Website wird gehostet über GitHub Pages (GitHub Inc., San Francisco, USA). Beim Besuch werden technisch notwendige Daten (IP-Adresse, Browserinformationen) verarbeitet. GitHub ist unter dem EU-U.S. Data Privacy Framework zertifiziert.</p>
+
+      <h2>3. Nervensystem-Selbsttest</h2>
+      <h3>Datenverarbeitung beim Selbsttest</h3>
+      <p>Deine Antworten im Selbsttest werden ausschließlich in deinem Browser verarbeitet. Sie werden nicht an einen Server gesendet und nicht gespeichert. Sobald du die Website verlässt, sind sie weg.</p>
+
+      <h3>E-Book-Anfrage</h3>
+      <p>Wenn du das E-Book anforderst, werden verarbeitet:</p>
+      <ul>
+        <li>Vorname (optional)</li>
+        <li>E-Mail-Adresse</li>
+      </ul>
+      <p>Dein Testergebnis wird nicht mit deiner E-Mail-Adresse verknüpft gespeichert.</p>
+
+      <h3>Zweck</h3>
+      <ul>
+        <li>E-Book-Versand (Einwilligung, Art. 6 Abs. 1 lit. a DSGVO)</li>
+        <li>Bei Newsletter-Opt-In: werbliche E-Mails (gesonderte Einwilligung)</li>
+      </ul>
+
+      <h2>4. Werbe-Kennzeichnung</h2>
+      <p>Diese Website enthält Verweise auf das Coaching-Programm VagusFlow von Theresa Ross. Das kostenlose E-Book dient auch der Vorstellung dieses Programms. Es besteht keine Verpflichtung zur Buchung.</p>
+
+      <h2>5. E-Mail-Versand</h2>
+      <p>Für den E-Mail-Versand nutzen wir [Dienst einfügen: Brevo / MailerLite / Tally]. Sitz in der EU. Es besteht ein Auftragsverarbeitungsvertrag. Wir nutzen Double-Opt-In.</p>
+
+      <h2>6. Speicherdauer</h2>
+      <p>Deine Daten bleiben gespeichert, solange du angemeldet bist. Abmeldung jederzeit per Klick in jeder E-Mail. Löschung innerhalb von 30 Tagen.</p>
+
+      <h2>7. Deine Rechte</h2>
+      <ul>
+        <li>Auskunft über gespeicherte Daten</li>
+        <li>Berichtigung unrichtiger Daten</li>
+        <li>Löschung deiner Daten</li>
+        <li>Widerruf deiner Einwilligung</li>
+        <li>Beschwerde bei einer Aufsichtsbehörde</li>
+      </ul>
+
+      <h2>8. Widerruf</h2>
+      <p>Du kannst deine Einwilligung jederzeit widerrufen — per Abmelde-Link in jeder E-Mail oder per E-Mail an [E-Mail einfügen].</p>
+
+      <h2>9. Cookies</h2>
+      <p>Diese Website verwendet keine Tracking-Cookies und keine Analyse-Tools.</p>
+
+      <p class="note">Stand: Mai 2025. Entwurf — bitte anwaltlich prüfen lassen. Platzhalter in eckigen Klammern ausfüllen.</p>
     </div>
-  </nav>
+  </section>
 
-  <div class="content">
-    <h1>Datenschutzerklärung</h1>
-
-    <h2>1. Verantwortliche Stelle</h2>
-    <p>Theresa Ross<br>[Adresse einfügen]<br>E-Mail: [E-Mail einfügen]</p>
-
-    <h2>2. Hosting</h2>
-    <p>Diese Website wird gehostet über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Beim Besuch der Website werden technisch notwendige Daten (IP-Adresse, Browserinformationen) verarbeitet.</p>
-
-    <h2>3. Nervensystem-Selbsttest</h2>
-    <h3>Datenverarbeitung beim Selbsttest</h3>
-    <p>Deine Antworten im Selbsttest werden ausschließlich in deinem Browser verarbeitet. Sie werden nicht an einen Server gesendet und nicht gespeichert. Sobald du die Website verlässt oder den Browser schließt, sind sie weg. Es findet keine Analyse deiner Antworten durch Dritte statt.</p>
-
-    <h3>E-Book-Anfrage</h3>
-    <p>Erst wenn du aktiv auf "E-Book kostenlos holen" klickst und deine E-Mail eingibst, werden Daten verarbeitet:</p>
-    <ul>
-      <li>Vorname (optional, für die Anrede)</li>
-      <li>E-Mail-Adresse (für den Versand des E-Books)</li>
-    </ul>
-    <p>Dein Testergebnis wird nicht mit deiner E-Mail-Adresse verknüpft gespeichert.</p>
-
-    <h3>Zweck der Verarbeitung</h3>
-    <ul>
-      <li>E-Book-Versand (Einwilligung, Art. 6 Abs. 1 lit. a DSGVO)</li>
-      <li>Bei Newsletter-Opt-In: werbliche E-Mails (gesonderte Einwilligung, Art. 6 Abs. 1 lit. a DSGVO)</li>
-    </ul>
-
-    <h3>Werbe-Kennzeichnung</h3>
-    <p>Diese Website enthält Verweise auf das Coaching-Programm VagusFlow von Theresa Ross. Das kostenlose E-Book dient auch der Vorstellung dieses Programms. Es besteht keine Verpflichtung zur Buchung.</p>
-
-    <h2>4. Kontaktformular</h2>
-    <p>Das Kontaktformular wird über Tally.so (Tally BV, Belgien, EU) bereitgestellt. Tally verarbeitet die eingegebenen Daten in unserem Auftrag und speichert sie auf Servern in der EU.</p>
-
-    <h2>5. Newsletter / E-Mail-Marketing</h2>
-    <p>Für den E-Mail-Versand nutzen wir Mailerlite (UAB MailerLite, Vilnius, Litauen, EU). Es besteht ein Auftragsverarbeitungsvertrag. Wir nutzen Double-Opt-In.</p>
-
-    <h2>6. Speicherdauer</h2>
-    <p>Deine Daten werden gespeichert, solange du unseren Newsletter abonniert hast. Nach Abmeldung werden sie innerhalb von 30 Tagen gelöscht.</p>
-
-    <h2>7. Deine Rechte</h2>
-    <p>Du hast jederzeit das Recht auf:</p>
-    <ul>
-      <li>Auskunft über deine gespeicherten Daten</li>
-      <li>Berichtigung unrichtiger Daten</li>
-      <li>Löschung deiner Daten</li>
-      <li>Widerruf deiner Einwilligung</li>
-      <li>Beschwerde bei einer Aufsichtsbehörde</li>
-    </ul>
-
-    <h2>8. Widerruf</h2>
-    <p>Du kannst deine Einwilligung jederzeit widerrufen — über den Abmelde-Link in jeder E-Mail oder per E-Mail an [E-Mail-Adresse einfügen].</p>
-
-    <h2>9. Cookies</h2>
-    <p>Diese Website verwendet keine Tracking-Cookies und keine Analyse-Tools. Es werden nur technisch notwendige Daten verarbeitet.</p>
-
-    <p class="note">Stand: Mai 2025. Diese Datenschutzerklärung ist ein Entwurf und sollte von einem Rechtsanwalt geprüft werden. Platzhalter in eckigen Klammern müssen ausgefüllt werden.</p>
-  </div>
-
-  <footer>
-    <div class="footer-inner">
-      <div><div class="footer-logo">Theresa Ross</div><p class="footer-text">Gesundheitsmentorin &<br>Nervensystem-Spezialistin</p></div>
-      <div><p class="footer-heading">Navigation</p><div class="footer-links"><a href="privatpersonen.html">Für dich</a><a href="unternehmen.html">Für Unternehmen</a><a href="ueber-mich.html">Über mich</a><a href="bibliothek.html">Bibliothek</a><a href="selbsttest.html">Selbsttest</a></div></div>
-      <div><p class="footer-heading">Rechtliches</p><div class="footer-links"><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></div></div>
-    </div>
-    <div class="footer-bottom">&copy; 2025 Theresa Ross. Alle Rechte vorbehalten.</div>
-  </footer>
+  <footer class="footer"><div class="footer-inner"><div><div class="footer-logo">Theresa Ross</div></div><div><p class="footer-heading">Seiten</p><div class="footer-links"><a href="ueber-mich.html">Über mich</a><a href="coaching.html">Coaching</a><a href="selbsttest.html">Selbsttest</a></div></div><div><p class="footer-heading">Rechtliches</p><div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></div><div class="footer-bottom">&copy; 2025 Theresa Ross</div></footer>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

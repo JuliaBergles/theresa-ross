@@ -1,0 +1,33 @@
+/* ============================================================
+   DESIGN TOKENS — Theresa Ross
+   Graubeige + Kupfer, Fraunces + Inter
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Hintergrund-Familie */
+  --bg-primary: #E8E3D9;
+  --bg-elevated: #F0EBE1;
+  --bg-dark: #2A2826;
+  --bg-dark-elevated: #38352F;
+
+  /* Akzentfarbe */
+  --accent: #B87D4B;
+  --accent-dark: #8E5E33;
+  --accent-light: #D9A87A;
+
+  /* Text */
+  --text-on-light: #2C2820;
+  --text-on-light-muted: #5F5950;
+  --text-on-dark: #F5EFE6;
+  --text-on-dark-muted: #B5AC9E;
+
+  /* Linien */
+  --border-light: rgba(44, 40, 32, 0.12);
+  --border-dark: rgba(245, 239, 230, 0.15);
+
+  /* Typografie */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
