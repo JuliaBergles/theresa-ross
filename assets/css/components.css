@@ -129,7 +129,7 @@
 }
 .btn--ghost-light:hover::after { opacity: 1; }
 .btn--ghost-light:hover {
-  border-color: var(--accent); color: var(--accent-dark);
+  border-color: var(--accent-text); color: var(--accent-text);
 }
 .btn--ghost-dark {
   background: transparent;
@@ -210,7 +210,7 @@
   transition: all 0.3s ease;
 }
 .card:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-text);
   box-shadow: 0 12px 32px rgba(44, 40, 32, 0.08);
   transform: translateY(-4px);
 }
@@ -220,7 +220,7 @@
 }
 .card--dark .h3 { color: var(--text-on-dark); }
 .card--dark p { color: var(--text-on-dark-muted); }
-.card--dark .eyebrow { color: var(--accent-light); }
+.card--dark .eyebrow { color: var(--accent); }
 
 /* --- Image Placeholder --- */
 .img-placeholder {
@@ -258,7 +258,7 @@
 .footer-links a {
   font-size: 0.875rem; color: var(--text-on-light-muted);
 }
-.footer-links a:hover { color: var(--accent); }
+.footer-links a:hover { color: var(--accent-text); }
 .footer-bottom {
   max-width: 1200px; margin: 3rem auto 0;
   padding-top: 2rem;
@@ -301,7 +301,7 @@
   margin-top: 0.25rem; accent-color: var(--accent);
   width: 16px; height: 16px; flex-shrink: 0;
 }
-.checkbox-label a { color: var(--accent-light); text-decoration: underline; }
+.checkbox-label a { color: var(--accent-text); text-decoration: underline; }
 
 /* ============================================================
    RESPONSIVE
