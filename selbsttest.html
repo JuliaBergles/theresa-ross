@@ -16,7 +16,7 @@
     .btn-secondary { display: inline-block; border: 1px solid var(--text-on-light); color: var(--text-on-light); font-family: var(--font-body); font-weight: 500; font-size: 0.9rem; padding: 12px 28px; border-radius: 4px; transition: all 0.2s; background: transparent; cursor: pointer; }
     .btn-secondary:hover { background: var(--text-on-light); color: var(--bg-primary); }
     .btn-ghost { background: none; border: none; font-family: var(--font-body); font-size: 0.85rem; color: var(--text-on-light-muted); cursor: pointer; text-decoration: underline; transition: color 0.2s; }
-    .btn-ghost:hover { color: var(--accent); }
+    .btn-ghost:hover { color: var(--accent-text); }
 
     /* Progress */
     .progress-wrap { margin-bottom: 40px; }
@@ -25,7 +25,7 @@
     .progress-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.5s ease; }
 
     /* Section label */
-    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 12px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-text); margin-bottom: 12px; }
 
     /* Question */
     .question-text {
@@ -43,12 +43,12 @@
       cursor: pointer; transition: all 0.25s ease; line-height: 1.5;
     }
     .option-btn:hover {
-      border-color: var(--accent);
+      border-color: var(--accent-text);
       background: rgba(251, 213, 184, 0.1);
       transform: translateY(-1px);
     }
     .option-btn.selected {
-      border-color: var(--accent);
+      border-color: var(--accent-text);
       background: rgba(251, 213, 184, 0.15);
       color: var(--text-on-light);
     }
@@ -61,7 +61,7 @@
       background: transparent; transition: all 0.2s ease;
     }
     .multi-btn.selected::before {
-      background: var(--accent); border-color: var(--accent);
+      background: var(--accent); border-color: var(--accent-text);
     }
     .multi-btn.selected::after {
       content: '✓'; position: absolute; left: 1.35rem; top: 50%; transform: translateY(-50%);
@@ -75,7 +75,7 @@
       background: transparent; outline: none; resize: none; min-height: 120px;
       transition: border-color 0.2s; line-height: 1.6;
     }
-    .text-input:focus { border-color: var(--accent); }
+    .text-input:focus { border-color: var(--accent-text); }
     .text-input::placeholder { color: var(--text-on-light-muted); }
 
     /* Skip */
@@ -99,11 +99,11 @@
       font-family: var(--font-body); font-size: 1rem; color: var(--text-on-light);
       background: var(--bg-primary); outline: none; transition: border-color 0.2s;
     }
-    .form-input:focus { border-color: var(--accent); }
+    .form-input:focus { border-color: var(--accent-text); }
     .checkbox-label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin-bottom: 12px; }
-    .checkbox-label input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--accent); flex-shrink: 0; }
+    .checkbox-label input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--accent-text); flex-shrink: 0; }
     .checkbox-label span { font-size: 0.85rem; color: var(--text-on-light-muted); line-height: 1.5; }
-    .checkbox-label a { color: var(--accent); text-decoration: underline; }
+    .checkbox-label a { color: var(--accent-text); text-decoration: underline; }
 
     /* Crisis overlay */
     .crisis-overlay {
@@ -113,7 +113,7 @@
     .crisis-card { max-width: 520px; text-align: center; }
     .crisis-card h2 { font-family: var(--font-display); font-size: 1.8rem; color: var(--text-on-light); margin-bottom: 24px; }
     .crisis-card p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 16px; }
-    .crisis-phone { font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: 24px 0; }
+    .crisis-phone { font-size: 1.5rem; font-weight: 700; color: var(--accent-text); margin: 24px 0; }
 
     /* Animation */
     .fade-in { animation: fadeIn 0.4s ease-out; }

@@ -220,7 +220,8 @@
 }
 .card--dark .h3 { color: var(--text-on-dark); }
 .card--dark p { color: var(--text-on-dark-muted); }
-.card--dark .eyebrow { color: var(--accent); }
+.card--dark .eyebrow { color: var(--accent-text); }
+.section--dark .eyebrow { color: var(--accent-text); }
 
 /* --- Image Placeholder --- */
 .img-placeholder {

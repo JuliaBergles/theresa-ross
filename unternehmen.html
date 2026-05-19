@@ -17,7 +17,7 @@
     .perspective-card li { font-size: 1rem; line-height: 1.5; padding-left: 1.5rem; position: relative; }
     .perspective-card li::before { position: absolute; left: 0; font-weight: 600; }
     .card-problem { background: var(--bg-dark); color: var(--text-on-dark); }
-    .card-problem li::before { content: '–'; color: var(--accent); }
+    .card-problem li::before { content: '–'; color: var(--accent-text); }
     .card-solution { background: var(--bg-elevated); color: var(--text-on-light); }
     .card-solution li::before { content: '+'; color: var(--accent-dark); }
 
@@ -30,14 +30,14 @@
     }
     .training-number {
       font-family: var(--font-display); font-size: 3rem; font-weight: 300;
-      color: var(--accent); line-height: 1; margin-bottom: 1.5rem;
+      color: var(--accent-text); line-height: 1; margin-bottom: 1.5rem;
     }
     .training-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; }
     .training-duration { font-size: 0.85rem; color: var(--text-on-dark-muted); margin-bottom: 1.5rem; }
     .training-card p { font-size: 0.95rem; color: var(--text-on-dark-muted); margin-bottom: 1rem; font-style: italic; }
     .training-card ul { list-style: none; display: grid; gap: 0.5rem; margin-top: auto; }
     .training-card li { font-size: 0.9rem; color: var(--text-on-dark-muted); padding-left: 1.25rem; position: relative; }
-    .training-card li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+    .training-card li::before { content: '–'; position: absolute; left: 0; color: var(--accent-text); }
 
     .contact-form { max-width: 600px; margin: 0 auto; }
     .form-group { margin-bottom: 1.25rem; }
@@ -48,7 +48,7 @@
       font-family: var(--font-body); font-size: 1rem; color: var(--text-on-light);
       outline: none; transition: border-color 0.2s;
     }
-    .form-input-light:focus { border-color: var(--accent); }
+    .form-input-light:focus { border-color: var(--accent-text); }
     .form-select {
       width: 100%; padding: 0.875rem 1rem; border-radius: 4px;
       border: 1px solid var(--border-light); background: var(--bg-primary);
@@ -57,7 +57,7 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235F5950' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 1rem center;
     }
-    .form-select:focus { border-color: var(--accent); }
+    .form-select:focus { border-color: var(--accent-text); }
   </style>
 </head>
 <body>
