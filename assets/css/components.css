@@ -5,7 +5,7 @@
 /* --- Navigation --- */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(26, 23, 20, 0.85);
+  background: rgba(28, 22, 21, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-dark);
@@ -95,11 +95,11 @@
 }
 .btn--primary {
   position: relative;
-  background: linear-gradient(135deg, #B8877F 0%, #A0706A 45%, #7D5550 100%);
+  background: linear-gradient(135deg, #B06E67 0%, #9B5B55 45%, #7A4440 100%);
   color: #FFFEF8;
   padding: 1.125rem 2.5rem;
   border-radius: 2px;
-  box-shadow: 0 4px 20px rgba(160, 112, 106, 0.3);
+  box-shadow: 0 4px 20px rgba(155, 91, 85, 0.3);
   overflow: hidden;
 }
 .btn--primary::before {
@@ -111,7 +111,7 @@
 .btn--primary:hover::before { left: 100%; }
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(160, 112, 106, 0.4);
+  box-shadow: 0 8px 30px rgba(155, 91, 85, 0.4);
 }
 .btn--ghost {
   background: transparent;
@@ -192,7 +192,7 @@
   transition: all 0.4s ease;
 }
 .card:hover {
-  border-color: rgba(160, 112, 106, 0.3);
+  border-color: rgba(155, 91, 85, 0.3);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
   transform: translateY(-4px);
 }
