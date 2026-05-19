@@ -7,13 +7,13 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap');
     @page { size: A4; margin: 2cm 2cm; }
-    @media print { .no-print { display: none; } body { background: #fff; } .page { box-shadow: none; margin: 0; } }
+    @media print { .no-print { display: none; } body { background: #EAE0D5; } .page { box-shadow: none; margin: 0; } }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; color: #2C2820; background: #E8E3D9; line-height: 1.75; font-size: 15px; font-weight: 300; }
     h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 400; line-height: 1.2; }
 
-    .page { max-width: 700px; margin: 0 auto; background: #fff; padding: 3.5rem; min-height: 100vh; box-shadow: 0 4px 40px rgba(0,0,0,0.06); position: relative; }
+    .page { max-width: 700px; margin: 0 auto; background: #EAE0D5; padding: 3.5rem; min-height: 100vh; box-shadow: 0 4px 40px rgba(0,0,0,0.06); position: relative; }
     .page + .page { margin-top: 2rem; }
     @media (max-width: 768px) { .page { padding: 2rem 1.5rem; } }
 
@@ -39,7 +39,8 @@
     .italic { font-style: italic; }
 
     /* Images */
-    .full-image { width: 100%; border-radius: 4px; margin: 2rem 0; }
+    .full-image { width: calc(100% + 7rem); margin-left: -3.5rem; margin-top: 1.5rem; margin-bottom: 2rem; max-height: 240px; object-fit: cover; }
+    @media (max-width: 768px) { .full-image { width: calc(100% + 3rem); margin-left: -1.5rem; } }
 
     /* Quote Block */
     .quote-block { margin: 2.5rem 0; position: relative; }
@@ -48,7 +49,7 @@
     .quote-author { font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #7A6F65; margin-top: 0.75rem; }
 
     /* Info Box (like Nepal box) */
-    .info-box { border-left: 3px solid #9B5B55; padding: 1rem 1.25rem; margin: 1.5rem 0; background: #FAF7F4; }
+    .info-box { border-left: 3px solid #9B5B55; padding: 1rem 1.25rem; margin: 1.5rem 0; background: #F2EBE3; }
     .info-box .info-title { font-size: 0.85rem; color: #9B5B55; font-weight: 500; margin-bottom: 0.5rem; }
     .info-box p { font-size: 0.9rem; margin-bottom: 0.25rem; color: #5F5950; }
 
@@ -57,7 +58,7 @@
     .reflexion-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #9B5B55; font-weight: 500; margin-bottom: 1.5rem; }
     .question { margin-bottom: 2rem; }
     .question p { font-size: 0.95rem; margin-bottom: 0.75rem; font-weight: 400; }
-    .write-box { border: 1.5px solid #E0D9D0; border-radius: 6px; padding: 1rem; min-height: 5rem; }
+    .write-box { border: 1.5px solid #D5CBC0; border-radius: 6px; padding: 1rem; min-height: 5rem; background: #F2EBE3; }
     .write-line { border-bottom: 1px solid #D5CBC0; height: 2.2rem; }
     .write-line:last-child { border-bottom: none; }
 
@@ -82,15 +83,22 @@
 <body>
 
 <!-- ==================== COVER ==================== -->
-<div class="page" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-  <span class="eyebrow">Theresa Ross</span>
-  <h1 class="cover-title">5 Muster, die deine Gesundheit sabotieren.</h1>
-  <div style="height: 1px; width: 80px; background: #9B5B55; margin: 1.5rem auto;"></div>
-  <p style="max-width: 28ch; color: #7A6F65; font-size: 1.05rem; margin-top: 1rem;">
-    Und warum dein Nervensystem der Schlüssel ist, den du bisher übersehen hast.
-  </p>
-  <img src="images/13.png" alt="" class="full-image" style="margin-top: 3rem; max-height: 280px; object-fit: cover;">
-  <p style="margin-top: 3rem; font-size: 0.8rem; color: #B5AC9E;">Ein kostenloses Workbook von Theresa Ross<br>Darm- und Nervensystem Mentorin</p>
+<div class="page" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+  <!-- Bild oben, 60% der Seite -->
+  <div style="position: relative; flex: 1; min-height: 55vh;">
+    <img src="images/20.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, #EAE0D5 100%);"></div>
+  </div>
+  <!-- Text unten -->
+  <div style="padding: 2rem 3.5rem 3rem; text-align: center; position: relative; margin-top: -4rem; z-index: 2;">
+    <span class="eyebrow">Theresa Ross</span>
+    <h1 class="cover-title" style="font-size: 2.6rem;">5 Muster, die deine Gesundheit sabotieren.</h1>
+    <div style="height: 1px; width: 80px; background: #9B5B55; margin: 1.5rem auto;"></div>
+    <p style="max-width: 30ch; margin: 1rem auto 0; color: #7A6F65; font-size: 1rem;">
+      Und warum dein Nervensystem der Schlüssel ist, den du bisher übersehen hast.
+    </p>
+    <p style="margin-top: 2.5rem; font-size: 0.75rem; color: #B5AC9E; letter-spacing: 0.1em;">EIN KOSTENLOSES WORKBOOK</p>
+  </div>
 </div>
 
 <!-- ==================== PERSÖNLICHES VORWORT ==================== -->
