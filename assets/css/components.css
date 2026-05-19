@@ -5,7 +5,7 @@
 /* --- Navigation --- */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(232, 227, 217, 0.92);
+  background: rgba(234, 224, 213, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
@@ -91,11 +91,11 @@
 }
 .btn--primary {
   position: relative;
-  background: linear-gradient(135deg, #C68A57 0%, #B87D4B 45%, #8E5E33 100%);
+  background: linear-gradient(135deg, #D08A50 0%, #C47A45 45%, #9E5E30 100%);
   color: #FFFEF8;
   padding: 1.125rem 2.5rem;
   border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(142, 94, 51, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(158, 94, 48, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   overflow: hidden;
 }
 .btn--primary::before {
