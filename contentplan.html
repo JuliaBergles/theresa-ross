@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content-Plan mit Slides | Theresa Ross</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#D5CBC0;color:#2C2820;line-height:1.6;font-size:14px}
+    h1,h2,h3{font-family:'Fraunces',serif;font-weight:400}
+    .container{max-width:900px;margin:0 auto;padding:3rem 2rem}
+    header{text-align:center;margin-bottom:3rem}
+    header h1{font-size:2rem;color:#9B5B55;margin-bottom:0.5rem}
+    header p{color:#7A6F65;font-size:0.9rem}
+
+    .week{margin-bottom:3rem}
+    .week-header{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:#9B5B55;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(155,91,85,0.15)}
+
+    .post{background:#EAE0D5;border-radius:6px;padding:1.5rem;margin-bottom:1.5rem;border-left:3px solid #9B5B55}
+    .post-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem}
+    .post-nr{font-family:'Fraunces',serif;font-size:1rem;color:#9B5B55}
+    .post-day{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#7A6F65}
+    .post-saule{font-size:0.65rem;color:#7A6F65;background:rgba(155,91,85,0.08);padding:0.15rem 0.5rem;border-radius:3px;display:inline-block;margin-bottom:0.5rem}
+    .vf-tag{background:#9B5B55;color:#F5EFE8;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.15rem 0.4rem;border-radius:2px;margin-left:0.5rem}
+
+    .slides{display:flex;gap:0.75rem;overflow-x:auto;padding:1rem 0;-webkit-overflow-scrolling:touch}
+    .slides::-webkit-scrollbar{height:4px}
+    .slides::-webkit-scrollbar-thumb{background:#C9A99A;border-radius:2px}
+    .slide{min-width:160px;max-width:160px;aspect-ratio:1080/1350;border-radius:4px;padding:1rem;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;flex-shrink:0;position:relative}
+    .slide-creme{background:#F5EFE8}
+    .slide-beige{background:#E8DCC8}
+    .slide-dark{background:#2C2820;color:#F5EFE8}
+
+    .slide-eyebrow{font-size:0.35rem;letter-spacing:0.25em;text-transform:uppercase;color:#9B5B55;margin-bottom:0.35rem}
+    .slide-hook{font-family:'Fraunces',serif;font-size:0.65rem;line-height:1.2;margin-bottom:0.25rem;color:#2C2820}
+    .slide-dark .slide-hook{color:#F5EFE8}
+    .slide-body{font-size:0.4rem;color:#7A6F65;line-height:1.5}
+    .slide-dark .slide-body{color:#B5AC9E}
+    .slide-line{width:20px;height:1px;background:#C9A99A;margin:0.35rem auto}
+    .slide-sig{position:absolute;bottom:0.5rem;font-size:0.3rem;color:#C9A99A}
+    .slide-nr{position:absolute;top:0.35rem;right:0.5rem;font-size:0.3rem;color:#C9A99A}
+    .slide-quote-mark{font-family:'Fraunces',serif;font-size:1.2rem;color:#C9A99A;opacity:0.3;line-height:1}
+    .slide-cta{font-family:'Fraunces',serif;font-size:0.55rem;color:#2C2820}
+
+    .caption-box{margin-top:0.75rem;background:#F5EFE8;border-radius:4px;padding:1rem}
+    .caption-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#9B5B55;margin-bottom:0.35rem}
+    .caption-text{font-size:0.8rem;color:#5F5950;line-height:1.7;margin-bottom:0.5rem}
+    .caption-hashtags{font-size:0.65rem;color:#B5AC9E}
+    .caption-cta{font-size:0.75rem;color:#9B5B55;font-weight:500}
+  </style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Content-Plan mit Slides</h1>
+  <p>13 Wochen. 26 Posts. Alle Slides ausgeschrieben. Start: 20. Mai 2026.</p>
+</header>
+
+<!-- ===== WOCHE 1 ===== -->
+<div class="week">
+<div class="week-header">Woche 1 — 20. Mai</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 01</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Nervensystem</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-eyebrow">Nervensystem</div><div class="slide-hook">Der längste Nerv deines Körpers.</div><div class="slide-line"></div><span class="slide-sig">— Theresa</span></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Der Vagusnerv verbindet Gehirn, Herz, Lunge und Darm.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Wenn er funktioniert:</div><div class="slide-body">Ruhige Verdauung.<br>Tiefer Schlaf.<br>Stabile Energie.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Wenn er überreizt ist:</div><div class="slide-body">Reizdarm. Schlafprobleme.<br>Erschöpfung. Innere Unruhe.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Du kannst deinen Vagusnerv nicht durch Willenskraft beruhigen. Aber du kannst deinem Körper beibringen, es wieder zu tun.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Speicher dir das.</div><div class="slide-body" style="margin-top:0.5rem;">Mehr zum Nervensystem<br>in meinem Workbook.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">Der längste Nerv deines Körpers.<br><br>Er verbindet Gehirn, Herz, Lunge und Darm. Er entscheidet, ob dein Körper zur Ruhe kommt. Oder im Alarmmodus bleibt.</div>
+    <div class="caption-cta">Speicher dir das.</div>
+    <div class="caption-hashtags">#theresaross #nervensystem #vagusnerv #darmhirnachse #stressregulation</div>
+  </div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 02</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Darm-Hirn-Achse</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-eyebrow">Darm-Hirn-Achse</div><div class="slide-hook">80% der Informationen fließen vom Darm zum Gehirn.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Nicht umgekehrt.</div><div class="slide-body">Dein Bauch denkt mit.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Was im Bauch passiert, beeinflusst den Geist.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Und umgekehrt.</div><div class="slide-body">Diese Verbindung heißt Darm-Hirn-Achse. Und sie verändert alles.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Das ist kein Mindset. Das ist Biologie.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Workbook in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">80% der Informationen fließen vom Darm zum Gehirn. Nicht umgekehrt.<br><br>Was im Bauch passiert, beeinflusst den Geist. Und umgekehrt.</div>
+    <div class="caption-cta">Workbook in der Bio.</div>
+    <div class="caption-hashtags">#theresaross #darmhirnachse #nervensystem #darmgesundheit #vagusnerv</div>
+  </div>
+</div>
+</div>
+
+<!-- ===== WOCHE 2 ===== -->
+<div class="week">
+<div class="week-header">Woche 2 — 27. Mai</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 03</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Symptome verstehen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-eyebrow">Symptome</div><div class="slide-hook">Du schläfst. Aber dein Nervensystem nicht.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Dein Vagusnerv reguliert die Schlaftiefe.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Wenn er überreizt ist, bleibt dein Schlaf flach.</div><div class="slide-body">Egal wie früh du ins Bett gehst.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Deshalb bist du müde, obwohl du schläfst.</div><div class="slide-body">Es ist kein Schlafproblem.<br>Es ist ein Nervensystem-Problem.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Dein Schlaf ist so gut wie dein Vagustonus.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Speicher dir das.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">Du schläfst. Aber dein Nervensystem nicht.<br><br>Dein Vagusnerv reguliert die Schlaftiefe. Wenn er überreizt ist, bleibt dein Schlaf flach.</div>
+    <div class="caption-cta">Speicher dir das.</div>
+    <div class="caption-hashtags">#theresaross #schlafprobleme #nervensystem #erschöpfung #vagusnerv</div>
+  </div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 04</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Tools & Einladungen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">18 Fragen.<br>10 Minuten.<br>Klarheit.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Wo steht dein Nervensystem?</div><div class="slide-body">Ein kurzer Test, der dir zeigt, was dein Körper gerade braucht.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Ehrlich. Anonym. Kostenlos.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">4</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Keine Diagnose. Nur Klarheit.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Selbsttest in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">Wo steht dein Nervensystem? 18 Fragen. 10 Minuten. Ehrlich und anonym.<br><br>Am Ende weißt du, was dein Körper gerade braucht.</div>
+    <div class="caption-cta">Selbsttest in der Bio.</div>
+    <div class="caption-hashtags">#theresaross #selbsttest #nervensystem #darmhirnachse #stresscheck</div>
+  </div>
+</div>
+</div>
+
+<!-- ===== WOCHE 3 ===== -->
+<div class="week">
+<div class="week-header">Woche 3 — 3. Juni</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 05</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Nervensystem</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-eyebrow">Nervensystem</div><div class="slide-hook">Gas und Bremse.<br>Dein Körper hat beides.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Sympathikus = Gas.</div><div class="slide-body">Alarm. Leistung. Kampf oder Flucht.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Parasympathikus = Bremse.</div><div class="slide-body">Ruhe. Verdauung. Regeneration.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Dein Vagusnerv ist die wichtigste Bremse.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-hook">Bei Dauerstress vergisst dein Körper das Bremsen.</div><div class="slide-body">Das ist kein Mindset.<br>Das ist Biologie.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Speicher dir das.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">Gas und Bremse. Dein Körper hat beides.<br><br>Bei Dauerstress vergisst er das Bremsen. Dein Vagusnerv ist die wichtigste Bremse.</div>
+    <div class="caption-cta">Speicher dir das.</div>
+    <div class="caption-hashtags">#theresaross #nervensystem #sympathikus #parasympathikus #vagusnerv</div>
+  </div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 06</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Körper-Geist</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Jedes Symptom ist ein Signal.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Dein Körper hat dir nie etwas vorgemacht.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Er lügt nicht.</div><div class="slide-body">Jede Erschöpfung war eine Grenze.<br>Jeder Darmkrampf ein Hilferuf.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Die Frage ist nicht: Wie bringe ich die Symptome zum Schweigen?</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-hook">Sondern: Was versucht mein Körper mir zu sagen?</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Kommentiere, wenn du das kennst.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">Jedes Symptom ist ein Signal.<br><br>Die Frage ist nicht: Wie bringe ich die Symptome zum Schweigen? Sondern: Was versucht mein Körper mir zu sagen?</div>
+    <div class="caption-cta">Kommentiere, wenn du das kennst.</div>
+    <div class="caption-hashtags">#theresaross #körperintelligenz #nervensystem #symptome #darmgesundheit</div>
+  </div>
+</div>
+</div>
+
+<!-- ===== WOCHE 4 ===== -->
+<div class="week">
+<div class="week-header">Woche 4 — 10. Juni</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 07</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Darm-Hirn-Achse</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-eyebrow">Darm-Hirn-Achse</div><div class="slide-hook">Du kannst alles richtig essen.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Und trotzdem Beschwerden haben.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Weil dein Darm nicht nur auf Essen reagiert.</div><div class="slide-body">Er reagiert auf das, was dein Nervensystem ihm sagt.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Wenn dein Nervensystem im Dauerstress ist, kann dein Darm nicht heilen.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Die Lösung beginnt nicht auf dem Teller. Sie beginnt im Nervensystem.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Speicher dir das.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">Du kannst alles richtig essen. Und trotzdem Beschwerden haben.<br><br>Weil dein Darm nicht nur auf Essen reagiert. Die Lösung beginnt nicht auf dem Teller.</div>
+    <div class="caption-cta">Speicher dir das.</div>
+    <div class="caption-hashtags">#theresaross #darmgesundheit #ernährung #nervensystem #reizdarm</div>
+  </div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 08</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Tools & Einladungen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">6 Stationen.<br>Ehrliche Fragen.<br>Kein Blabla.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Ein Workbook über die Verbindung von Darm, Nervensystem und Geist.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Fragen, die dir niemand stellt.</div><div class="slide-body">Über die Muster, die dich festhalten. Und den Weg zurück.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Kostenlos. Kein Haken.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Workbook in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">6 Stationen. Ehrliche Fragen. Kein Blabla.<br><br>Ein Workbook über die Verbindung von Darm, Nervensystem und Geist. Kostenlos.</div>
+    <div class="caption-cta">Workbook in der Bio.</div>
+    <div class="caption-hashtags">#theresaross #workbook #nervensystem #darmhirnachse #kostenlos</div>
+  </div>
+</div>
+</div>
+
+<!-- ===== WOCHE 5 ===== -->
+<div class="week">
+<div class="week-header">Woche 5 — 17. Juni</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 09</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Symptome verstehen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Erkennst du dich wieder?</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Der Dauer-Alarm.</div><div class="slide-body">Dein Nervensystem kommt nicht runter.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Die Symptom-Jagd.</div><div class="slide-body">Du behandelst Symptome, nicht die Ursache.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Die Kopf-Bauch-Trennung.</div><div class="slide-body">Du spürst deinen Körper nicht mehr.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-hook">Die stille Überforderung.</div><div class="slide-body">Außen stabil. Innen auf Reserve.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-hook">Der fehlende Schlüssel.</div><div class="slide-body">Niemand hat dir gesagt, wo du ansetzen sollst.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">7</span><div class="slide-cta">E-Book in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">5 Muster, die dafür sorgen, dass dein Körper nicht zur Ruhe kommt.<br><br>Erkennst du dich in einem davon wieder?</div>
+    <div class="caption-cta">E-Book in der Bio.</div>
+    <div class="caption-hashtags">#theresaross #stressmuster #nervensystem #erschöpfung #darmgesundheit</div>
+  </div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 10</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Körper-Geist</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Was passiert, wenn du 5 Minuten nichts tust?</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Kein Handy. Kein Podcast. Keine Ablenkung.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Nur du und dein Körper.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Wenn Stille unangenehm ist, sagt das viel über dein Nervensystem.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Manchmal ist nichts tun das Mutigste, was du tun kannst.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Speicher dir das.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box">
+    <div class="caption-label">Caption</div>
+    <div class="caption-text">Was passiert, wenn du 5 Minuten nichts tust?<br><br>Wenn Stille unangenehm ist, sagt das viel über dein Nervensystem.</div>
+    <div class="caption-cta">Speicher dir das.</div>
+    <div class="caption-hashtags">#theresaross #stille #nervensystem #achtsamkeit #körpergeist</div>
+  </div>
+</div>
+</div>
+
+<!-- ===== WOCHE 6-13 KOMPAKT ===== -->
+<!-- Ab hier gleicher Aufbau, Posts 11-26 -->
+
+<div class="week">
+<div class="week-header">Woche 6 — 24. Juni</div>
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 11</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Darm-Hirn-Achse</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Dein Darm reagiert nicht nur auf Essen.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Reizdarm beginnt oft im Kopf.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Chronischer Stress verändert deine Darmflora.</div><div class="slide-body">Innerhalb weniger Tage.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Entzündungen im Darm können Angstzustände auslösen.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Dein Darm hört nicht auf dein Essen. Er hört auf deinen Stress.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Selbsttest in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Reizdarm beginnt oft im Kopf. Chronischer Stress verändert deine Darmflora innerhalb weniger Tage.</div><div class="caption-cta">Selbsttest in der Bio.</div><div class="caption-hashtags">#theresaross #reizdarm #darmhirnachse #stress #nervensystem</div></div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 12</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Tools & Einladungen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Ehrlich. Anonym.<br>10 Minuten.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Am Ende weißt du, wo du stehst.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Und ob du Unterstützung brauchst oder auf einem guten Weg bist.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">4</span><div class="slide-hook">Beides ist in Ordnung.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Selbsttest in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Ehrlich. Anonym. 10 Minuten. Am Ende weißt du, wo du stehst. Beides ist in Ordnung.</div><div class="caption-cta">Selbsttest in der Bio.</div><div class="caption-hashtags">#theresaross #selbsttest #nervensystem #klarheit</div></div>
+</div>
+</div>
+
+<div class="week">
+<div class="week-header">Woche 7 — 1. Juli</div>
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 13</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Nervensystem</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Hör auf zu optimieren.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Dein Nervensystem lässt sich nicht optimieren.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Es will reguliert werden.</div><div class="slide-body">Das ist ein Unterschied.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Regulation bedeutet:</div><div class="slide-body">Dein Körper lernt wieder, nach Stress runterzukommen.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Regulation ist kein Zustand. Es ist eine Fähigkeit.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Speicher dir das.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Hör auf zu optimieren. Dein Nervensystem lässt sich nicht optimieren. Es will reguliert werden.</div><div class="caption-cta">Speicher dir das.</div><div class="caption-hashtags">#theresaross #regulation #nervensystem #vagusnerv #stressabbau</div></div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 14</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Tools & Einladungen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">4 Sekunden ein.<br>8 Sekunden aus.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Langsames Ausatmen aktiviert deinen Vagusnerv.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Probier es jetzt. 5 Mal.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">4</span><div class="slide-hook">Spür, was passiert.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Probier es aus. Sag mir, was du spürst.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">4 Sekunden ein. 8 Sekunden aus. 5 Mal.<br><br>Langsames Ausatmen aktiviert deinen Vagusnerv. Probier es jetzt.</div><div class="caption-cta">Probier es aus. Sag mir, was du spürst.</div><div class="caption-hashtags">#theresaross #atemübung #vagusnerv #nervensystem #regulation</div></div>
+</div>
+</div>
+
+<div class="week">
+<div class="week-header">Woche 8 — 8. Juli</div>
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 15</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Darm-Hirn-Achse</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-eyebrow">Darm-Hirn-Achse</div><div class="slide-hook">95% deines Serotonins werden im Darm produziert.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Nicht im Kopf.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Dein Darm beeinflusst Stimmung, Schlaf, Energie und Stresstoleranz.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Das ist keine Vermutung.</div><div class="slide-body">Das ist Forschung.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Workbook in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">95% deines Serotonins werden im Darm produziert. Nicht im Kopf.<br><br>Dein Darm beeinflusst Stimmung, Schlaf, Energie und Stresstoleranz.</div><div class="caption-cta">Workbook in der Bio.</div><div class="caption-hashtags">#theresaross #serotonin #darmgesundheit #darmhirnachse #stimmung</div></div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 16</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Tools & Einladungen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Fragen, die dir niemand stellt.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Ein Workbook für dich.</div><div class="slide-body">6 Stationen. Ehrliche Reflexionsfragen.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Über die Verbindung von Darm, Nervensystem und Geist.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Kostenlos. Kein Haken.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Workbook in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Fragen, die dir niemand stellt. 6 Stationen. Über Darm, Nervensystem und Geist.</div><div class="caption-cta">Workbook in der Bio.</div><div class="caption-hashtags">#theresaross #workbook #reflexion #nervensystem #kostenlos</div></div>
+</div>
+</div>
+
+<div class="week">
+<div class="week-header">Woche 9 — 15. Juli</div>
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 17</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Symptome verstehen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Du kannst deinen Darm nicht kontrollieren.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Deinen Schlaf auch nicht.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Dein Nervensystem schon gar nicht.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Was du steuern kannst:</div><div class="slide-body">Deine innere Haltung.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-hook">Da fängt echte Veränderung an.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Speicher dir das.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Du kannst deinen Darm nicht kontrollieren. Deinen Schlaf auch nicht. Was du steuern kannst: deine innere Haltung.</div><div class="caption-cta">Speicher dir das.</div><div class="caption-hashtags">#theresaross #kontrolle #loslassen #nervensystem #darmgesundheit</div></div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 18 <span class="vf-tag">VAGUSFLOW</span></span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">VAGUSFLOW</span>
+  <div class="slides">
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">1</span><div class="slide-eyebrow">Herbst 2026</div><div class="slide-hook">Etwas kommt.</div><div class="slide-line" style="background:#7A6F65;"></div></div>
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">2</span><div class="slide-hook">Ich arbeite an etwas.</div><div class="slide-body">Etwas, das alles verbindet.</div></div>
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">3</span><div class="slide-hook">Darm. Nervensystem. Körper und Geist.</div></div>
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">4</span><div class="slide-hook">Mehr bald.</div></div>
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">5</span><div class="slide-cta" style="color:#F5EFE8;">Warteliste in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Herbst 2026. Ich arbeite an etwas. Darm. Nervensystem. Körper und Geist. Mehr bald.</div><div class="caption-cta">Warteliste in der Bio.</div><div class="caption-hashtags">#theresaross #vagusflow #nervensystem #coaching #herbst2026</div></div>
+</div>
+</div>
+
+<div class="week">
+<div class="week-header">Woche 10 — 22. Juli</div>
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 19</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Körper-Geist</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Dein Verstand versucht zu schützen. Nicht zu quälen.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Die Gedankenspiralen sind kein Defekt.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Dein Nervensystem versucht, Kontrolle zu behalten.</div><div class="slide-body">Weil es sich nicht sicher fühlt.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">4</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Sicherheit entsteht nicht im Kopf. Sie entsteht im Körper.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Speicher dir das.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Dein Verstand versucht zu schützen. Nicht zu quälen. Die Gedankenspiralen sind kein Defekt.</div><div class="caption-cta">Speicher dir das.</div><div class="caption-hashtags">#theresaross #gedankenspiralen #nervensystem #grübeln #stressregulation</div></div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 20</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Körper-Geist</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Wann hast du zuletzt wirklich gefühlt?</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Vom Funktionieren zurück zum Fühlen.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Nicht dramatisch. Nicht laut.</div><div class="slide-body">Einfach wieder spüren, was ist.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">4</span><div class="slide-hook">Das ist der Anfang.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Schreib mir per DM.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Wann hast du zuletzt wirklich gefühlt? Vom Funktionieren zurück zum Fühlen. Das ist der Anfang.</div><div class="caption-cta">Schreib mir per DM.</div><div class="caption-hashtags">#theresaross #fühlen #nervensystem #körpergeist #veränderung</div></div>
+</div>
+</div>
+
+<div class="week">
+<div class="week-header">Woche 11 — 29. Juli</div>
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 21</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Symptome verstehen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Nicht faul.<br>Nicht schwach.<br>Überlastet.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Was chronische Erschöpfung wirklich ist.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Dein Nervensystem hat so lange Gas gegeben, dass es die Bremse vergessen hat.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Das ist Biologie. Kein Charakterfehler.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Selbsttest in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Nicht faul. Nicht schwach. Überlastet. Chronische Erschöpfung ist Biologie, kein Charakterfehler.</div><div class="caption-cta">Selbsttest in der Bio.</div><div class="caption-hashtags">#theresaross #erschöpfung #burnout #nervensystem #chronischemüdigkeit</div></div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 22</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Nervensystem</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-eyebrow">Schlaf</div><div class="slide-hook">Dein Schlaf ist so gut wie dein Vagustonus.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Der Vagusnerv reguliert deine Schlaftiefe.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Wenn er überreizt ist, bleibt dein Schlaf flach.</div><div class="slide-body">Egal wie früh du ins Bett gehst.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Die Lösung liegt nicht in der Matratze. Sie liegt im Nervensystem.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Selbsttest in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Dein Schlaf ist so gut wie dein Vagustonus. Die Lösung liegt nicht in der Matratze.</div><div class="caption-cta">Selbsttest in der Bio.</div><div class="caption-hashtags">#theresaross #schlaf #vagusnerv #nervensystem #schlafqualität</div></div>
+</div>
+</div>
+
+<div class="week">
+<div class="week-header">Woche 12 — 5. August</div>
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 23</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Körper-Geist</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Die Natur zeigt es vor.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Loslassen. Zur Ruhe kommen.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Herbst ist die Jahreszeit der Innenkehr.</div><div class="slide-body">Dein Nervensystem braucht das auch.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">4</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Nicht mehr Gas geben. Sondern ankommen.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">5</span><div class="slide-cta">Speicher dir das.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Die Natur zeigt es vor. Loslassen. Zur Ruhe kommen. Dein Nervensystem braucht das auch.</div><div class="caption-cta">Speicher dir das.</div><div class="caption-hashtags">#theresaross #herbst #innenkehr #nervensystem #loslassen</div></div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 24 <span class="vf-tag">VAGUSFLOW</span></span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">VAGUSFLOW</span>
+  <div class="slides">
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">1</span><div class="slide-eyebrow">VAGUS FLOW</div><div class="slide-hook">Wenn alles andere nicht funktioniert hat.</div><div class="slide-line" style="background:#7A6F65;"></div></div>
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">2</span><div class="slide-hook">Mehrere Wochen. Dein Nervensystem. Deine Regulation.</div></div>
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">3</span><div class="slide-hook">Persönliche Begleitung für Darm und Nervensystem.</div></div>
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">4</span><div class="slide-hook">Start: Herbst 2026.</div><div class="slide-body" style="color:#9B5B55;">Begrenzte Plätze.</div></div>
+    <div class="slide slide-dark"><span class="slide-nr" style="color:#7A6F65;">5</span><div class="slide-cta" style="color:#F5EFE8;">Warteliste in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">VAGUS FLOW. Wenn alles andere nicht funktioniert hat. Persönliche Begleitung. Start: Herbst 2026.</div><div class="caption-cta">Warteliste in der Bio.</div><div class="caption-hashtags">#theresaross #vagusflow #coaching #nervensystem #darmgesundheit #herbst2026</div></div>
+</div>
+</div>
+
+<div class="week">
+<div class="week-header">Woche 13 — 12. August</div>
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 25</span><span class="post-day">Montag</span></div>
+  <span class="post-saule">Symptome verstehen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Lerne, das Flüstern zu hören.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Dein Körper flüstert, bevor er schreit.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Jedes Symptom war ein Signal.</div><div class="slide-body">Jede Erschöpfung eine Grenze.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Er hat nie gelogen.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Dein Körper flüstert, bevor er schreit. Lerne, das Flüstern zu hören.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">Kommentiere, wenn du das kennst.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Dein Körper flüstert, bevor er schreit. Jedes Symptom war ein Signal. Er hat nie gelogen.</div><div class="caption-cta">Kommentiere, wenn du das kennst.</div><div class="caption-hashtags">#theresaross #körpersignale #nervensystem #symptome #zuhören</div></div>
+</div>
+
+<div class="post">
+  <div class="post-meta"><span class="post-nr">Post 26</span><span class="post-day">Donnerstag</span></div>
+  <span class="post-saule">Tools & Einladungen</span>
+  <div class="slides">
+    <div class="slide slide-creme"><span class="slide-nr">1</span><div class="slide-hook">Die Antworten sind schon in dir.</div><div class="slide-line"></div></div>
+    <div class="slide slide-creme"><span class="slide-nr">2</span><div class="slide-hook">Du brauchst kein neues Programm.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">3</span><div class="slide-hook">Du brauchst Zugang zu dem, was dein Körper schon weiß.</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">4</span><div class="slide-hook">Das Workbook und der Selbsttest sind ein Anfang.</div></div>
+    <div class="slide slide-beige"><span class="slide-nr">5</span><div class="slide-quote-mark">„</div><div class="slide-hook" style="font-style:italic;font-size:0.55rem;">Komm an in deinem Körper.</div><div class="slide-body">— Theresa</div></div>
+    <div class="slide slide-creme"><span class="slide-nr">6</span><div class="slide-cta">E-Book und Selbsttest in der Bio.</div><span class="slide-sig">theresa-ross.de</span></div>
+  </div>
+  <div class="caption-box"><div class="caption-label">Caption</div><div class="caption-text">Die Antworten sind schon in dir. Du brauchst Zugang zu dem, was dein Körper schon weiß.</div><div class="caption-cta">E-Book und Selbsttest in der Bio.</div><div class="caption-hashtags">#theresaross #nervensystem #darmhirnachse #workbook #selbsttest</div></div>
+</div>
+</div>
+
+</div>
+</body>
+</html>
