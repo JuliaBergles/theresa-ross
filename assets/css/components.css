@@ -326,4 +326,18 @@
   .nav-links.active { display: flex; }
   .menu-toggle { display: block; }
   .section--hero { padding-top: clamp(6rem, 10vh, 8rem); }
+
+  /* Sections auf mobile kompakter */
+  .section { padding: clamp(3rem, 8vh, 5rem) 1.25rem; }
+  .footer { padding: 3rem 1.25rem 2rem; }
+
+  /* Buttons auf Mobile: schmaleres Padding, damit sie in eine Reihe passen */
+  .btn { padding: 0.9rem 1.5rem; font-size: 0.95rem; }
+  .btn--primary, .btn--ghost-light, .btn--ghost-dark { padding: 1rem 1.75rem; }
+
+  /* Card-Padding auf Mobile reduzieren */
+  .card { padding: 2rem 1.5rem; }
+
+  /* Two-col gap kleiner auf Mobile */
+  .two-col { gap: 2rem; }
 }

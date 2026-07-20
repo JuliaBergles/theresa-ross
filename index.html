@@ -26,6 +26,47 @@
     /* Cards grid */
     .cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Hero — responsive Kopf */
+    .hero {
+      position: relative; min-height: 90vh;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .hero-inner { position: relative; z-index: 2; text-align: center; padding: 5rem 1.25rem 3rem; }
+    .hero h1 {
+      font-size: clamp(1.75rem, 5.5vw, 4rem);
+      line-height: 1.15;
+      color: #1A1510;
+      margin: 0 auto 0.75rem;
+      max-width: 20ch;
+    }
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 2vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #3D3530;
+      margin: 0 auto 1.25rem;
+      max-width: 30ch;
+      line-height: 1.35;
+    }
+    .hero-body {
+      font-size: clamp(0.9rem, 1.8vw, 1.125rem);
+      max-width: 34ch;
+      margin: 0 auto 1.75rem;
+      color: #3D3530;
+      line-height: 1.55;
+    }
+    .hero-cta { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 600px) {
+      .hero { min-height: auto; }
+      .hero-inner { padding: 6rem 1rem 3rem; }
+      .hero h1 { font-size: 1.6rem; max-width: 14ch; }
+      .hero-sub { font-size: 0.9rem; max-width: 26ch; }
+      .hero-body { font-size: 0.9rem; }
+      .hero-cta { flex-direction: column; align-items: stretch; }
+      .hero-cta .btn { width: 100%; justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -47,16 +88,16 @@
   </nav>
 
   <!-- 1. Hero mit Hintergrundbild -->
-  <section style="position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+  <section class="hero">
     <img src="images/5.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
     <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(234,224,213,0.92) 0%, rgba(234,224,213,0.7) 50%, rgba(234,224,213,0.92) 100%);"></div>
-    <div class="container" style="position: relative; z-index: 2; text-align: center; padding: 2rem 1.5rem;">
-      <h1 class="h1 fade-up" style="margin: 0 auto 1rem; color: #1A1510; white-space: nowrap;">Komm an in deinem Körper</h1>
-      <p class="fade-up" style="font-family: var(--font-body); font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 700; letter-spacing: 0.02em; color: #3D3530; margin: 0 auto 1.75rem; max-width: 40ch;">Coaching für Darmgesundheit und Stressmanagement</p>
-      <p class="body-large fade-up" style="max-width: 38ch; margin: 0 auto 3rem; color: #3D3530;">
+    <div class="container hero-inner">
+      <h1 class="h1 fade-up">Komm an in deinem Körper</h1>
+      <p class="hero-sub fade-up">Coaching für Darmgesundheit und Stressmanagement</p>
+      <p class="body-large hero-body fade-up">
         Wenn dein Körper schon lange müde ist und dein Kopf nicht aufhört zu kreisen. Es gibt einen Weg zurück.
       </p>
-      <div class="fade-up" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <div class="hero-cta fade-up">
         <a href="selbsttest.html" class="btn btn--primary">Jetzt Selbsttest starten</a>
         <a href="coaching.html" class="btn btn--ghost-light" style="border-color: #3D3530; color: #3D3530;">Zum VAGUS FLOW Programm</a>
       </div>
