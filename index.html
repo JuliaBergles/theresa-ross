@@ -26,6 +26,7 @@
     /* Cards grid */
     .cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 768px) { .cards-grid--two { grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto; } }
 
     /* Hero — responsive Kopf */
     .hero {
@@ -141,18 +142,12 @@
         <span class="eyebrow">Angebote</span>
         <h2 class="h2">Wo du anfangen kannst.</h2>
       </div>
-      <div class="cards-grid">
+      <div class="cards-grid cards-grid--two">
         <article class="card fade-up">
           <span class="eyebrow">Kostenlos</span>
           <h3 class="h3" style="margin: 0.75rem 0 1rem;">Selbsttest</h3>
           <p style="color: var(--text-on-light-muted);">Wo steht dein Nervensystem? Finde es heraus.</p>
           <a href="selbsttest.html" class="btn btn--primary" style="margin-top: 2rem;">Jetzt testen</a>
-        </article>
-        <article class="card fade-up">
-          <span class="eyebrow">Für Privatpersonen</span>
-          <h3 class="h3" style="margin: 0.75rem 0 1rem;">Dein Weg</h3>
-          <p style="color: var(--text-on-light-muted);">VAGUS FLOW, 1:1-Beratung oder Gratis-Einstieg. Schau, was passt.</p>
-          <a href="privatpersonen.html" class="btn btn--primary" style="margin-top: 2rem;">Angebote ansehen</a>
         </article>
         <article class="card card--dark fade-up">
           <span class="eyebrow" style="color: var(--accent-text);">Nächster Start: 19. September</span>
@@ -251,7 +246,7 @@
           <span class="eyebrow fade-up">Über mich</span>
           <h2 class="h2 fade-up">Ich bin Theresa.</h2>
           <p class="fade-up" style="margin-top: 1.5rem;">
-            Mein Name ist Theresa Ross.
+            Mein Name ist Theresa Ross. Seit nunmehr 10 Jahren lebe ich beschwerdefrei.
           </p>
           <p class="fade-up" style="margin-top: 1rem;">
             Ich arbeite als Gesundheitsberaterin und unterstütze Menschen, die Hilfe im Bereich der Darmgesundheit und Stressreduzierung suchen.
