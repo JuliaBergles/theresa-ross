@@ -127,7 +127,7 @@ Hook: "Du kannst deinen Darm nicht kontrollieren."
 
 **Post 18 — Etwas kommt.**
 Säule: VAGUSFLOW
-CTA: Warteliste in der Bio.
+CTA: Sei dabei — Link in der Bio.
 Hook: "Herbst 2026."
 
 ### Woche 10
@@ -163,7 +163,7 @@ Hook: "Die Natur zeigt es vor. Loslassen. Zur Ruhe kommen."
 
 **Post 24 — VAGUS FLOW: Das steckt drin.**
 Säule: VAGUSFLOW
-CTA: Warteliste in der Bio.
+CTA: Sei dabei — Link in der Bio.
 Hook: "Wenn alles andere nicht funktioniert hat."
 
 ### Woche 13
