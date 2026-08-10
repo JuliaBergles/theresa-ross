@@ -30,18 +30,18 @@ Dann im Browser: http://localhost:8765
 - **Buchungslink:** https://theresa-ross.thrivecart.com/vagus-flow/
 - **Button-Wording überall:** "Sei dabei" (nicht mehr "Warteliste")
 
-Alle CTA-Buttons zu VAGUS FLOW verweisen auf den Thrivecart-Buchungslink. Der frühere MailerLite-Warteliste-Link (`preview.mailerlite.io/forms/1206562/…`) wird nur noch für das kostenlose Workbook auf `index.html` genutzt.
+Alle CTA-Buttons zu VAGUS FLOW verweisen auf den Thrivecart-Buchungslink. Der alte MailerLite-Warteliste-Link (`preview.mailerlite.io/forms/1206562/…`) wird nicht mehr verwendet.
 
 ## Weitere Angebote
 
 - **Selbsttest** (`selbsttest.html`) — 18 Fragen, kostenlos, anonym
 - **Workbook** (`workbook.html`) — 6 Stationen zur Selbstreflexion
 - **E-Book** (`ebook.html`) — 5 neurologische Muster, kostenlos
-- **Newsletter** — 20 vorbereitete Ausgaben (`newsletter/newsletter.html`)
+- **Newsletter** — 20 vorbereitete Ausgaben (`newsletter/newsletter.html`); Anmelde-Bereich auf `index.html` (`#newsletter`) — Button-Link ist aktuell Platzhalter `MAILERLITE_NEWSLETTER_LINK` und muss durch echten MailerLite-Formular-Link ersetzt werden
 
 ## Struktur
 
-- `index.html` — Startseite (Hero, Drei Wege, Über-mich-Teaser, Angebote, VAGUS FLOW, FAQ, Newsletter)
+- `index.html` — Startseite (Hero, Drei Wege, Über-mich-Teaser, Angebote, VAGUS FLOW, FAQ, E-Book, Newsletter). E-Book-Button verlinkt direkt auf `ebook.html` (kein Formular davor).
 - `ueber-mich.html` — Über mich (Portrait, Geschichte, Qualifikationen)
 - `coaching.html` — VAGUS FLOW Programm-Seite (mit Preisbereich)
 - `selbsttest.html` — 18-Fragen-Selbsttest
