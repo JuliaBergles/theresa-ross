@@ -32,27 +32,48 @@ Dann im Browser: http://localhost:8765
 
 Alle CTA-Buttons zu VAGUS FLOW verweisen auf den Thrivecart-Buchungslink. Der alte MailerLite-Warteliste-Link (`preview.mailerlite.io/forms/1206562/…`) wird nicht mehr verwendet.
 
+## MailerLite Setup
+
+- **Landing Page (Workbook-Anmeldung):** `https://theresa-ross-gesundheitsberatung-5bceai.mailerpage.io`
+- **Aktive Gruppen:**
+  - `Newsletter Abonnenten NEU` — Hauptliste
+  - `Newsletter Automation` — Welcome-Sequence-Trigger
+  - `PDF - 5 neurobiologische Muster` — Freebie-Interessenten
+- **Aktive Automation:** `Freebook 5 neurobiologische Muster - VAGUS FLOW` (Trigger: neue Anmeldung, verschickt Workbook-Link per Mail)
+- **Absender:** `theresaross-coach@outlook.de` (Free-Domain — Deliverability könnte mit eigener Domain besser sein)
+
 ## Weitere Angebote
 
 - **Selbsttest** (`selbsttest.html`) — 18 Fragen, kostenlos, anonym
 - **Workbook** (`workbook.html`) — 6 Stationen zur Selbstreflexion
-- **E-Book** (`ebook.html`) — 5 neurologische Muster, kostenlos
-- **Newsletter** — 20 vorbereitete Ausgaben (`newsletter/newsletter.html`); Anmelde-Bereich auf `index.html` (`#newsletter`) — Button-Link ist aktuell Platzhalter `MAILERLITE_NEWSLETTER_LINK` und muss durch echten MailerLite-Formular-Link ersetzt werden
+- **E-Book / Workbook "5 Muster"** (`ebook.html`) — 5 neurologische Muster; wird als Lead Magnet über MailerLite ausgeliefert (siehe Workbook-Trichter unten)
+- **Newsletter** — 20 vorbereitete Ausgaben (`newsletter/newsletter.html`); Anmeldung läuft ausschließlich über den Workbook-Trichter (keine separate Newsletter-Sektion mehr)
+
+## Workbook-Trichter (Lead Magnet Flow)
+
+Der Newsletter-Einstieg passiert über das kostenlose "5 Muster"-Workbook:
+
+1. **Button "Workbook kostenlos sichern"** auf `index.html` (E-Book-Sektion, `#ebook`) → verlinkt auf MailerLite-Landing-Page
+2. **MailerLite-Landing-Page:** `https://theresa-ross-gesundheitsberatung-5bceai.mailerpage.io` (Anmelde-Formular)
+3. **Nach Double-Opt-In:** Person landet in MailerLite-Gruppen "Newsletter Abonnenten NEU", "Newsletter Automation" und "PDF - 5 neurobiologische Muster"
+4. **Automation "Freebook 5 neurobiologische Muster - VAGUS FLOW"** feuert → Mail mit Workbook-Link (`https://theresa-ross.de/ebook.html`) wird verschickt
+
+Deshalb: eine separate Newsletter-Anmelde-Sektion auf `index.html` gibt es nicht mehr — alle neuen Newsletter-Abonnenten kommen über das Workbook rein.
 
 ## Struktur
 
-- `index.html` — Startseite (Hero, Drei Wege, Über-mich-Teaser, Angebote, VAGUS FLOW, FAQ, E-Book, Newsletter). E-Book-Button verlinkt direkt auf `ebook.html` (kein Formular davor).
+- `index.html` — Startseite (Hero, Drei Wege, Über-mich-Teaser, Angebote, VAGUS FLOW, FAQ, E-Book/Workbook-Trichter, Über-mich). E-Book-Button verlinkt auf MailerLite-Landing-Page.
 - `ueber-mich.html` — Über mich (Portrait, Geschichte, Qualifikationen)
-- `coaching.html` — VAGUS FLOW Programm-Seite (mit Preisbereich)
+- `coaching.html` — VAGUS FLOW Programm-Seite (Preisbereich + neue "Stimmen"-Sektion mit Teilnehmerinnen-Feedback zwischen Ablauf und Herbstspecial)
 - `selbsttest.html` — 18-Fragen-Selbsttest
-- `workbook.html`, `ebook.html` — Freebies mit CTA zu VAGUS FLOW
+- `workbook.html`, `ebook.html` — Freebies mit CTA zu VAGUS FLOW (technisch weiter direkt erreichbar; primärer Weg zu `ebook.html` läuft über den MailerLite-Trichter)
 - `privatpersonen.html`, `unternehmen.html` — aktuell in der Nav ausgeblendet
 - `contentplan.html` — interne Übersicht der 26 Instagram-Karussell-Posts
 - `newsletter/newsletter.html` — 20 Newsletter-Ausgaben (gestylt)
 - `impressum.html`, `datenschutz.html` — Rechtliches
 - `assets/css/` — `tokens.css`, `base.css`, `components.css` (Design-Tokens getrennt)
 - `assets/js/main.js` — Nav-Toggle, FAQ-Accordion, Fade-Ups
-- `images/` — alle Fotos (nummeriert 1–22 + `theresa-ueber-mich.jpg`)
+- `images/` — alle Fotos (nummeriert 1–22 + `theresa-ueber-mich.jpg`, `feedback-vagusflow-01.jpg`)
 
 ## Navigation (aktuell sichtbar)
 
