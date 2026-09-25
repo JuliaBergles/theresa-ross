@@ -24,13 +24,12 @@ Dann im Browser: http://localhost:8765
 
 8-wöchiges Coaching-Programm mit persönlicher Begleitung.
 
-- **Start:** 19. September 2026
-- **Launch-Preis:** 549 € – **nur im August!** Danach wird der Preis teurer.
-- **Plätze limitiert verfügbar** (persönliche Begleitung).
-- **Buchungslink:** https://theresa-ross.thrivecart.com/vagus-flow/
-- **Button-Wording überall:** "Sei dabei" (nicht mehr "Warteliste")
+- **Aktueller Status (Stand 2026-09-25):** Der laufende Kurs (Start 19. September 2026) läuft bereits. Der **nächste VAGUS FLOW ist für 2027 in Planung**.
+- **Keine offene Anmeldung.** Der Thrivecart-Buchungslink (`https://theresa-ross.thrivecart.com/vagus-flow/`) ist überall auf der Website entfernt worden.
+- **Statt Buchung:** Alle "Sei dabei"-Buttons zu VAGUS FLOW wurden ersetzt durch **"In den Newsletter eintragen"** → `https://theresa-ross-gesundheitsberatung-5bceai.mailerpage.io`, damit Interessent:innen rechtzeitig zum 2027er-Start informiert werden.
+- Auch alte Preis-/Datumshinweise (549 € Launch-Preis, "Nur im August", "Nächster Start: 19. September") wurden entfernt bzw. durch den 2027-Hinweis ersetzt.
 
-Alle CTA-Buttons zu VAGUS FLOW verweisen auf den Thrivecart-Buchungslink. Der alte MailerLite-Warteliste-Link (`preview.mailerlite.io/forms/1206562/…`) wird nicht mehr verwendet.
+Betroffene Seiten (alle angepasst): `coaching.html`, `index.html`, `privatpersonen.html`, `workbook.html`, `ebook.html`, plus Meta-Tags und der Coaching-Empfehlungstext in `selbsttest.html`. Das Newsletter-Archiv (`newsletter/newsletter.html`) bleibt bewusst unverändert, weil es versendete Newsletter dokumentiert.
 
 ## MailerLite Setup
 
@@ -64,7 +63,7 @@ Deshalb: eine separate Newsletter-Anmelde-Sektion auf `index.html` gibt es nicht
 
 - `index.html` — Startseite (Hero, Drei Wege, Über-mich-Teaser, Angebote, VAGUS FLOW, FAQ, E-Book/Workbook-Trichter, Über-mich). E-Book-Button verlinkt auf MailerLite-Landing-Page.
 - `ueber-mich.html` — Über mich (Portrait, Geschichte, Qualifikationen)
-- `coaching.html` — VAGUS FLOW Programm-Seite (Preisbereich + neue "Stimmen"-Sektion mit Teilnehmerinnen-Feedback zwischen Ablauf und Herbstspecial)
+- `coaching.html` — VAGUS FLOW Programm-Seite (Ablauf + "Stimmen"-Sektion mit Teilnehmerinnen-Feedback; Herbstspecial-Sektion wurde in eine "Nächster Kurs 2027"-Sektion umgewandelt)
 - `selbsttest.html` — 18-Fragen-Selbsttest
 - `workbook.html`, `ebook.html` — Freebies mit CTA zu VAGUS FLOW (technisch weiter direkt erreichbar; primärer Weg zu `ebook.html` läuft über den MailerLite-Trichter)
 - `privatpersonen.html`, `unternehmen.html` — aktuell in der Nav ausgeblendet
@@ -101,11 +100,13 @@ Details in:
 
 - Neue Fotos nach `images/` mit sprechendem Namen (nicht als Nummer)
 - Bei Text-Änderungen: HTML-Entities beachten (`&amp;`, `&ndash;`, geschütztes Leerzeichen `&nbsp;`)
-- Preis- und Termin-Angaben zu VAGUS FLOW an **mehreren Stellen** konsistent halten:
-  - `coaching.html` (Preisbereich + Schema.org-Snippet)
-  - `index.html` (VAGUS FLOW-Sektion)
-  - `privatpersonen.html` (Herbst-Special-Sektion)
-  - `newsletter/newsletter.html` (mehrere Ausgaben)
+- Preis- und Termin-Angaben zu VAGUS FLOW an **mehreren Stellen** konsistent halten (aktuell: kein aktiver Preis/Termin, nur der 2027-Ausblick):
+  - `coaching.html` (Sektion "Nächster Kurs 2027" + Meta-Tags + Schema.org-Snippet)
+  - `index.html` (VAGUS FLOW-Sektion + Angebote-Karte + Meta-Tags)
+  - `privatpersonen.html` (Sektion "Nächster Kurs 2027")
+  - `workbook.html`, `ebook.html` (CTA-Box am Ende)
+  - `selbsttest.html` (Ergebnistexte)
+  - `newsletter/newsletter.html` bleibt Archiv — nicht anfassen
 
 ## Kontakt
 
